@@ -5,7 +5,7 @@
 @include('layout.header')
 
 <body id="main-body"
-    class="loggedin fix-header card-no-border fix-sidebar {{ config('settings.css_kanban') }} {{ runtimePreferenceLeftmenuPosition(auth()->user()->left_menu_position) }} {{ $page['page'] ?? '' }}">
+    class="loggedin fix-header {{ app()->getLocale() == 'persian' ? 'rtl' : '' }} card-no-border fix-sidebar {{ config('settings.css_kanban') }} {{ runtimePreferenceLeftmenuPosition(auth()->user()->left_menu_position) }} {{ $page['page'] ?? '' }}">
 
     <!--main wrapper-->
     <div id="main-wrapper">

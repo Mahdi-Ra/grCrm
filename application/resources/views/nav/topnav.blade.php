@@ -30,7 +30,7 @@
 
             <div class="page-wrapper-overlay js-close-side-panels hidden" data-target=""></div>
 
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav {{ app()->getLocale() == 'persian' ? 'ml-auto' : 'mr-auto' }}">
 
                 <!--left menu toogle (hamburger menu) - main application -->
                 @if(request('visibility_left_menu_toggle_button') == 'visible')
