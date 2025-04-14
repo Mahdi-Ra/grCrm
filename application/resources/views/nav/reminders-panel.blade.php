@@ -5,7 +5,8 @@
             <!--title-->
             <div class="rpanel-title">
                 <div class="x-top">
-                    <i class="ti-alarm-clock"></i>@lang('lang.reminders')
+                    <i class="ti-alarm-clock"></i>
+                    <p class="x-top-text">@lang('lang.reminders')</p>
                     <span>
                         <i class="ti-close js-close-side-panels" data-target="sidepanel-reminders"></i>
                     </span>

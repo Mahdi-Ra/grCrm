@@ -6161,7 +6161,7 @@ Notify
   position: fixed;
   right: -240px;
   width: 240px;
-  display: none;
+  display: block;
   z-index: 55;
   background: #fff;
   top: 0px;
@@ -6172,6 +6172,7 @@ Notify
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .right-sidebar .rpanel-title {
   display: block;
   padding: 24px 20px 25px 20px;
@@ -6182,7 +6183,7 @@ Notify
   font-weight: 200;
 }
 .right-sidebar .rpanel-title span {
-  float: right;
+  float: inline-end;
   cursor: pointer;
   font-size: 11px;
 }
@@ -6193,7 +6194,14 @@ Notify
   vertical-align: middle;
   font-size: 22px;
   padding-right: 6px;
+  float: inline-start;
 }
+.x-top-text {
+  float: inline-start;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
 .right-sidebar .rpanel-title i.ti-close {
   font-size: 14px;
 }
@@ -6216,6 +6224,7 @@ Notify
   width: 320px;
   display: block;
 }
+
 .shw-rside.sidebar-md {
   width: 480px;
 }
@@ -11323,7 +11332,7 @@ widget-chart-page product review
  ============================================================== */
 @media (min-width: 1024px) {
   .page-wrapper {
-    margin-left: 210px;
+    margin-inline-start: 210px;
   }
 }
 @media (max-width: 1023px) {
@@ -12887,9 +12896,9 @@ textarea.error {
   border-bottom: none;
 }
 .modal .modal-dialog .modal-header button.close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
+  position: relative;
+  inset-inline-start: 0;
+  top: 25px;
   text-shadow: none;
   background-color: transparent;
   padding: 8px;
@@ -17570,8 +17579,8 @@ chat application Page
   padding-top: 19px;
 }
 .right-sidepanel-with-menu .rpanel-title .x-top-nav {
-  text-align: right;
-  padding-top: 4px;
+  text-align: end;
+  padding-top: 20px;
 }
 .right-sidepanel-with-menu .rpanel-title .x-top-nav a {
   font-size: 12px;
@@ -18831,7 +18840,7 @@ chat application Page
 }
 .search-modal .modal-header .x-search-field .form-group .form-control {
   width: 100%;
-  padding-left: 40px;
+  padding-inline-start: 40px;
   height: 56px;
   border: 0px;
   font-size: 17px !important;
@@ -18839,7 +18848,7 @@ chat application Page
 }
 .search-modal .modal-header .x-search-field i {
   position: absolute;
-  left: 10px;
+  inset-inline-start: 10px;
   top: 19px;
   font-size: 20px;
   opacity: 0.6;
