@@ -9,7 +9,7 @@
         <?php else: ?>
         <div class="form-group row m-b-12">
             <label
-                class="col-12 text-left control-label col-form-label col-12 m-b-0 font-13 p-b-4"><?php echo app('translator')->get('lang.my_projects'); ?></label>
+                class="col-12 <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?> control-label col-form-label col-12 m-b-0 font-13 p-b-4"><?php echo app('translator')->get('lang.my_projects'); ?></label>
             <div class="col-12">
                 <select name="my_assigned_projects" id="my_assigned_projects" placeholder="project"
                     class="projects_my_tasks_toggle form-control form-control-sm js-select2-basic-search-modal select2-hidden-accessible"
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group row">
             <label
-                class="col-12 text-left control-label col-form-label col-12 m-b-0 font-13 p-b-4"><?php echo app('translator')->get('lang.my_tasks'); ?></label>
+                class="col-12 <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?> control-label col-form-label col-12 m-b-0 font-13 p-b-4"><?php echo app('translator')->get('lang.my_tasks'); ?></label>
             <div class="col-12">
                 <select class="select2-basic form-control form-control-sm" id="my_assigned_tasks"
                     name="my_assigned_tasks" disabled>
@@ -33,7 +33,7 @@
         <!--timer date-->
         <div class="form-group row">
             <label
-                class="col-12 text-left control-label col-form-label col-12 m-b-0 font-13 p-b-4"><?php echo app('translator')->get('lang.date'); ?></label>
+                class="col-12 <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?> control-label col-form-label col-12 m-b-0 font-13 p-b-4"><?php echo app('translator')->get('lang.date'); ?></label>
             <div class="col-12">
                 <input type="text" class="form-control  form-control-sm pickadate" disabled autocomplete="off"
                     name="timer_created_edit" id="manual_timer_created"

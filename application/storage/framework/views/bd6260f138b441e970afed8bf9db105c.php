@@ -5,8 +5,8 @@
             <!--title-->
             <div class="rpanel-title">
                 <div class="x-top">
-                    <i class="sl-icon-bell"></i><?php echo e(cleanLang(__('lang.notifications'))); ?>
-
+                    <i class="sl-icon-bell"></i>
+                    <p class="x-top-text"><?php echo e(cleanLang(__('lang.notifications'))); ?></p>
                     <span>
                         <i class="ti-close js-close-side-panels" data-target="sidepanel-notifications"></i>
                     </span>

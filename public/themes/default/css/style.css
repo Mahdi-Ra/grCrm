@@ -12894,10 +12894,11 @@ textarea.error {
 .modal .modal-dialog .modal-header {
   min-height: 58px;
   border-bottom: none;
+  position: relative;
 }
 .modal .modal-dialog .modal-header button.close {
-  position: relative;
-  inset-inline-start: 0;
+  position: absolute;
+  inset-inline-end: 8px;
   top: 25px;
   text-shadow: none;
   background-color: transparent;
