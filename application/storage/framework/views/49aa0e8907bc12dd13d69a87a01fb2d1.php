@@ -4,7 +4,7 @@
             <div class="card-body">
                 <div class="d-flex m-b-30 no-block">
                     <h5 class="card-title m-b-0 align-self-center"><?php echo e(cleanLang(__('lang.leads'))); ?></h5>
-                    <div class="ml-auto">
+                    <div class="<?php echo e(app()->getLocale() == 'persian' ? 'mr-auto' : 'ml-auto'); ?>">
                         <?php echo e(cleanLang(__('lang.this_year'))); ?>
 
                     </div>

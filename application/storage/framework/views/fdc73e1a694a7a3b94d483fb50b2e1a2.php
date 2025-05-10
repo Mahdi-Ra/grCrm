@@ -231,12 +231,12 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="mdi mdi-plus-circle-multiple-outline text-danger font-28"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu <?php echo e(app()->getLocale() == 'persian' ? 'dropdown-menu-left' : 'dropdown-menu-right'); ?>">
 
                         <!-- client -->
                         <?php if(auth()->user()->role->role_projects >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal" data-url="<?php echo e(url('clients/create')); ?>"
                             data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_client'))); ?>"
@@ -249,7 +249,7 @@
                         <!-- project -->
                         <?php if(config('visibility.modules.projects') && auth()->user()->role->role_projects >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal" data-url="<?php echo e(url('projects/create')); ?>"
                             data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_project'))); ?>"
@@ -262,7 +262,7 @@
                         <!-- task -->
                         <?php if(config('visibility.modules.tasks') && auth()->user()->role->role_tasks >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/tasks/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_task'))); ?>"
@@ -275,7 +275,7 @@
                         <!-- lead -->
                         <?php if(config('visibility.modules.leads') && auth()->user()->role->role_leads >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/leads/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_lead'))); ?>"
@@ -288,7 +288,7 @@
                         <!-- invoice -->
                         <?php if(config('visibility.modules.invoices') && auth()->user()->role->role_invoices >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/invoices/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_invoice'))); ?>"
@@ -302,7 +302,7 @@
                         <!-- estimate -->
                         <?php if(config('visibility.modules.estimates') && auth()->user()->role->role_estimates >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/estimates/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_estimate'))); ?>"
@@ -316,7 +316,7 @@
                         <!-- proposal -->
                         <?php if(config('visibility.modules.proposals') && auth()->user()->role->role_proposals >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/proposals/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_proposal'))); ?>"
@@ -330,7 +330,7 @@
                         <!-- contract -->
                         <?php if(config('visibility.modules.contracts') && auth()->user()->role->role_contracts >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/contracts/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_contract'))); ?>"
@@ -343,7 +343,7 @@
                         <!-- payment -->
                         <?php if(config('visibility.modules.payments') && auth()->user()->role->role_invoices >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/payments/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_payment'))); ?>"
@@ -356,7 +356,7 @@
                         <!-- subscription -->
                         <?php if(config('visibility.modules.subscriptions') && auth()->user()->role->role_subscriptions >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/subscriptions/create?ref=quickadd')); ?>"
                             data-loading-target="commonModalBody"
@@ -370,7 +370,7 @@
                         <!-- expense -->
                         <?php if(config('visibility.modules.expenses') && auth()->user()->role->role_expenses >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal"
                             data-url="<?php echo e(url('/expenses/create?ref=quickadd')); ?>" data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_expense'))); ?>"
@@ -384,7 +384,7 @@
                         <!-- knowledgebase article -->
                         <?php if(config('visibility.modules.knowledgebase') && auth()->user()->role->role_knowledgebase >= 2): ?>
                         <a href="javascript:void(0)"
-                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                            class="dropdown-item dropdown-item-iconed edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                             data-toggle="modal" data-target="#commonModal" data-url="<?php echo e(url('kb/create')); ?>"
                             data-loading-target="commonModalBody"
                             data-modal-title="<?php echo e(cleanLang(__('lang.add_article'))); ?>" data-action-url="<?php echo e(url('kb')); ?>"
@@ -396,7 +396,7 @@
 
                         <!-- knowledgebase article -->
                         <?php if(config('visibility.modules.tickets') && auth()->user()->role->role_tickets >= 2): ?>
-                        <a class="dropdown-item dropdown-item-iconed" href="<?php echo e(url('/tickets/create')); ?>">
+                        <a class="dropdown-item dropdown-item-iconed <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>" href="<?php echo e(url('/tickets/create')); ?>">
                             <i class="ti-comments"></i> <?php echo e(cleanLang(__('lang.ticket'))); ?></a>
                         <?php endif; ?>
 
@@ -420,7 +420,7 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="sl-icon-globe"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right animated bounceInDown language">
+                    <div class="dropdown-menu <?php echo e(app() -> getLocale() == 'persian' ? 'dropdown-menu-left' : 'dropdown-menu-right'); ?> animated bounceInDown language">
                         <div class="row">
                             <?php $__currentLoopData = request('system_languages'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-6">
@@ -454,13 +454,13 @@
 
                         </span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right animated flipInY">
+                    <div class="dropdown-menu <?php echo e(app() -> getLocale() == 'persian' ? 'dropdown-menu-left' : 'dropdown-menu-right'); ?> animated flipInY">
                         <ul class="dropdown-user">
                             <li>
                                 <div class="dw-user-box">
                                     <div class="u-img"><img src="<?php echo e(auth()->user()->avatar); ?>"
                                             id="topnav_dropdown_avatar" alt="user"></div>
-                                    <div class="u-text">
+                                    <div class="u-text <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                                         <h4 id="topnav_dropdown_full_name"><?php echo e(auth()->user()->first_name); ?>
 
                                             <?php echo e(auth()->user()->last_name); ?></h4>
@@ -481,7 +481,7 @@
                             <!--my profile-->
                             <li>
                                 <a href="javascript:void(0)"
-                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                                     data-toggle="modal" data-target="#commonModal"
                                     data-url="<?php echo e(url('/contacts/'.auth()->id().'/edit?type=profile')); ?>"
                                     data-loading-target="commonModalBody"
@@ -496,7 +496,7 @@
                             <!--my timesheets-->
                             <?php if(auth()->user()->is_team && auth()->user()->role->role_timesheets >= 1): ?>
                             <li>
-                                <a href="<?php echo e(url('/timesheets/my')); ?>">
+                                <a href="<?php echo e(url('/timesheets/my')); ?>" class="<?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                                     <i class="ti-timer p-r-4"></i>
                                     <?php echo e(cleanLang(__('lang.my_time_sheets'))); ?></a>
                             </li>
@@ -505,7 +505,7 @@
                             <!--my notes-->
                             <?php if(auth()->user()->is_team): ?>
                             <li>
-                                <a href="<?php echo e(url('/notes')); ?>">
+                                <a href="<?php echo e(url('/notes')); ?>" class="<?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                                     <i class="sl-icon-notebook p-r-4"></i>
                                     <?php echo e(cleanLang(__('lang.my_notes'))); ?></a>
                             </li>
@@ -515,7 +515,7 @@
                             <!--edit company profile-->
                             <li>
                                 <a href="javascript:void(0)"
-                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                                     data-toggle="modal" data-target="#commonModal"
                                     data-url="<?php echo e(url('/clients/'.auth()->user()->clientid.'/edit')); ?>"
                                     data-loading-target="commonModalBody"
@@ -527,7 +527,7 @@
                             </li>
                             <li>
                                 <a href="javascript:void(0)"
-                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                                     data-toggle="modal" data-target="#commonModal" data-url="<?php echo e(url('/clients/logo')); ?>"
                                     data-loading-target="commonModalBody" data-modal-size="modal-sm"
                                     data-modal-title="<?php echo e(cleanLang(__('lang.update_avatar'))); ?>"
@@ -541,7 +541,7 @@
                             <!--update notifcations-->
                             <li>
                                 <a href="javascript:void(0)" id="topnavUpdateNotificationsButton"
-                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                                     data-toggle="modal" data-target="#commonModal"
                                     data-url="<?php echo e(url('user/updatenotifications')); ?>"
                                     data-loading-target="commonModalBody"
@@ -558,7 +558,7 @@
                             <!--update theme-->
                             <li>
                                 <a href="javascript:void(0)" id="topnavUpdatePasswordButton"
-                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                                     data-toggle="modal" data-target="#commonModal"
                                     data-url="<?php echo e(url('user/updatetheme')); ?>" data-loading-target="commonModalBody"
                                     data-modal-title="<?php echo e(cleanLang(__('lang.change_theme'))); ?>"
@@ -574,7 +574,7 @@
                             <!--update password-->
                             <li>
                                 <a href="javascript:void(0)" id="topnavUpdatePasswordButton"
-                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                                    class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
                                     data-toggle="modal" data-target="#commonModal"
                                     data-url="<?php echo e(url('user/updatepassword')); ?>" data-loading-target="commonModalBody"
                                     data-modal-title="<?php echo e(cleanLang(__('lang.update_password'))); ?>"
@@ -593,7 +593,7 @@
 
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a href="/logout">
+                                <a href="/logout" class="<?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                                     <i class="fa fa-power-off p-r-4"></i> <?php echo e(cleanLang(__('lang.logout'))); ?></a>
                             </li>
                         </ul>

@@ -6,7 +6,7 @@
     <div class="scroll-sidebar" id="main-scroll-sidebar">
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav" id="main-sidenav">
-            <ul id="sidebarnav" data-modular-id="main_menu_team">
+            <ul id="sidebarnav" data-modular-id="main_menu_team" class="<?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
 
                 
                 <!--[MODULES] - dynamic menu-->
@@ -16,7 +16,7 @@
                 <!--home-->
                 <?php if(auth()->user()->role->role_homepage == 'dashboard'): ?>
                 <li data-modular-id="main_menu_team_home"
-                    class="sidenav-menu-item <?php echo e($page['mainmenu_home'] ?? ''); ?> menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item <?php echo e($page['mainmenu_home'] ?? ''); ?> menu-tooltip menu-with-tooltip "
                     title="<?php echo e(cleanLang(__('lang.home'))); ?>">
                     <a class="waves-effect waves-dark" href="/home" aria-expanded="false" target="_self">
                         <i class="ti-home"></i>
@@ -37,12 +37,18 @@
                 config('visibility.modules.users')])): ?>
                 <li data-modular-id="main_menu_team_clients"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_customers'] ?? ''); ?>">
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="sl-icon-people"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.customers'))); ?>
 
                         </span>
                     </a>
+                    <style>
+                        .ltr::after {
+                            right: 20px !important;
+                            -webkit-transform: rotate(135deg) !important;
+                            transform: rotate(135deg) !important; }
+                    </style>
                     <ul aria-expanded="false" class="collapse">
                         <?php if(config('visibility.modules.clients')): ?>
                         <li class="sidenav-submenu <?php echo e($page['submenu_customers'] ?? ''); ?>" id="submenu_clients">
@@ -72,7 +78,7 @@
                 <?php if(config('visibility.modules.projects')): ?>
                 <li data-modular-id="main_menu_team_projects"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_projects'] ?? ''); ?>">
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="ti-folder"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.projects'))); ?>
 
@@ -114,7 +120,7 @@
                 <li data-modular-id="main_menu_team_tasks"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_tasks'] ?? ''); ?> menu-tooltip menu-with-tooltip"
                     title="<?php echo e(cleanLang(__('lang.tasks'))); ?>">
-                    <a class="waves-effect waves-dark" href="/tasks" aria-expanded="false" target="_self">
+                    <a class="waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="/tasks" aria-expanded="false" target="_self">
                         <i class="ti-menu-alt"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.tasks'))); ?>
 
@@ -133,7 +139,7 @@
                 <li data-modular-id="main_menu_team_leads"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_leads'] ?? ''); ?> menu-tooltip menu-with-tooltip"
                     title="<?php echo e(cleanLang(__('lang.leads'))); ?>">
-                    <a class="waves-effect waves-dark" href="/leads" aria-expanded="false" target="_self">
+                    <a class="waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="/leads" aria-expanded="false" target="_self">
                         <i class="sl-icon-call-in"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.leads'))); ?>
 
@@ -154,7 +160,7 @@
                 config('visibility.modules.proposals')])): ?>
                 <li data-modular-id="main_menu_team_billing"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_sales'] ?? ''); ?>">
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="ti-wallet"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.sales'))); ?>
 
@@ -216,7 +222,7 @@
                 <li data-modular-id="main_menu_team_proposals"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_proposals'] ?? ''); ?>">
                     <!--multiple menu-->
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="ti-bookmark-alt"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.proposals'))); ?>
 
@@ -249,7 +255,7 @@
                 <li data-modular-id="main_menu_team_proposals"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_proposals'] ?? ''); ?> menu-tooltip menu-with-tooltip"
                     title="<?php echo e(cleanLang(__('lang.proposals'))); ?>">
-                    <a class="waves-effect waves-dark p-r-20" href="/proposals" aria-expanded="false" target="_self">
+                    <a class="waves-effect waves-dark p-r-20 <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="/proposals" aria-expanded="false" target="_self">
                         <i class="ti-bookmark-alt"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.proposals'))); ?>
 
@@ -268,7 +274,7 @@
                 <li data-modular-id="main_menu_team_contracts"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_contracts'] ?? ''); ?>">
                     <!--multiple menu-->
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="ti-write"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.contracts'))); ?>
 
@@ -301,7 +307,7 @@
                 <li data-modular-id="main_menu_team_contracts"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_contracts'] ?? ''); ?> menu-tooltip menu-with-tooltip"
                     title="<?php echo e(cleanLang(__('lang.contracts'))); ?>">
-                    <a class="waves-effect waves-dark p-r-20" href="/contracts" aria-expanded="false" target="_self">
+                    <a class="waves-effect waves-dark p-r-20 <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="/contracts" aria-expanded="false" target="_self">
                         <i class="ti-write"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.contracts'))); ?>
 
@@ -355,7 +361,7 @@
                 <!--support-->
                 <li data-modular-id="main_menu_team_support"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_support'] ?? ''); ?>">
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="ti-comments"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.support'))); ?>
 
@@ -405,7 +411,7 @@
                 <?php if(auth()->user()->is_team): ?>
                 <li data-modular-id="main_menu_team_team"
                     class="sidenav-menu-item <?php echo e($page['mainmenu_settings'] ?? ''); ?>">
-                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
+                    <a class="has-arrow waves-effect waves-dark <?php echo e(app()->getLocale() == 'persian' ? 'rtl' : 'ltr'); ?>" href="javascript:void(0);" aria-expanded="false">
                         <i class="sl-icon-user"></i>
                         <span class="hide-menu"><?php echo e(cleanLang(__('lang.team'))); ?>
 

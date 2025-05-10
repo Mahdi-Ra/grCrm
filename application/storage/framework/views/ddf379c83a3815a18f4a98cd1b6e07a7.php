@@ -4,12 +4,12 @@
     <div class="card">
         <div class="card-body p-l-15 p-r-15">
             <div class="d-flex p-10 no-block">
-                <span class="align-slef-center">
+                <span class="align-slef-center <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                     <h2 class="m-b-0"><?php echo e(runtimeMoneyFormat($payload['payments']['today'])); ?></h2>
                     <h6 class="text-muted m-b-0"><?php echo e(cleanLang(__('lang.payments'))); ?> -
                         <?php echo e(cleanLang(__('lang.today'))); ?></h6>
                 </span>
-                <div class="align-self-center display-6 ml-auto"><i class="text-success icon-Credit-Card2"></i>
+                <div class="align-self-center display-6 <?php echo e(app()->getLocale() == 'persian' ? 'mr-auto' : 'ml-auto'); ?>"><i class="text-success icon-Credit-Card2"></i>
                 </div>
             </div>
         </div>

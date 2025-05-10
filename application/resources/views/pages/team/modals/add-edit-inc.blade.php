@@ -3,7 +3,7 @@
     <div class="col-lg-12">
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="first_name" name="first_name"
                     value="{{ $user->first_name ?? '' }}">
@@ -81,7 +81,7 @@
                 {{ cleanLang(__('lang.preferences')) }}
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="toggle_social_profile" id="toggle_social_preferences"
                             class="js-switch-toggle-hidden-content" data-target="preferences_section">

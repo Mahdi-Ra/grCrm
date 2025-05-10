@@ -3,11 +3,11 @@
     <div class="card">
         <div class="card-body p-l-15 p-r-15">
             <div class="d-flex p-10 no-block">
-                <span class="align-slef-center">
+                <span class="align-slef-center {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                     <h2 class="m-b-0">{{ runtimeMoneyFormat($payload['payments']['this_month']) }}</h2>
                     <h6 class="text-muted m-b-0">{{ cleanLang(__('lang.payments')) }} - {{ cleanLang(__('lang.month')) }}</h6>
                 </span>
-                <div class="align-self-center display-6 ml-auto"><i class="text-info icon-Credit-Card2"></i></div>
+                <div class="align-self-center display-6 {{ app()->getLocale() == 'persian' ? 'mr-auto' : 'ml-auto' }}"><i class="text-info icon-Credit-Card2"></i></div>
             </div>
         </div>
         <div class="progress">

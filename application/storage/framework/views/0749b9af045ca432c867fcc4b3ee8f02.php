@@ -1,6 +1,6 @@
 <div class="col-lg-8  col-md-12">
     <div class="card">
-        <div class="card-body">
+        <div class="card-body <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
             <h5 class="card-title"><?php echo e(cleanLang(__('lang.latest_activity'))); ?></h5>
             <div class="dashboard-events profiletimeline" id="dashboard-admin-events">
                 <?php $events = $payload['all_events'] ; ?>

@@ -3,7 +3,7 @@
             <div class="card-body">
                 <div class="d-flex m-b-30">
                     <h5 class="card-title m-b-0 align-self-center"><?php echo e(cleanLang(__('lang.income_vs_expense'))); ?></h5>
-                    <div class="ml-auto align-self-center">
+                    <div class="<?php echo e(app()->getLocale() == 'persian' ? 'mr-auto' : 'ml-auto'); ?> align-self-center">
                         <ul class="list-inline font-12">
                             <li><span class="label label-success label-rounded"><i class="fa fa-circle"></i> <?php echo e(cleanLang(__('lang.income'))); ?></span></li>
                             <li><span class="label label-info label-rounded"><i class="fa fa-circle text-info"></i> <?php echo e(cleanLang(__('lang.expense'))); ?></span></li>

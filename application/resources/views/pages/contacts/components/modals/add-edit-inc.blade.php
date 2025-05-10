@@ -17,7 +17,7 @@
 
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="first_name" name="first_name"
                     value="{{ $user->first_name ?? '' }}">
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.last_name')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.last_name')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="last_name" name="last_name"
                     value="{{ $user->last_name ?? '' }}">
@@ -33,7 +33,7 @@
         </div>
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.email_address')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.email_address')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="email" name="email"
                     value="{{ $user->email ?? '' }}">
@@ -41,7 +41,7 @@
         </div>
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.telephone')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.telephone')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="phone" name="phone"
                     value="{{ $user->phone ?? '' }}">
@@ -49,7 +49,7 @@
         </div>
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.position')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.position')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="position" name="position"
                     value="{{ $user->position ?? '' }}">
@@ -58,7 +58,7 @@
 
         <!--timezone-->
         <div class="form-group row">
-            <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.timezone')) }}</label>
+            <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.timezone')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic-with-search form-control form-control-sm select2-preselected"
                     data-allow-clear="false" data-preselected="{{ $user->timezone ?? config('system.settings_system_timezone')}}"
@@ -533,11 +533,11 @@
         @if(isset($page['section']) && $page['section'] == 'edit')
         <!--social profile-->
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 {{ cleanLang(__('lang.social_profile')) }}
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="toggle_social_profile" id="toggle_social_profile"
                             class="js-switch-toggle-hidden-content" data-target="social_profile_section">
@@ -549,7 +549,7 @@
         <div class="hidden" id="social_profile_section">
             <!--twitter-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">Twitter</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">Twitter</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="social_twitter" name="social_twitter"
                         value="{{ $user->social_twitter ?? '' }}"
@@ -558,7 +558,7 @@
             </div>
             <!--facebook-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">Facebook</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">Facebook</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="social_facebook" name="social_facebook"
                         value="{{ $user->social_facebook ?? '' }}"
@@ -567,7 +567,7 @@
             </div>
             <!--linkedin-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">LinkedIn</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">LinkedIn</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="social_linkedin" name="social_linkedin"
                         value="{{ $user->social_linkedin ?? '' }}"
@@ -576,7 +576,7 @@
             </div>
             <!--github-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">Github</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">Github</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="social_github" name="social_github"
                         value="{{ $user->social_github ?? '' }}"
@@ -585,7 +585,7 @@
             </div>
             <!--dribble-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">Dribble</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">Dribble</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="social_dribble" name="social_dribble"
                         value="{{ $user->social_dribble ?? '' }}"
