@@ -1,5 +1,7 @@
 <!--CRUMBS CONTAINER (LEFT)-->
-<div class="col-md-12 {{ runtimeCrumbsColumnSize($page['crumbs_col_size'] ?? '') }} align-self-center {{ $page['crumbs_special_class'] ?? '' }}" id="breadcrumbs">
+<div class="col-md-12 {{ runtimeCrumbsColumnSize($page['crumbs_col_size'] ?? '') }} align-self-center {{ $page['crumbs_special_class'] ?? '' }}
+    {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
+     id="breadcrumbs">
     <h3 class="text-themecolor">{{ $page['heading'] }}</h3>
     <!--crumbs-->
     <ol class="breadcrumb">

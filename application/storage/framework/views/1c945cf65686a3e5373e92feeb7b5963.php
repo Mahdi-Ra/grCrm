@@ -1,5 +1,8 @@
 <!--CRUMBS CONTAINER (LEFT)-->
-<div class="col-md-12 <?php echo e(runtimeCrumbsColumnSize($page['crumbs_col_size'] ?? '')); ?> align-self-center <?php echo e($page['crumbs_special_class'] ?? ''); ?>" id="breadcrumbs">
+<div class="col-md-12 <?php echo e(runtimeCrumbsColumnSize($page['crumbs_col_size'] ?? '')); ?> align-self-center <?php echo e($page['crumbs_special_class'] ?? ''); ?>
+
+    <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"
+     id="breadcrumbs">
     <h3 class="text-themecolor"><?php echo e($page['heading']); ?></h3>
     <!--crumbs-->
     <ol class="breadcrumb">
