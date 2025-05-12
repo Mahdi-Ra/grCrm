@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <h3 id="stats-widget-value-1">{!! $stats[0]['value'] ?? '' !!}</h3>
                 @if(config('settings.extended_stats_panel'))
                 <h6 class="card-subtitle m-b-5" id="stats-widget-title-1">{{ $stats[0]['title'] ?? '' }}
@@ -26,7 +26,7 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <h3 id="stats-widget-value-1">{!! $stats[1]['value'] ?? '' !!}</h3>
                 @if(config('settings.extended_stats_panel'))
                 <h6 class="card-subtitle  m-b-5" id="stats-widget-title-2">{{ $stats[1]['title'] ?? '' }}
@@ -51,7 +51,7 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <h3 id="stats-widget-value-1">{!! $stats[2]['value'] ?? '' !!}</h3>
                 @if(config('settings.extended_stats_panel'))
                 <h6 class="card-subtitle m-b-5" id="stats-widget-title-3">{{ $stats[2]['title'] ?? '' }}
@@ -76,7 +76,7 @@
 <div class="card">
     <div class="card-body">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <h3 id="stats-widget-value-1">{!! $stats[3]['value'] ?? '' !!}</h3>
                 @if(config('settings.extended_stats_panel'))
                 <h6 class="card-subtitle m-b-5" id="stats-widget-title-4">{{ $stats[3]['title'] ?? '' }}

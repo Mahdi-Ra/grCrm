@@ -4,7 +4,7 @@
         @if(config('visibility.contacts_modal_client_fields'))
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.company_name')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.company_name')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <!--select2 basic search-->
                 <select name="clientid" id="clientid"
@@ -601,7 +601,7 @@
 
         <!--notes-->
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <div><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
             </div>
         </div>

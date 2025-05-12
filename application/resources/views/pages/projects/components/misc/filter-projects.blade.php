@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_projects')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-projects"></i>
@@ -16,7 +16,7 @@
                 <!--client-->
                 @if(config('visibility.filter_panel_client_project'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -37,7 +37,7 @@
                 <!--assigned-->
                 @if(config('visibility.filter_panel_assigned'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.assigned')) }}
                     </div>
                     <div class="fields">
@@ -60,7 +60,7 @@
 
                 <!--start date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.start_date')) }}
                     </div>
                     <div class="fields">
@@ -87,7 +87,7 @@
 
                 <!--due date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.due_date')) }}
                     </div>
                     <div class="fields">
@@ -113,7 +113,7 @@
 
                 <!--tags-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.tags')) }}
                     </div>
                     <div class="fields">
@@ -135,7 +135,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.category')) }}
                     </div>
                     <div class="fields">
@@ -156,7 +156,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">
@@ -179,7 +179,7 @@
 
                 <!--state-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.show')) }}
                     </div>
                     <div class="fields">

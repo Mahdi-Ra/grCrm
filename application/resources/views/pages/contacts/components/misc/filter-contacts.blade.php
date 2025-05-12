@@ -1,5 +1,5 @@
 <!-- right-sidebar -->
-<div class="right-sidebar" id="sidepanel-filter-contacts">
+<div class="right-sidebar {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="sidepanel-filter-contacts">
     <form>
         <div class="slimscrollright">
             <!--title-->

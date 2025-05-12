@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-7 p-b-9 align-self-center text-right {{ $page['list_page_actions_size'] ?? '' }} {{ $page['list_page_container_class'] ?? '' }}"
+<div class="col-md-12  col-lg-7 p-b-9 align-self-center {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} {{ $page['list_page_actions_size'] ?? '' }} {{ $page['list_page_container_class'] ?? '' }}"
     id="list-page-actions-container">
     <div id="list-page-actions">
         <!--SEARCH BOX-->
@@ -43,13 +43,13 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="listTableAction">
                 <!--list view-->
-                <a class="dropdown-item display-block ajax-request" href="javascript:void(0)"
+                <a class="dropdown-item display-block ajax-request {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
                     data-url="{{ url('/projects/search?action=search&toggle_project_view=list&filter_category='.request('filter_category')) }}"
                     id="invoice-action-stop-recurring"> <i class="ti-view-list-alt display-inline-block m-t-3"></i>
                     <span class="display-inline-block vm m-t--3 p-l-3">@lang('lang.list_view')</span>
                 </a>
                 <!--card view-->
-                <a class="dropdown-item display-block ajax-request" href="javascript:void(0)"
+                <a class="dropdown-item display-block ajax-request {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
                     data-url="{{ url('/projects/search?action=search&toggle_project_view=card&filter_category='.request('filter_category')) }}"
                     id="invoice-action-stop-recurring"> <i class="ti-layout-cta-left display-inline-block m-t-3"></i>
                     <span class="display-inline-block vm m-t--3 p-l-3">@lang('lang.card_view')</span>
