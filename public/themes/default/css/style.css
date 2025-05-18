@@ -8016,6 +8016,11 @@ form p:last-child {
   left: -9999px;
   opacity: 0;
 }
+body.rtl [type="checkbox"] {
+  position: absolute;
+  right: -9999px;
+}
+
 
 [type=checkbox] {
   /* checkbox aspect */

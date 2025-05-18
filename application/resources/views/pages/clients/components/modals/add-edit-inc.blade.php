@@ -101,7 +101,7 @@
         @if(auth()->user()->is_team)
         <div class="spacer row">
             <div class="col-sm-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
-                <span class="title">{{ cleanLang(__('lang.description_and_details')) }}</span class="title">
+                <span class="title">{{ cleanLang(__('lang.description_and_details')) }}</span>
             </div>
             <div class="col-sm-12 col-lg-4">
                 <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
