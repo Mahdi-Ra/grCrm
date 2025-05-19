@@ -12,7 +12,7 @@
         <!--title-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.lead_title')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.lead_title')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="lead_title" name="lead_title" placeholder=""
                     value="{{ $lead->lead_title ?? '' }}">
@@ -21,7 +21,7 @@
         <!--first name-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="lead_firstname" name="lead_firstname"
                     placeholder="" value="{{ $lead->lead_firstname ?? '' }}">
@@ -30,7 +30,7 @@
         <!--last name-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.last_name')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.last_name')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="lead_lastname" name="lead_lastname"
                     placeholder="" value="{{ $lead->lead_lastname ?? '' }}">
@@ -39,7 +39,7 @@
         <!--telephone-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.telephone')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.telephone')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="lead_phone" name="lead_phone" placeholder=""
                     value="{{ $lead->lead_phone ?? '' }}">
@@ -48,7 +48,7 @@
         <!--email-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.email_address')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.email_address')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm" id="lead_email" name="lead_email" placeholder=""
                     value="{{ $lead->lead_email ?? '' }}">
@@ -59,7 +59,7 @@
         <!--value-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.lead_value')) }} ({{
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.lead_value')) }} ({{
                             config('system.settings_system_currency_symbol') }})</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="number" class="form-control form-control-sm" id="lead_value" name="lead_value"
@@ -73,7 +73,7 @@
         @if(config('visibility.lead_modal_assign_fields'))
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.assigned')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.assigned')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <select name="assigned" id="assigned"
                     class="form-control form-control-sm select2-basic select2-multiple select2-tags select2-hidden-accessible"
@@ -106,7 +106,7 @@
         @else
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.status')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.status')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm" id="lead_status" name="lead_status">
                     @foreach($statuses as $status)
@@ -127,11 +127,11 @@
 
         <!--lead details - toggle-->
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <span class="title">{{ cleanLang(__('lang.details')) }}</span>
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="show_more_settings_leads1" id="show_more_settings_leads1"
                             class="js-switch-toggle-hidden-content" data-target="add_lead_details">
@@ -146,7 +146,7 @@
             <!--description-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 text-left control-label col-form-label">{{ cleanLang(__('lang.notes')) }}</label>
+                    class="col-sm-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.notes')) }}</label>
                 <div class="col-sm-12">
                     <textarea class="form-control form-control-sm tinymce-textarea" rows="5" name="lead_description"
                         id="lead_description">
@@ -158,7 +158,7 @@
             <!--lead sources-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.source')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.source')) }}</label>
                 @if(config('system.settings_leads_allow_new_sources') == 'yes')
                 <!--existing-->
                 <div class="col-sm-12 col-lg-9">
@@ -199,7 +199,7 @@
             <!--lead category-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
                 <div class="col-sm-12 col-lg-9">
                     <select class="select2-basic form-control form-control-sm" id="lead_categoryid"
                         name="lead_categoryid">
@@ -216,7 +216,7 @@
             <!--tags-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.tags')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.tags')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <select name="tags" id="tags"
                         class="form-control form-control-sm select2-multiple {{ runtimeAllowUserTags() }} select2-hidden-accessible"
@@ -243,7 +243,7 @@
             <!--contacted-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.last_contacted')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.last_contacted')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm pickadate" autocomplete="off"
                         name="lead_last_contacted"
@@ -263,11 +263,11 @@
         <!--CUSTOMER FIELDS [collapsed]-->
         @if(config('system.settings_customfields_display_leads') == 'toggled')
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
-                <span class="title">{{ cleanLang(__('lang.more_information')) }}</span class="title">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+                <span class="title">{{ cleanLang(__('lang.more_information')) }}</span>
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="add_client_option_other" id="add_client_option_other"
                             class="js-switch-toggle-hidden-content" data-target="leads_custom_fields_collaped">
@@ -294,11 +294,11 @@
 
         <!--address and organisation - toggle-->
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
-                <span class="title">{{ cleanLang(__('lang.address_and_organisation_details')) }}</span class="title">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+                <span class="title">{{ cleanLang(__('lang.address_and_organisation_details')) }}</span>
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="show_more_settings_leads2" id="show_more_settings_leads2"
                             class="js-switch-toggle-hidden-content" data-target="add_lead_address_section">
@@ -315,7 +315,7 @@
             <!--company name-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.company_name')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.company_name')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="lead_company_name"
                         name="lead_company_name" placeholder="" value="{{ $lead->lead_company_name ?? '' }}">
@@ -325,7 +325,7 @@
             <!--street-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.street')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.street')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="lead_street" name="lead_street"
                         placeholder="" value="{{ $lead->lead_street ?? '' }}">
@@ -334,7 +334,7 @@
             <!--city-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.city')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.city')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="lead_city" name="lead_city"
                         placeholder="" value="{{ $lead->lead_city ?? '' }}">
@@ -343,7 +343,7 @@
             <!--state-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.state')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.state')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="lead_state" name="lead_state"
                         placeholder="" value="{{ $lead->lead_state ?? '' }}">
@@ -352,7 +352,7 @@
             <!--zip-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.zipcode')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.zipcode')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="lead_zip" name="lead_zip" placeholder=""
                         value="{{ $lead->lead_zip ?? '' }}">
@@ -361,7 +361,7 @@
             <!--country-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.country')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.country')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <select class="select2-basic-with-search form-control" id="lead_country" name="lead_country">
                         <option></option>
@@ -372,7 +372,7 @@
             <!--website-->
             <div class="form-group row">
                 <label
-                    class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.website')) }}</label>
+                    class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.website')) }}</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="text" class="form-control form-control-sm" id="lead_website" name="lead_website"
                         placeholder="" value="{{ $lead->lead_website ?? '' }}">
@@ -393,7 +393,7 @@
         @if(config('visibility.lead_show_lead_option'))
         <div class="line"></div>
         <div class="form-group form-group-checkbox row">
-            <div class="col-12 text-left p-t-5">
+            <div class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} p-t-5">
                 <input type="checkbox" id="show_after_adding" name="show_after_adding"
                     class="filled-in chk-col-light-blue" checked="checked">
                 <label for="show_after_adding">{{ cleanLang(__('lang.show_lead_after_adding')) }}</label>
@@ -404,7 +404,7 @@
         <!--notes-->
         <div class="row">
             <div class="col-12">
-                <div><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
             </div>
         </div>
     </div>

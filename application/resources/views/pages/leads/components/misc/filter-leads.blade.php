@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_leads')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-leads"></i>
@@ -17,7 +17,7 @@
                 <!--assigned-->
                 @if(config('visibility.filter_panel_assigned'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.assigned_users')) }}
                     </div>
                     <div class="fields">
@@ -39,7 +39,7 @@
 
                 <!--lead status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">
@@ -62,7 +62,7 @@
 
                 <!--date addded-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date_added')) }}
                     </div>
                     <div class="fields">
@@ -70,13 +70,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_lead_created_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" id="filter_lead_created_start"
                                     name="filter_lead_created_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_lead_created_end"
-                                    class="form-control form-control-sm pickadate" placeholder="End">
+                                    class="form-control form-control-sm pickadate" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" id="filter_lead_created_end"
                                     name="filter_lead_created_end" value="">
                             </div>
@@ -87,7 +87,7 @@
 
                 <!--last contacted-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.last_contact')) }}
                     </div>
                     <div class="fields">
@@ -95,13 +95,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_lead_last_contacted_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" id="filter_lead_last_contacted_start"
                                     name="filter_lead_last_contacted_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_lead_last_contacted_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" id="filter_lead_last_contacted_end"
                                     name="filter_lead_last_contacted_end" value="">
                             </div>
@@ -112,7 +112,7 @@
 
                 <!--value-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.value')) }}
                     </div>
                     <div class="fields">
@@ -134,7 +134,7 @@
 
                 <!--tags-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.tags')) }}
                     </div>
                     <div class="fields">
@@ -156,7 +156,7 @@
 
                 <!--state-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.show')) }}
                     </div>
                     <div class="fields">
