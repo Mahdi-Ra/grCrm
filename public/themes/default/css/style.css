@@ -19737,3 +19737,20 @@ tr.pinned td {
   font-weight: 500;
 }
 /*# sourceMappingURL=style.css.map */
+/* custom css */
+body.rtl .noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+  right: 0;
+  left: auto;
+}
+body.ltr .noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+  left: 0;
+  right: auto;
+}
+body.rtl .noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+  right: -17px;
+  left: auto;
+}
+body.ltr .noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+  left: -17px;
+  right: auto;
+}

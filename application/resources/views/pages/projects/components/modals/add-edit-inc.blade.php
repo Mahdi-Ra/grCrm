@@ -542,7 +542,7 @@
             <!--option toggle-->
             <div class="hidden highlighted-panel" id="edit_project_assigned_permissions">
                 <div class="form-group form-group-checkbox row m-b-0">
-                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">{{ cleanLang(__('lang.task_collaboration')) }} <a
+                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.task_collaboration')) }} <a
                             class="align-middle font-16 toggle-collapse" href="#info_task_collaboration"
                             role="button"><i class="ti-info-alt text-themecontrast"></i></a> </label>
                     <div class="col-7 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
@@ -554,7 +554,7 @@
                 </div>
                 <!--info: taskcollaborations-->
                 <div class="collapse" id="info_task_collaboration">
-                    <div class="alert alert-info">{{ cleanLang(__('lang.task_collaboration_info')) }}</div>
+                    <div class="alert alert-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.task_collaboration_info')) }}</div>
                 </div>
                 <div class="line m-t-30"></div>
             </div>
@@ -563,11 +563,11 @@
 
             <!--CLIENT PERMISSIONS-->
             <div class="spacer row">
-                <div class="col-sm-8 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
+                <div class="col-sm-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                     <span class="title">{{ cleanLang(__('lang.client_project_permissions')) }}</span>
                 </div>
                 <div class="col-sm-4">
-                    <div class="switch {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+                    <div class="switch {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                         <label>
                             <input type="checkbox" name="show_more_settings_projects2" id="show_more_settings_projects2"
                                 class="js-switch-toggle-hidden-content" data-target="edit_project_permissions_tasks">
@@ -579,7 +579,7 @@
             <div id="edit_project_permissions_tasks" class="hidden highlighted-panel">
                 <!--permission - view tasks-->
                 <div class="form-group form-group-checkbox row">
-                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">{{ cleanLang(__('lang.view_tasks')) }}</label>
+                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.view_tasks')) }}</label>
                     <div class="col-7 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
                         <input type="checkbox" id="clientperm_tasks_view" name="clientperm_tasks_view"
                             class="filled-in chk-col-light-blue"
@@ -590,7 +590,7 @@
                 <!--permission - task participation-->
                 <div class="form-group form-group-checkbox row">
                     <label
-                        class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} required">{{ cleanLang(__('lang.task_participation')) }}**</label>
+                        class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.task_participation')) }}**</label>
                     <div class="col-7 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
                         <input type="checkbox" id="clientperm_tasks_collaborate" name="clientperm_tasks_collaborate"
                             class="filled-in chk-col-light-blue"
@@ -601,7 +601,7 @@
                 <!--permission - create tasks-->
                 <div class="form-group form-group-checkbox row">
                     <label
-                        class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} required">{{ cleanLang(__('lang.create_tasks')) }}**</label>
+                        class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.create_tasks')) }}**</label>
                     <div class="col-7 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
                         <input type="checkbox" id="clientperm_tasks_create" name="clientperm_tasks_create"
                             class="filled-in chk-col-light-blue"
@@ -612,7 +612,7 @@
                 <div class="line"></div>
                 <!--permission - view timesheets-->
                 <div class="form-group form-group-checkbox row">
-                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">{{ cleanLang(__('lang.view_time_sheets')) }}</label>
+                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.view_time_sheets')) }}</label>
                     <div class="col-7 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
                         <input type="checkbox" id="clientperm_timesheets_view" name="clientperm_timesheets_view"
                             class="filled-in chk-col-light-blue"
@@ -622,7 +622,7 @@
                 </div>
                 <!--permission - view expenses-->
                 <div class="form-group form-group-checkbox row">
-                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">{{ cleanLang(__('lang.view_expenses')) }}</label>
+                    <label class="col-5 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.view_expenses')) }}</label>
                     <div class="col-7 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
                         <input type="checkbox" id="clientperm_expenses_view" name="clientperm_expenses_view"
                             class="filled-in chk-col-light-blue"
@@ -631,7 +631,7 @@
                     </div>
                 </div>
 
-                <div><small class="text-bold">** {{ cleanLang(__('lang.if_items_selected_then_viewing_perm')) }}</small>
+                <div class=" {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><small class="text-bold">** {{ cleanLang(__('lang.if_items_selected_then_viewing_perm')) }}</small>
                 </div>
                 <div class="line m-t-30"></div>
             </div>
