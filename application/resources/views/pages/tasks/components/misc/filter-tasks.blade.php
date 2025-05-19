@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_tasks')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-tasks"></i>
@@ -16,7 +16,7 @@
                 @if(config('visibility.filter_panel_client_project'))
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -34,7 +34,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -52,7 +52,7 @@
                 <!--task type (when viewing a project)-->
                 @if(config('visibility.tasks_filter_milestone'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.milestone')) }}
                     </div>
                     <div class="fields">
@@ -78,7 +78,7 @@
                 <!--assigned-->
                 @if(config('visibility.filter_panel_assigned'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.assigned_to')) }}
                     </div>
                     <div class="fields">
@@ -101,20 +101,20 @@
 
                 <!--date added-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date_added')) }}
                     </div>
                     <div class="fields">
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_start_start" autocomplete="off"
-                                    class="form-control form-control-sm pickadate" placeholder="Start">
+                                    class="form-control form-control-sm pickadate" placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_start_start"
                                     id="filter_task_date_start_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_start_end" autocomplete="off"
-                                    class="form-control form-control-sm pickadate" placeholder="End">
+                                    class="form-control form-control-sm pickadate" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_start_end"
                                     id="filter_task_date_start_end" value="">
                             </div>
@@ -124,7 +124,7 @@
 
                 <!--date due-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.due_date')) }}
                     </div>
                     <div class="fields">
@@ -132,13 +132,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_due_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_due_start"
                                     id="filter_task_date_due_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_due_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_due_end"
                                     id="filter_task_date_due_end" value="">
                             </div>
@@ -148,7 +148,7 @@
                 <!--filter item-->
                 <!--tags-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.tags')) }}
                     </div>
                     <div class="fields">
@@ -171,7 +171,7 @@
 
                 <!--priority-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.priority')) }}
                     </div>
                     <div class="fields">
@@ -193,7 +193,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">
@@ -216,7 +216,7 @@
 
                 <!--state-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.show')) }}
                     </div>
                     <div class="fields">

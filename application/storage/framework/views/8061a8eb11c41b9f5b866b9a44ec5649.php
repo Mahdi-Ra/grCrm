@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                 <i class="icon-Filter-2"></i><?php echo e(cleanLang(__('lang.filter_tasks'))); ?>
 
                 <span>
@@ -17,7 +17,7 @@
                 <?php if(config('visibility.filter_panel_client_project')): ?>
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.client_name'))); ?>
 
                     </div>
@@ -36,7 +36,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.project'))); ?>
 
                     </div>
@@ -55,7 +55,7 @@
                 <!--task type (when viewing a project)-->
                 <?php if(config('visibility.tasks_filter_milestone')): ?>
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.milestone'))); ?>
 
                     </div>
@@ -82,7 +82,7 @@
                 <!--assigned-->
                 <?php if(config('visibility.filter_panel_assigned')): ?>
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.assigned_to'))); ?>
 
                     </div>
@@ -106,7 +106,7 @@
 
                 <!--date added-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.date_added'))); ?>
 
                     </div>
@@ -114,13 +114,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_start_start" autocomplete="off"
-                                    class="form-control form-control-sm pickadate" placeholder="Start">
+                                    class="form-control form-control-sm pickadate" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'شروع' : 'Start'); ?>">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_start_start"
                                     id="filter_task_date_start_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_start_end" autocomplete="off"
-                                    class="form-control form-control-sm pickadate" placeholder="End">
+                                    class="form-control form-control-sm pickadate" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'پایان' : 'End'); ?>">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_start_end"
                                     id="filter_task_date_start_end" value="">
                             </div>
@@ -130,7 +130,7 @@
 
                 <!--date due-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.due_date'))); ?>
 
                     </div>
@@ -139,13 +139,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_due_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'شروع' : 'Start'); ?>">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_due_start"
                                     id="filter_task_date_due_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_task_date_due_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'پایان' : 'End'); ?>">
                                 <input class="mysql-date" type="hidden" name="filter_task_date_due_end"
                                     id="filter_task_date_due_end" value="">
                             </div>
@@ -155,7 +155,7 @@
                 <!--filter item-->
                 <!--tags-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.tags'))); ?>
 
                     </div>
@@ -179,7 +179,7 @@
 
                 <!--priority-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.priority'))); ?>
 
                     </div>
@@ -203,7 +203,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.status'))); ?>
 
                     </div>
@@ -227,7 +227,7 @@
 
                 <!--state-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.show'))); ?>
 
                     </div>
