@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_estimates')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-estimates"></i>
@@ -16,7 +16,7 @@
                 <!--company name-->
                 @if(config('visibility.filter_panel_client'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -39,7 +39,7 @@
                 <!--clients project list-->
                 @if(config('visibility.filter_panel_clients_projects'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -60,7 +60,7 @@
 
                 <!--amount-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.amount')) }}
                     </div>
                     <div class="fields">
@@ -81,7 +81,7 @@
 
                 <!--date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.estimate_date')) }}
                     </div>
                     <div class="fields">
@@ -89,12 +89,12 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_date_start" 
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_bill_date_start" id="filter_bill_date_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_date_end" 
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_bill_date_end" id="filter_bill_date_end" value="">
                             </div>
                         </div>
@@ -103,7 +103,7 @@
 
                 <!--expiry-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.expiry_date')) }}
                     </div>
                     <div class="fields">
@@ -112,14 +112,14 @@
                                 <input type="text" name="filter_bill_expiry_date_start"
                                     
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" id="filter_bill_expiry_date_start" name="filter_bill_expiry_date_start"
                                     value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_expiry_date_end"
                                      class="form-control form-control-sm pickadate"
-                                    autocomplete="off" placeholder="End">
+                                    autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" id="filter_bill_expiry_date_end" name="filter_bill_expiry_date_end" value="">
                             </div>
                         </div>
@@ -128,7 +128,7 @@
 
                 <!--tags-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.tags')) }}
                     </div>
                     <div class="fields">
@@ -150,7 +150,7 @@
 
                 <!--created by-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.created_by')) }}
                     </div>
                     <div class="fields">
@@ -170,7 +170,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.category')) }}
                     </div>
                     <div class="fields">
@@ -191,7 +191,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">

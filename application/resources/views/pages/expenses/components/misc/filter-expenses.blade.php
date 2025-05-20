@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_expenses')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-expenses"></i>
@@ -17,7 +17,7 @@
                 <!--filter by team members-->
                 @if(config('visibility.filter_by_user'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         @lang('lang.team_member')
                     </div>
                     <div class="fields">
@@ -45,7 +45,7 @@
                 <!--company name-->
                 @if(config('visibility.filter_panel_client'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -65,7 +65,7 @@
                 <!--project-->
                 @if(config('visibility.filter_panel_project'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -83,7 +83,7 @@
                 <!--clients project list-->
                 @if(config('visibility.filter_panel_clients_projects'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -104,7 +104,7 @@
 
                 <!--amount-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.amount')) }}
                     </div>
                     <div class="fields">
@@ -129,7 +129,7 @@
 
                 <!--date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date')) }}
                     </div>
                     <div class="fields">
@@ -154,7 +154,7 @@
 
                 <!--category-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.category')) }}
                     </div>
                     <div class="fields">

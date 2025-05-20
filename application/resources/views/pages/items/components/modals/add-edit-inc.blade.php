@@ -5,7 +5,7 @@
         <div class="modal-selector">
             <!--item-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">Product Type</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">Product Type</label>
                 <div class="col-sm-12 col-lg-9">
                     <select class="select2-basic form-control form-control-sm select2-preselected" id="item_type"
                         name="item_type" data-preselected="{{ $item->item_type ?? ''}}">
@@ -22,7 +22,7 @@
         <!--description-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.description')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.description')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <textarea class="w-100" id="item_description" rows="5"
                     name="item_description">{{ $item->item_description ?? '' }}</textarea>
@@ -33,7 +33,7 @@
         <!--rate-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.rate')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.rate')) }}*</label>
             <div class="col-sm-12 col-lg-9 input-group input-group-sm">
                 <span class="input-group-addon">{{ config('system.settings_system_currency_symbol') }}</span>
                 <input type="number" name="item_rate" id="item_rate" class="form-control form-control-sm"
@@ -46,7 +46,7 @@
 
             <!--item_dimensions_length-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label required">Length</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">Length</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="number" class="form-control form-control-sm" id="item_dimensions_length"
                         name="item_dimensions_length" value="{{ $item->item_dimensions_length ?? '' }}">
@@ -56,7 +56,7 @@
 
             <!--item_dimensions_width-->
             <div class="form-group row">
-                <label class="col-sm-12 col-lg-3 text-left control-label col-form-label required">Width</label>
+                <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">Width</label>
                 <div class="col-sm-12 col-lg-9">
                     <input type="number" class="form-control form-control-sm" id="item_dimensions_width"
                         name="item_dimensions_width" value="{{ $item->item_dimensions_width ?? '' }}">
@@ -70,7 +70,7 @@
         <!--units-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.units')) }}*
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.units')) }}*
                 <span class="align-middle text-info font-16" data-toggle="tooltip"
                     title="{{ cleanLang(__('lang.units_examples')) }}" data-placement="top"><i
                         class="ti-info-alt"></i></span></label>
@@ -83,7 +83,7 @@
         <!--category-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm" id="item_categoryid" name="item_categoryid">
                     @foreach($categories as $category)
@@ -101,12 +101,12 @@
 
         <!--item_notes_estimatation - toggle-->
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <span class="title">@lang('lang.estimation_notes')</span> <span class="align-middle text-info font-16" data-toggle="tooltip" title="@lang('lang.estimate_notes_info')"
                 data-placement="top"><i class="ti-info-alt"></i></span>
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="more_information" id="item_notes_estimatation_toggle"
                             class="js-switch-toggle-hidden-content" data-target="item_notes_estimatation_panel">
@@ -147,7 +147,7 @@
         <!--notes-->
         <div class="row">
             <div class="col-12">
-                <div><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
             </div>
         </div>
     </div>

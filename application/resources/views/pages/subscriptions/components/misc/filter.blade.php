@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_subscriptions')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-subscriptions"></i>
@@ -16,7 +16,7 @@
                 @if(config('visibility.filter_panel_client_project'))
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -34,7 +34,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -52,7 +52,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">
@@ -74,7 +74,7 @@
 
                 <!--filter item-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.amount')) }}
                     </div>
                     <div class="fields">
@@ -100,7 +100,7 @@
 
                 <!--filter item-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.payments')) }}
                     </div>
                     <div class="fields">
@@ -126,7 +126,7 @@
 
                 <!--filter item-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date_created')) }}
                     </div>
                     <div class="fields">
@@ -134,13 +134,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_subscription_date_started_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_subscription_date_started_start"
                                     id="filter_subscription_date_started_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_subscription_date_started_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_subscription_date_started_end"
                                     id="filter_subscription_date_started_end" value="">
                             </div>
