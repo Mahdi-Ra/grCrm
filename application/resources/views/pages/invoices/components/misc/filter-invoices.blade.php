@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_invoices')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-invoices"></i>
@@ -16,7 +16,7 @@
                 @if(config('visibility.filter_panel_client_project'))
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -34,7 +34,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -53,7 +53,7 @@
                 <!--clients project list-->
                 @if(config('visibility.filter_panel_clients_projects'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -74,7 +74,7 @@
 
                 <!--invoice amount-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.invoice_amount')) }}
                     </div>
                     <div class="fields">
@@ -83,13 +83,13 @@
                                 <span class="input-group-addon">{{ config('system.settings_system_currency_symbol') }}</span>
                                 <input type="number" name="filter_bill_final_amount_min"
                                     id="filter_bill_final_amount_min" class="form-control form-control-sm"
-                                    placeholder="min">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'حداقل' : 'min' }}">
                             </div>
                             <div class="col-md-6 input-group input-group-sm">
                                 <span class="input-group-addon">{{ config('system.settings_system_currency_symbol') }}</span>
                                 <input type="number" name="filter_bill_final_amount_max"
                                     id="filter_bill_final_amount_max" class="form-control form-control-sm"
-                                    placeholder="max">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'حداکثر' : 'max' }}">
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
 
                 <!--payments-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.payments_amount')) }}
                     </div>
                     <div class="fields">
@@ -105,12 +105,12 @@
                             <div class="col-md-6 input-group input-group-sm">
                                 <span class="input-group-addon">{{ config('system.settings_system_currency_symbol') }}</span>
                                 <input type="number" name="filter_invoice_payments_min" id="filter_invoice_payments_min"
-                                    class="form-control form-control-sm" placeholder="min">
+                                    class="form-control form-control-sm" placeholder="{{ app()->getLocale() == 'persian' ? 'حداقل' : 'min' }}">
                             </div>
                             <div class="col-md-6 input-group input-group-sm">
                                 <span class="input-group-addon">{{ config('system.settings_system_currency_symbol') }}</span>
                                 <input type="number" name="filter_invoice_payments_max" id="filter_invoice_payments_max"
-                                    class="form-control form-control-sm" placeholder="max">
+                                    class="form-control form-control-sm" placeholder="{{ app()->getLocale() == 'persian' ? 'حداکثر' : 'max' }}">
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
 
                 <!--invoice date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date_created')) }}
                     </div>
                     <div class="fields">
@@ -126,13 +126,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_date_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_bill_date_start"
                                     id="filter_bill_date_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_date_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_bill_date_end"
                                     id="filter_bill_date_end" value="">
                             </div>
@@ -142,7 +142,7 @@
 
                 <!--due date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.due_date')) }}
                     </div>
                     <div class="fields">
@@ -150,13 +150,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_due_date_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" id="filter_bill_due_date_start"
                                     name="filter_bill_due_date_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_due_date_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" id="filter_bill_due_date_end"
                                     name="filter_bill_due_date_end" value="">
                             </div>
@@ -167,7 +167,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">
@@ -188,7 +188,7 @@
 
                 <!--created by -->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.added_by')) }}
                     </div>
                     <div class="fields">
@@ -208,7 +208,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.recurring')) }}
                     </div>
                     <div class="fields">
@@ -228,7 +228,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.category')) }}
                     </div>
                     <div class="fields">

@@ -21,7 +21,7 @@
             <div class="client-selector-container" id="client-existing-container">
                 <div class="form-group row">
                     <label
-                        class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.client')) }}*</label>
+                        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.client')) }}*</label>
                     <div class="col-sm-12 col-lg-9">
                         <!--select2 basic search-->
                         <select name="bill_clientid" id="bill_clientid"
@@ -44,7 +44,7 @@
                 <!--projects-->
                 <div class="form-group row">
                     <label
-                        class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.project')) }}</label>
+                        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.project')) }}</label>
                     <div class="col-sm-12 col-lg-9">
                         <select class="select2-basic form-control form-control-sm dynamic_bill_projectid"
                             data-allow-clear="true" id="bill_projectid" name="bill_projectid" disabled>
@@ -57,7 +57,7 @@
             <div class="client-selector-container hidden" id="client-new-container">
                 <div class="form-group row">
                     <label
-                        class="col-sm-12 col-lg-4 text-left control-label col-form-label required">{{ cleanLang(__('lang.company_name')) }}*</label>
+                        class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.company_name')) }}*</label>
                     <div class="col-sm-12 col-lg-8">
                         <input type="text" class="form-control form-control-sm" id="client_company_name"
                             name="client_company_name">
@@ -66,7 +66,7 @@
 
                 <div class="form-group row">
                     <label
-                        class="col-sm-12 col-lg-4 text-left control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
+                        class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.first_name')) }}*</label>
                     <div class="col-sm-12 col-lg-8">
                         <input type="text" class="form-control form-control-sm" id="first_name" name="first_name"
                             placeholder="">
@@ -74,7 +74,7 @@
                 </div>
                 <div class="form-group row">
                     <label
-                        class="col-sm-12 col-lg-4 text-left control-label col-form-label required">{{ cleanLang(__('lang.last_name')) }}*</label>
+                        class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.last_name')) }}*</label>
                     <div class="col-sm-12 col-lg-8">
                         <input type="text" class="form-control form-control-sm" id="last_name" name="last_name"
                             placeholder="">
@@ -82,7 +82,7 @@
                 </div>
                 <div class="form-group row">
                     <label
-                        class="col-sm-12 col-lg-4 text-left control-label col-form-label required">{{ cleanLang(__('lang.email_address')) }}*</label>
+                        class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.email_address')) }}*</label>
                     <div class="col-sm-12 col-lg-8">
                         <input type="text" class="form-control form-control-sm" id="email" name="email" placeholder="">
                     </div>
@@ -94,11 +94,11 @@
             <div class="hidden" id="new-client-custom-fields">
                 @if(auth()->user()->is_team)
                 <div class="spacer row">
-                    <div class="col-sm-12 col-lg-8">
-                        <span class="title">{{ cleanLang(__('lang.additional_client_details')) }}</span class="title">
+                    <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+                        <span class="title">{{ cleanLang(__('lang.additional_client_details')) }}</span>
                     </div>
                     <div class="col-sm-12 col-lg-4">
-                        <div class="switch  text-right">
+                        <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                             <label>
                                 <input type="checkbox" name="add_client_option_other" id="add_client_option_other"
                                     class="js-switch-toggle-hidden-content" data-target="client_custom_fields_collaped">
@@ -143,7 +143,7 @@
         <!--invoice date-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.invoice_date')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.invoice_date')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control  form-control-sm pickadate" name="bill_date_add_edit"
                     autocomplete="off" value="{{ runtimeDatepickerDate($invoice->bill_date ?? '') }}">
@@ -155,7 +155,7 @@
         <!--due date-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.due_date')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.due_date')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control form-control-sm pickadate" name="bill_due_date_add_edit"
                     autocomplete="off" value="{{ runtimeDatepickerDate($invoice->bill_due_date ?? '') }}">
@@ -170,7 +170,7 @@
         @if(config('visibility.invoice_modal_clients_projects'))
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.project')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.project')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm" id="bill_projectid" name="bill_projectid">
                     @foreach(config('settings.clients_projects') as $project)
@@ -184,7 +184,7 @@
         <!--invoice category-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm" id="bill_categoryid" name="bill_categoryid">
                     @foreach($categories as $category)
@@ -200,11 +200,11 @@
 
         <!--otions toggle-->
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
-                <span class="title">{{ cleanLang(__('lang.additional_information')) }}</span class="title">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+                <span class="title">{{ cleanLang(__('lang.additional_information')) }}</span>
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" class="js-switch-toggle-hidden-content"
                             data-target="edit_bill_recurring_toggle">
@@ -216,7 +216,7 @@
         <div class="hidden" id="edit_bill_recurring_toggle">
             <!--tags-->
             <div class="form-group row">
-                <label class="col-12 text-left control-label col-form-label">{{ cleanLang(__('lang.tags')) }}</label>
+                <label class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.tags')) }}</label>
                 <div class="col-12">
                     <select name="tags" id="tags"
                         class="form-control form-control-sm select2-multiple {{ runtimeAllowUserTags() }} select2-hidden-accessible"
@@ -240,7 +240,7 @@
 
             <!-- notes-->
             <div class="form-group row">
-                <label class="col-12 text-left control-label col-form-label">{{ cleanLang(__('lang.notes')) }}</label>
+                <label class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.notes')) }}</label>
                 <div class="col-12">
                     <textarea id="bill_notes" name="bill_notes"
                         class="tinymce-textarea">{{ $invoice->bill_notes ?? '' }}</textarea>
@@ -251,7 +251,7 @@
             <!-- terms-->
             <div class="form-group row">
                 <label
-                    class="col-12 text-left control-label col-form-label">{{ cleanLang(__('lang.terms_and_conditions')) }}</label>
+                    class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.terms_and_conditions')) }}</label>
                 <div class="col-12">
                     <textarea id="bill_terms" name="bill_terms" class="tinymce-textarea">
                         @if(isset($page['section']) && $page['section'] == 'create')
@@ -278,12 +278,12 @@
         <!--notes-->
         <div class="row">
             <div class="col-12">
-                <div><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><small><strong>* {{ cleanLang(__('lang.required')) }}</strong></small></div>
             </div>
         </div>
 
         <!--recurring notes-->
-        <div class="alert alert-info m-t-10"><i class="sl-icon-refresh text-warning"></i>
+        <div class="alert alert-info m-t-10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="sl-icon-refresh text-warning"></i>
             {{ cleanLang(__('lang.recurring_invoice_options_info')) }}</div>
     </div>
 </div>

@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                 <i class="icon-Filter-2"></i><?php echo e(cleanLang(__('lang.filter_invoices'))); ?>
 
                 <span>
@@ -17,7 +17,7 @@
                 <?php if(config('visibility.filter_panel_client_project')): ?>
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.client_name'))); ?>
 
                     </div>
@@ -36,7 +36,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.project'))); ?>
 
                     </div>
@@ -56,7 +56,7 @@
                 <!--clients project list-->
                 <?php if(config('visibility.filter_panel_clients_projects')): ?>
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.project'))); ?>
 
                     </div>
@@ -78,7 +78,7 @@
 
                 <!--invoice amount-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.invoice_amount'))); ?>
 
                     </div>
@@ -88,13 +88,13 @@
                                 <span class="input-group-addon"><?php echo e(config('system.settings_system_currency_symbol')); ?></span>
                                 <input type="number" name="filter_bill_final_amount_min"
                                     id="filter_bill_final_amount_min" class="form-control form-control-sm"
-                                    placeholder="min">
+                                    placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'حداقل' : 'min'); ?>">
                             </div>
                             <div class="col-md-6 input-group input-group-sm">
                                 <span class="input-group-addon"><?php echo e(config('system.settings_system_currency_symbol')); ?></span>
                                 <input type="number" name="filter_bill_final_amount_max"
                                     id="filter_bill_final_amount_max" class="form-control form-control-sm"
-                                    placeholder="max">
+                                    placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'حداکثر' : 'max'); ?>">
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
 
                 <!--payments-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.payments_amount'))); ?>
 
                     </div>
@@ -111,12 +111,12 @@
                             <div class="col-md-6 input-group input-group-sm">
                                 <span class="input-group-addon"><?php echo e(config('system.settings_system_currency_symbol')); ?></span>
                                 <input type="number" name="filter_invoice_payments_min" id="filter_invoice_payments_min"
-                                    class="form-control form-control-sm" placeholder="min">
+                                    class="form-control form-control-sm" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'حداقل' : 'min'); ?>">
                             </div>
                             <div class="col-md-6 input-group input-group-sm">
                                 <span class="input-group-addon"><?php echo e(config('system.settings_system_currency_symbol')); ?></span>
                                 <input type="number" name="filter_invoice_payments_max" id="filter_invoice_payments_max"
-                                    class="form-control form-control-sm" placeholder="max">
+                                    class="form-control form-control-sm" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'حداکثر' : 'max'); ?>">
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
 
                 <!--invoice date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.date_created'))); ?>
 
                     </div>
@@ -133,13 +133,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_date_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'شروع' : 'Start'); ?>">
                                 <input class="mysql-date" type="hidden" name="filter_bill_date_start"
                                     id="filter_bill_date_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_date_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'پایان' : 'End'); ?>">
                                 <input class="mysql-date" type="hidden" name="filter_bill_date_end"
                                     id="filter_bill_date_end" value="">
                             </div>
@@ -149,7 +149,7 @@
 
                 <!--due date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.due_date'))); ?>
 
                     </div>
@@ -158,13 +158,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_due_date_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'شروع' : 'Start'); ?>">
                                 <input class="mysql-date" type="hidden" id="filter_bill_due_date_start"
                                     name="filter_bill_due_date_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_bill_due_date_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="<?php echo e(app()->getLocale() == 'persian' ? 'پایان' : 'End'); ?>">
                                 <input class="mysql-date" type="hidden" id="filter_bill_due_date_end"
                                     name="filter_bill_due_date_end" value="">
                             </div>
@@ -175,7 +175,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.status'))); ?>
 
                     </div>
@@ -197,7 +197,7 @@
 
                 <!--created by -->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.added_by'))); ?>
 
                     </div>
@@ -218,7 +218,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.recurring'))); ?>
 
                     </div>
@@ -239,7 +239,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.category'))); ?>
 
                     </div>
