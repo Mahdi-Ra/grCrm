@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                 <i class="icon-Filter-2"></i><?php echo e(cleanLang(__('lang.filter_payments'))); ?>
 
                 <span>
@@ -18,7 +18,7 @@
                 <?php if(config('visibility.filter_panel_client_project')): ?>
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.client_name'))); ?>
 
                     </div>
@@ -37,7 +37,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.project'))); ?>
 
                     </div>
@@ -57,7 +57,7 @@
                 <!--clients project list-->
                 <?php if(config('visibility.filter_panel_clients_projects')): ?>
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.project'))); ?>
 
                     </div>
@@ -79,7 +79,7 @@
 
                 <!--payment id-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.invoice_id'))); ?>
 
                     </div>
@@ -100,7 +100,7 @@
 
                 <!--amount-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.amount'))); ?>
 
                     </div>
@@ -124,7 +124,7 @@
 
                 <!--date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.payment_date'))); ?>
 
                     </div>
@@ -150,7 +150,7 @@
 
                 <!--methods-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <?php echo e(cleanLang(__('lang.payment_method'))); ?>
 
                     </div>

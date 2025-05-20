@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-7 p-b-9 align-self-center text-right <?php echo e($page['list_page_actions_size'] ?? ''); ?> <?php echo e($page['list_page_container_class'] ?? ''); ?>"
+<div class="col-md-12  col-lg-7 p-b-9 align-self-center <?php echo e(app()->getLocale() == 'persian' ? 'text-left' : 'text-right'); ?> <?php echo e($page['list_page_actions_size'] ?? ''); ?> <?php echo e($page['list_page_container_class'] ?? ''); ?>"
     id="list-page-actions-container">
     <div id="list-page-actions">
         <!--SEARCH BOX-->
