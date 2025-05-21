@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>@lang('lang.filter_proposals')
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-proposals"></i>
@@ -17,7 +17,7 @@
                 <!--client-->
                 @if(config('visibility.filter_panel_client'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -37,7 +37,7 @@
                 <!--lead-->
                 @if(config('visibility.filter_panel_lead'))
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.lead')) }}
                     </div>
                     <div class="fields">
@@ -55,7 +55,7 @@
 
                 <!--categorgies-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.category')) }}
                     </div>
                     <div class="fields">
@@ -77,7 +77,7 @@
 
                 <!--proposal_date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.proposal_date')) }}
                     </div>
                     <div class="fields">
@@ -103,7 +103,7 @@
 
                 <!--valid_until-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.valid_until')) }}
                     </div>
                     <div class="fields">

@@ -22,7 +22,7 @@
                             @if(auth()->user()->is_team && config('system.settings2_tickets_replying_interface') ==
                             'inline')
                             <button type="button"
-                                class="btn btn-default btn-sm waves-effect waves-dark js-toggle-side-panel ticket-add-canned m-b-20"
+                                class="btn btn-default btn-sm waves-effect waves-dark js-toggle-side-panel ticket-add-canned m-b-20 "
                                 data-target="sidepanel-canned-messages">
                                 <i class="sl-icon-speech"></i>
                                 @lang('lang.canned_messages')
@@ -44,7 +44,7 @@
                             @if(auth()->user()->is_team)
                             <div class="form-group row">
                                 <label
-                                    class="col-12 text-left control-label col-form-label">{{ cleanLang(__('lang.tags')) }}</label>
+                                    class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.tags')) }}</label>
                                 <div class="col-12">
                                     <select name="tags" id="tags"
                                         class="form-control form-control-sm select2-multiple {{ runtimeAllowUserTags() }} select2-hidden-accessible"

@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_tickets')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-tickets"></i>
@@ -15,7 +15,7 @@
 
                 <!--company name-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.client_name')) }}
                     </div>
                     <div class="fields">
@@ -33,7 +33,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -50,7 +50,7 @@
 
                 <!--category-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.category')) }}
                     </div>
                     <div class="fields">
@@ -72,7 +72,7 @@
 
                 <!--date-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date')) }}
                     </div>
                     <div class="fields">
@@ -80,13 +80,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_ticket_created_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_ticket_created_start"
                                     id="filter_ticket_created_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_ticket_created_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_ticket_created_end"
                                     id="filter_ticket_created_end" value="">
                             </div>
@@ -97,7 +97,7 @@
 
                 <!--priority-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.priority')) }}
                     </div>
                     <div class="fields">
@@ -117,7 +117,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">
@@ -144,7 +144,7 @@
                 <!--remember filters-->
                 <div class="modal-selector m-t-20">
 
-                    <div class="form-group form-group-checkbox row">
+                    <div class="form-group form-group-checkbox row {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <div class="col-12 p-t-5">
                             <input type="checkbox" id="show_archive_tickets" name="show_archive_tickets" class="filled-in chk-col-light-blue" >
                             <label class="p-l-30" for="show_archive_tickets">@lang('lang.show_archive_tickets')</label>
@@ -153,7 +153,7 @@
 
 
                     
-                    <div class="form-group form-group-checkbox row">
+                    <div class="form-group form-group-checkbox row {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <div class="col-12 p-t-5">
                             <input type="checkbox" id="filter_remember" name="filter_remember" class="filled-in chk-col-light-blue" 
                             {{ runtimePrechecked(auth()->user()->remember_filters_tickets_status ?? '') }}>

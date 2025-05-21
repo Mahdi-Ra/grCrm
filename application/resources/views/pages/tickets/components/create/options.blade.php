@@ -4,13 +4,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="ticket-panel">
-                    <div class="x-top-header">
+                    <div class="x-top-header {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.ticket_options')) }}
                     </div>
                     <div class="x-body form-horizontal">
                         @if(auth()->user()->is_team)
                         <div class="form-group row">
-                            <label for="example-month-input" class="col-12 control-label col-form-label text-left required">{{ cleanLang(__('lang.client')) }}</label>
+                            <label for="example-month-input" class="col-12 control-label col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.client')) }}</label>
                             <div class="col-12">
                                 <select name="ticket_clientid" id="ticket_clientid" class="clients_and_projects_toggle form-control form-control-sm js-select2-basic-search select2-hidden-accessible"
                                     data-projects-dropdown="ticket_projectid" data-feed-request-type="clients_projects"
@@ -20,7 +20,7 @@
 
                         <!--project-->
                         <div class="form-group row">
-                            <label for="example-month-input" class="col-12 col-form-label text-left">{{ cleanLang(__('lang.project')) }}</label>
+                            <label for="example-month-input" class="col-12 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.project')) }}</label>
                             <div class="col-12">
                                 <select class="select2-basic form-control form-control-sm dynamic_ticket_projectid" id="ticket_projectid" name="ticket_projectid"
                                     disabled>
@@ -30,7 +30,7 @@
                         @endif
                         <!--department-->
                         <div class="form-group row">
-                            <label for="example-month-input" class="col-12 control-label col-form-label text-left required">{{ cleanLang(__('lang.department')) }}</label>
+                            <label for="example-month-input" class="col-12 control-label col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.department')) }}</label>
                             <div class="col-12">
                                 <select class="select2-basic form-control  form-control-sm" id="ticket_categoryid" name="ticket_categoryid">
                                     <option></option>
@@ -45,7 +45,7 @@
                         <!--clients projects-->
                         @if(auth()->user()->is_client)
                         <div class="form-group row">
-                            <label for="example-month-input" class="col-12 col-form-label text-left">{{ cleanLang(__('lang.project')) }}</label>
+                            <label for="example-month-input" class="col-12 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.project')) }}</label>
                             <div class="col-12">
                                 <select class="select2-basic form-control  form-control-sm" id="ticket_projectid" name="ticket_projectid"
                                     data-allow-clear="true">
@@ -62,7 +62,7 @@
                         <!--priority-->
                         @if(auth()->user()->is_team)
                         <div class="form-group row">
-                            <label for="example-month-input" class="col-12 col-form-label text-left">{{ cleanLang(__('lang.priority')) }}</label>
+                            <label for="example-month-input" class="col-12 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.priority')) }}</label>
                             <div class="col-12">
                                 <select class="select2-basic form-control  form-control-sm" id="ticket_priority" name="ticket_priority">
                                     @foreach(config('settings.ticket_priority') as $key => $value)

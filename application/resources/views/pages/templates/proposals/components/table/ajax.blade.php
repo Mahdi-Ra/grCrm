@@ -3,7 +3,7 @@
 <tr id="template_{{ $template->proposal_template_id }}">
 
     <!--title-->
-    <td class="col_proposal_template_title">
+    <td class="col_proposal_template_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="javascript:void(0);" class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
             data-toggle="modal" data-target="#commonModal"
             data-url="{{ urlResource('/templates/proposals/'.$template->proposal_template_id.'/edit') }}"
@@ -14,12 +14,12 @@
     </td>
 
     <!--proposal_template_created-->
-    <td class="col_proposal_template_created">
+    <td class="col_proposal_template_created {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($template->proposal_template_created) }}
     </td>
 
     <!--created by-->
-    <td class="col_created_by">
+    <td class="col_created_by {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <img src="{{ getUsersAvatar($template->avatar_directory, $template->avatar_filename, $template->proposal_template_creatorid) }}"
             alt="user" class="img-circle avatar-xsmall">
         {{ checkUsersName($template->first_name, $template->proposal_template_creatorid)  }}
@@ -27,7 +27,7 @@
 
 
     <!--actions-->
-    <td class="col_proposals_actions actions_column">
+    <td class="col_proposals_actions actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--action button-->
         <span class="list-table-action dropdown font-size-inherit">
             <!--delete-->

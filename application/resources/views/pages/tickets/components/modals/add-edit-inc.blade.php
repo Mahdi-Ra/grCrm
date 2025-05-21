@@ -4,7 +4,7 @@
         @if(config('system.settings_tickets_edit_subject') == 'yes')
         <div class="form-group row">
             <label
-                class="col-sm-12 text-left control-label col-form-label required">{{ cleanLang(__('lang.subject')) }}*</label>
+                class="col-sm-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.subject')) }}*</label>
             <div class="col-sm-12">
                 <input type="text" class="form-control form-control-sm" id="ticket_subject" name="ticket_subject"
                     value="{{ $ticket->ticket_subject }}">
@@ -14,7 +14,7 @@
         @if(config('system.settings_tickets_edit_body') == 'yes')
         <div class="form-group row">
             <label
-                class="col-sm-12 text-left control-label col-form-label required">{{ cleanLang(__('lang.message')) }}*</label>
+                class="col-sm-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.message')) }}*</label>
             <div class="col-sm-12">
                 <textarea id="ticket_message" name="ticket_message"
                     class="tinymce-textarea">{{ $ticket->ticket_message ?? '' }}</textarea>
@@ -26,7 +26,7 @@
         <!--department-->
         <div class="form-group row">
             <label for="example-month-input"
-                class="col-sm-12 col-lg-3 col-form-label text-left required">{{ cleanLang(__('lang.department')) }}*</label>
+                class="col-sm-12 col-lg-3 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.department')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control  form-control-sm" id="ticket_categoryid"
                     name="ticket_categoryid">
