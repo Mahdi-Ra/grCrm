@@ -2,7 +2,7 @@
     <div class="card-body">
         <div class="table-responsive list-table-wrapper">
             @if (!$users->isEmpty())
-            <table id="team-list-table" class="table m-t-0 m-b-0 table-hover no-wrap contact-list" data-page-size="10">
+            <table id="team-list-table" class="table m-t-0 m-b-0 table-hover no-wrap contact-list {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" data-page-size="10">
                 <thead>
                     <tr>
                         <th class="team_col_first_name"><a class="js-ajax-ux-request js-list-sorting"

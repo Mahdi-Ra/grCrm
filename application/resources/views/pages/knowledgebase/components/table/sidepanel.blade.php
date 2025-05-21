@@ -2,18 +2,18 @@
     <div class="card-body">
 
         <!--categories-->
-        <div class="x-section">
+        <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <h4>{{ cleanLang(__('lang.categories')) }}</h4>
             <ul>
                 @foreach($categories as $category)
-                <li><a href="/kb/articles/{{ $category->kbcategory_slug }}"">{{ $category->kbcategory_title }}</a></li>
+                <li><a href="/kb/articles/{{ $category->kbcategory_slug }}">{{ $category->kbcategory_title }}</a></li>
                 @endforeach
             </ul>
         </div>
 
         <!--related questions-->
         @if(isset($page['vsibility_related_questions']) && $page['vsibility_related_questions'] =='yes')
-        <div class="x-section">
+        <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <h4>{{ cleanLang(__('lang.related')) }}</h4>
             <ul>
                 @foreach($questions as $question)

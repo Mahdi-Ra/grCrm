@@ -2,8 +2,8 @@
 <div class="right-sidebar sidebar-lg" id="sidepanel-canned-messages">
     <div class="slimscrollright">
         <!--title-->
-        <div class="rpanel-title">
-            <i class="sl-icon-speech"></i>{{ cleanLang(__('lang.canned_messages')) }}
+        <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+            <i class="sl-icon-speech {{ app()->getLocale() == 'persian' ? 'p-l-10' : 'p-r-10' }}"></i>{{ cleanLang(__('lang.canned_messages')) }}
             <span>
                 <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-items"></i>
             </span>

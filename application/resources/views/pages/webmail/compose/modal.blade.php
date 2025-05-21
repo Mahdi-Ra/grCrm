@@ -1,6 +1,6 @@
 <!--client email-->
 <div class="form-group row">
-    <label class="col-12 text-left control-label col-form-label required">@lang('lang.to')</label>
+    <label class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.to')</label>
     <!--specified [standard user]-->
     @if($recipients['specified'])
     <div class="col-12">
@@ -22,7 +22,7 @@
 
 <!--subject-->
 <div class="form-group row">
-    <label class="col-12 text-left control-label col-form-label">@lang('lang.subject')</label>
+    <label class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.subject')</label>
     <div class="col-12">
         <input type="text" class="form-control form-control-sm" id="email_subject" name="email_subject" placeholder="">
     </div>
@@ -30,7 +30,7 @@
 
 <!--template-->
 <div class="form-group row">
-    <label class="col-12 text-left control-label col-form-label">@lang('lang.use_a_template')</label>
+    <label class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.use_a_template')</label>
     <div class="col-12">
         <select class="select2-basic form-control form-control-sm select2-preselected" id="email_template_selector"
             name="email_template_selector">
@@ -68,7 +68,7 @@
 
 <!--from email-->
 <div class="form-group row">
-    <label class="col-12 text-left control-label col-form-label required">@lang('lang.from')</label>
+    <label class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.from')</label>
     <div class="col-12">
         <select class="select2-basic form-control form-control-sm select2-preselected" id="email_from"
             name="email_from">
@@ -80,4 +80,4 @@
 </div>
 
 <!--warning-->
-<div class="alert alert-warning">@lang('lang.email_address_warning')</div>
+<div class="alert alert-warning {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.email_address_warning')</div>

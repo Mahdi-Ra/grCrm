@@ -4,14 +4,14 @@
         <ul class="chatonline style-none" id="messages-left-menu">
             <!--team-->
             <li id="<?php echo e(messagesUniqueID(auth()->user()->unique_id, 'team')); ?>">
-                <a href="javascript:void(0)" class="ajax-request messages-menu-link active" data-type="form"
+                <a href="javascript:void(0)" class="ajax-request messages-menu-link active <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>" data-type="form"
                     id="messages_team_link"
                     data-form-id="<?php echo e(messagesUniqueID(auth()->user()->unique_id, 'team')); ?>"
                     data-ajax-type="post" data-loading-target="chat-messages-container"
                     data-message-target="team" data-progress-bar="hidden"
                     data-counter-id="messages_counter_team" data-url="<?php echo e(url('/messages/feed?action=load')); ?>">
                     <img src="<?php echo e(url('public/images/team.png')); ?>" alt="user-img" class="img-circle">
-                    <span><?php echo app('translator')->get('lang.team'); ?>
+                    <span class="<?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><?php echo app('translator')->get('lang.team'); ?>
                         <small class="text-info messages_user_status text-lc"><?php echo app('translator')->get('lang.all_team_members'); ?>
                             <!--counter-->
                             <span class="badge badge-pill badge-danger messages_counter hidden"

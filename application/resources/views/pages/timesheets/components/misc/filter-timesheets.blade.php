@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_timesheets')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-timesheets"></i>
@@ -15,7 +15,7 @@
 
                 <!-- team member -->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.team_members')) }}
                     </div>
                     <div class="fields">
@@ -35,7 +35,7 @@
 
                 <!--project-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.project')) }}
                     </div>
                     <div class="fields">
@@ -51,7 +51,7 @@
 
                 <!--grouping-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.grouping')) }}
                     </div>
                     <div class="fields">
@@ -70,7 +70,7 @@
 
                 <!--date range-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.date')) }}
                     </div>
                     <div class="fields">
@@ -78,13 +78,13 @@
                             <div class="col-md-6">
                                 <input type="text" name="filter_date_created_start"
                                     class="form-control form-control-sm pickadate" autocomplete="off"
-                                    placeholder="Start">
+                                    placeholder="{{ app()->getLocale() == 'persian' ? 'شروع' : 'Start' }}">
                                 <input class="mysql-date" type="hidden" name="filter_date_created_start"
                                     id="filter_date_created_start" value="">
                             </div>
                             <div class="col-md-6">
                                 <input type="text" name="filter_date_created_end"
-                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="End">
+                                    class="form-control form-control-sm pickadate" autocomplete="off" placeholder="{{ app()->getLocale() == 'persian' ? 'پایان' : 'End' }}">
                                 <input class="mysql-date" type="hidden" name="filter_date_created_end"
                                     id="filter_date_created_end" value="">
                             </div>
@@ -94,7 +94,7 @@
 
                 <!--status-->
                 <div class="filter-block">
-                    <div class="title">
+                    <div class="title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.status')) }}
                     </div>
                     <div class="fields">

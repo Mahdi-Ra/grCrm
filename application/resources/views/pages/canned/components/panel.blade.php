@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="ticket-panel">
-                    <div class="x-top-header">
+                    <div class="x-top-header {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         {{ cleanLang(__('lang.categories')) }}
                     </div>
 
-                    <div class="x-body">
+                    <div class="x-body {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
 
                         <!--department-->
                         @foreach($category_list as $category)

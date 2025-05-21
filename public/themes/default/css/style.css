@@ -19761,3 +19761,7 @@ body.rtl .input-group-sm .input-group-addon {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+body.rtl .chatonline img {
+  float: right;
+  margin-left: 10px;
+}

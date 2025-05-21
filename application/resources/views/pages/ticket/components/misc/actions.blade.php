@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-3 align-self-center text-right parent-page-actions p-b-9"
+<div class="col-md-12  col-lg-3 align-self-center {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} parent-page-actions p-b-9"
         id="list-page-actions-container">
         <div id="list-page-actions">
                 <!--edit (nb: the second condition is needed for timeline [right actions nav] replacement-->
