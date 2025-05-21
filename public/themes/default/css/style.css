@@ -5517,7 +5517,7 @@ sidebar navigation
   margin: 15px 0;
 }
 .sidebar-nav > ul > li > a {
-  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
 }
 .sidebar-nav > ul > li > a i {
   width: 35px;
@@ -5538,7 +5538,7 @@ sidebar navigation
   font-weight: 400;
   background: #242933;
   color: #20aee3;
-  border-left: 3px solid #20aee3;
+  border-right: 3px solid #20aee3;
 }
 .sidebar-nav > ul > li {
   margin-bottom: 7px;
@@ -5592,10 +5592,20 @@ sidebar navigation
   color: #b2c1e6;
 }
 
-.rtl .sidebar-nav .has-arrow::after {
+body.rtl .sidebar-nav .has-arrow::after {
   left: 10px !important;
-  -webkit-transform: rotate(-45deg) translate(0, -50%) !important;
-  transform: rotate(-45deg) translate(0, -50%) !important;
+  -webkit-transform: rotate(-45deg) translate(0, -50%);
+  transform: rotate(-45deg) translate(0, -50%);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+body.rtl .sidebar-nav .active > .has-arrow::after,
+body.rtl .sidebar-nav li > .has-arrow.active::after,
+body.rtl .sidebar-nav .has-arrow[aria-expanded=true]::after {
+  transform: rotate(225deg) translate(0, -50%);
+  -webkit-transform: rotate(225deg) translate(0, -50%);
+  top: 42%;
+  width: 7px;
 }
 .sidebar-nav .has-arrow::after {
   border-color: #626878;
@@ -12489,6 +12499,10 @@ a.link:hover, a.link:focus {
 #main-sidenav {
   height: 100%;
   padding-right: 10px;
+}
+body.rtl #main-sidenav {
+  padding-left: 10px;
+  padding-right: 0;
 }
 
 /* ----------------------------------------------------------
