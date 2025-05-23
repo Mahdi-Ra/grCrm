@@ -17,7 +17,7 @@
                 <div class="p-b-5">
                     <label class="custom-control custom-checkbox table-config-checkbox-container">
                         <input name="tableconfig_column_1" type="checkbox"
-                            class="custom-control-input table-config-checkbox cursor-pointer"
+                            class="custom-control-input table-config-checkbox cursor-pointers"
                             {{ runtimePrechecked(config('table.tableconfig_column_1')) }}>
                         <span class="custom-control-indicator"></span>
                         <span class="custom-control-description">@lang('lang.id')</span>
