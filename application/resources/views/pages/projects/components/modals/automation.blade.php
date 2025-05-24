@@ -1,6 +1,6 @@
     <!--project_automation_status-->
     <div class="form-group row">
-        <label class="col-sm-3 text-left control-label col-form-label">@lang('lang.automation')</label>
+        <label class="col-sm-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.automation')</label>
         <div class="col-sm-9 text-left">
             <select class="select2-basic form-control form-control-sm select2-preselected"
                 id="project_automation_status" name="project_automation_status"

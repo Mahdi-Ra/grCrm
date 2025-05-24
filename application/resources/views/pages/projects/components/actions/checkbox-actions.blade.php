@@ -1,4 +1,4 @@
-<div class="col-12 align-self-center hidden checkbox-actions box-shadow-minimum"
+<div class="col-12 align-self-center hidden checkbox-actions box-shadow-minimum {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
     id="projects-checkbox-actions-container">
     <!--button-->
     @if(config('visibility.action_buttons_edit'))

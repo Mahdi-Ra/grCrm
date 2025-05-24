@@ -13,7 +13,7 @@
         </span>
     </td>
     @endif
-    <td class="contacts_col_first_name" id="contacts_col_first_name_{{ $contact->id }}">
+    <td class="contacts_col_first_name {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contacts_col_first_name_{{ $contact->id }}">
         <span class="user-avatar-container"><img src="{{ $contact->avatar }}" alt="user"
                 class="img-circle avatar-xsmall">
             @if($contact->is_online)
@@ -23,7 +23,7 @@
         </span>
         <!--add item modal-->
         @if(config('visibility.show_contact_profile'))
-        <a href="javascript:void(0);" class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form user_profile_name_{{ $contact->id }}"
+        <a href="javascript:void(0);" class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form user_profile_name_{{ $contact->id }} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
             data-toggle="modal" data-target="#commonModal" data-url="{{ url('contacts/'.$contact->id) }}"
             data-loading-target="commonModalBody"
             data-modal-title="" data-modal-size="modal-md"
@@ -41,21 +41,21 @@
 
     </td>
     @if(config('visibility.contacts_col_client'))
-    <td class="contacts_col_company" id="contacts_col_company_{{ $contact->id }}">
+    <td class="contacts_col_company {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contacts_col_company_{{ $contact->id }}">
         <a href="{{ url('/clients') }}/{{ $contact->clientid }}">{{ str_limit($contact->client_company_name, 15) }}</a>
     </td>
     @endif
-    <td class="contacts_col_email" id="contacts_col_email_{{ $contact->id }}">
+    <td class="contacts_col_email {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contacts_col_email_{{ $contact->id }}">
         {{ $contact->email }}
     </td>
-    <td class="contacts_col_phone" id="contacts_col_phone_{{ $contact->id }}">{{ $contact->phone ?? '---'}}</td>
+    <td class="contacts_col_phone {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contacts_col_phone_{{ $contact->id }}">{{ $contact->phone ?? '---'}}</td>
     @if(config('visibility.contacts_col_last_active'))
-    <td class="contacts_col_last_active" id="contacts_col_last_active_{{ $contact->id }}">
+    <td class="contacts_col_last_active {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contacts_col_last_active_{{ $contact->id }}">
         {{ $contact->carbon_last_seen }}
     </td>
     @endif
     @if(config('visibility.action_column'))
-    <td class="contacts_col_action actions_column" id="contacts_col_action_{{ $contact->id }}">
+    <td class="contacts_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contacts_col_action_{{ $contact->id }}">
         <!--action button-->
         <span class="list-table-action dropdown font-size-inherit">
             <!--delete-->

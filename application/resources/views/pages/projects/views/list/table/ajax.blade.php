@@ -13,11 +13,11 @@
     </td>
     @endif
     <!--tableconfig_column_1 [project_id]-->
-    <td class="projects_col_id {{ config('table.tableconfig_column_1') }} tableconfig_column_1">
+    <td class="projects_col_id {{ config('table.tableconfig_column_1') }} tableconfig_column_1 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="{{ _url('/projects/'.$project->project_id) }}">{{ $project->project_id }}</label></a>
     </td>
     <!--tableconfig_column_2 [project_title]-->
-    <td class="projects_col_project {{ config('table.tableconfig_column_2') }} tableconfig_column_2">
+    <td class="projects_col_project {{ config('table.tableconfig_column_2') }} tableconfig_column_2 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="{{ _url('/projects/'.$project->project_id) }}">{{ str_limit($project->project_title ??'---', 20) }}<a />
             <!--automation-->
             @if(auth()->user()->is_team && $project->project_automation_status == 'enabled')
@@ -27,21 +27,21 @@
     </td>
     <!--tableconfig_column_3 [client_company_name]-->
     @if(config('visibility.projects_col_client'))
-    <td class="projects_col_client {{ config('table.tableconfig_column_3') }} tableconfig_column_3">
+    <td class="projects_col_client {{ config('table.tableconfig_column_3') }} tableconfig_column_3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a
             href="/clients/{{ $project->project_clientid }}">{{ str_limit($project->client_company_name ??'---', 12) }}</a>
     </td>
     @endif
     <!--tableconfig_column_4 [project_date_start]-->
-    <td class="projects_col_start_date {{ config('table.tableconfig_column_4') }} tableconfig_column_4">
+    <td class="projects_col_start_date {{ config('table.tableconfig_column_4') }} tableconfig_column_4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($project->project_date_start) }}
     </td>
     <!--tableconfig_column_5 [project_date_due]-->
-    <td class="projects_col_end_date {{ config('table.tableconfig_column_5') }} tableconfig_column_5">
+    <td class="projects_col_end_date {{ config('table.tableconfig_column_5') }} tableconfig_column_5 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($project->project_date_due) }}</td>
     <!--tableconfig_column_6 [tags]-->
     @if(config('visibility.projects_col_tags'))
-    <td class="projects_col_tags {{ config('table.tableconfig_column_6') }} tableconfig_column_6">
+    <td class="projects_col_tags {{ config('table.tableconfig_column_6') }} tableconfig_column_6 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--tag-->
         @if(count($project->tags ?? []) > 0)
         @foreach($project->tags->take(1) as $tag)
@@ -61,7 +61,7 @@
     </td>
     @endif
     <!--tableconfig_column_7 [project_progress]-->
-    <td class="projects_col_progress p-r-20 {{ config('table.tableconfig_column_7') }} tableconfig_column_7">
+    <td class="projects_col_progress p-r-20 {{ config('table.tableconfig_column_7') }} tableconfig_column_7 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="progress" data-toggle="tooltip" title="{{ $project->project_progress }}%">
             @if($project->project_progress == 100)
             <div class="progress-bar bg-success w-100 h-px-10 font-11 font-weight-500" data-toggle="tooltip"
@@ -75,87 +75,87 @@
     </td>
 
     <!--tableconfig_column_8 [count_pending_tasks]-->
-    <td class="col_count_pending_tasks {{ config('table.tableconfig_column_8') }} tableconfig_column_8">
+    <td class="col_count_pending_tasks {{ config('table.tableconfig_column_8') }} tableconfig_column_8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $project->count_pending_tasks }}
     </td>
 
     <!--tableconfig_column_9 [count_tasks_completed]-->
-    <td class="col_count_completed_tasks {{ config('table.tableconfig_column_9') }} tableconfig_column_9">
+    <td class="col_count_completed_tasks {{ config('table.tableconfig_column_9') }} tableconfig_column_9 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $project->count_completed_tasks }}
     </td>
 
     <!--tableconfig_column_10 [sum_invoices_all]-->
 
-    <td class="col_sum_invoices_all {{ config('table.tableconfig_column_10') }} tableconfig_column_10">
+    <td class="col_sum_invoices_all {{ config('table.tableconfig_column_10') }} tableconfig_column_10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($project->sum_invoices_all) }}
     </td>
 
     <!--tableconfig_column_11 [sum_all_payments]-->
-    <td class="col_sum_all_payments {{ config('table.tableconfig_column_11') }} tableconfig_column_11">
+    <td class="col_sum_all_payments {{ config('table.tableconfig_column_11') }} tableconfig_column_11 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($project->sum_all_payments) }}
     </td>
 
     <!--tableconfig_column_12 [sum_outstanding_balance]-->
     @if(config('visibility.role_invoices'))
-    <td class="col_sum_outstanding_balance {{ config('table.tableconfig_column_12') }} tableconfig_column_12">
+    <td class="col_sum_outstanding_balance {{ config('table.tableconfig_column_12') }} tableconfig_column_12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($project->sum_outstanding_balance) }}
     </td>
     @endif
 
     <!--tableconfig_column_13 [project_billing_type]-->
     @if(config('visibility.role_invoices'))
-    <td class="col_project_billing_type {{ config('table.tableconfig_column_13') }} tableconfig_column_13">
+    <td class="col_project_billing_type {{ config('table.tableconfig_column_13') }} tableconfig_column_13 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeLang($project->project_billing_type) }}
     </td>
     @endif
 
     <!--tableconfig_column_14 [project_billing_estimated_hours]-->
     @if(config('visibility.role_estimates'))
-    <td class="col_project_billing_estimated_hours {{ config('table.tableconfig_column_14') }} tableconfig_column_14">
+    <td class="col_project_billing_estimated_hours {{ config('table.tableconfig_column_14') }} tableconfig_column_14 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $project->project_billing_estimated_hours }}
     </td>
     @endif
 
     <!--tableconfig_column_15 [project_billing_costs_estimate]-->
     @if(config('visibility.role_estimates'))
-    <td class="col_project_billing_costs_estimate {{ config('table.tableconfig_column_15') }} tableconfig_column_15">
+    <td class="col_project_billing_costs_estimate {{ config('table.tableconfig_column_15') }} tableconfig_column_15 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($project->project_billing_costs_estimate) }}
     </td>
     @endif
 
     <!--tableconfig_column_16 [sum_hours]-->
     @if(config('visibility.role_timesheets'))
-    <td class="col_sum_hours {{ config('table.tableconfig_column_16') }} tableconfig_column_16">
+    <td class="col_sum_hours {{ config('table.tableconfig_column_16') }} tableconfig_column_16 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeSecondsWholeHours($project->sum_hours) }}:{{ runtimeSecondsWholeMinutesZero($project->sum_hours) }}
     </td>
     @endif
 
     <!--tableconfig_column_17 [sum_expenses]-->
     @if(config('visibility.role_expenses'))
-    <td class="col_sum_expenses {{ config('table.tableconfig_column_17') }} tableconfig_column_17">
+    <td class="col_sum_expenses {{ config('table.tableconfig_column_17') }} tableconfig_column_17 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($project->sum_expenses) }}
     </td>
     @endif
 
     <!--tableconfig_column_18 [count_files]-->
-    <td class="col_count_files {{ config('table.tableconfig_column_18') }} tableconfig_column_18">
+    <td class="col_count_files {{ config('table.tableconfig_column_18') }} tableconfig_column_18 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $project->count_files }}
     </td>
 
     <!--tableconfig_column_19 [count_tickets_open]-->
-    <td class="count_tickets_open {{ config('table.tableconfig_column_19') }} tableconfig_column_19">
+    <td class="count_tickets_open {{ config('table.tableconfig_column_19') }} tableconfig_column_19 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $project->count_tickets_open }}
     </td>
 
     <!--tableconfig_column_20 [count_tickets_closed]-->
-    <td class="col_count_tickets_closed {{ config('table.tableconfig_column_20') }} tableconfig_column_20">
+    <td class="col_count_tickets_closed {{ config('table.tableconfig_column_20') }} tableconfig_column_20 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $project->count_tickets_closed }}
     </td>
 
 
     <!--tableconfig_column_21 [assigned]-->
     @if(config('visibility.projects_col_team'))
-    <td class="projects_col_team {{ config('table.tableconfig_column_21') }} tableconfig_column_21">
+    <td class="projects_col_team {{ config('table.tableconfig_column_21') }} tableconfig_column_21 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--assigned users-->
         @if(count($project->assigned ?? []) > 0)
         @foreach($project->assigned->take(2) as $user)
@@ -175,7 +175,7 @@
     </td>
     @endif
     <!--tableconfig_column_22 [project_status]-->
-    <td class="projects_col_status {{ config('table.tableconfig_column_22') }} tableconfig_column_22">
+    <td class="projects_col_status {{ config('table.tableconfig_column_22') }} tableconfig_column_22 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span
             class="label {{ runtimeProjectStatusColors($project->project_status, 'label') }}">{{ runtimeLang($project->project_status) }}</span>
         <!--archived-->
@@ -185,7 +185,7 @@
         @endif
     </td>
     @if(config('visibility.projects_col_actions'))
-    <td class="projects_col_action actions_column">
+    <td class="projects_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--action button-->
         <span class="list-table-action dropdown font-size-inherit">
             <div class="dropdown-menu" aria-labelledby="quick-access-button">
@@ -258,7 +258,7 @@
                 class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm">
                 <i class="ti-more"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="listTableAction">
+            <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
                 @include('pages.projects.views.common.dropdown-menu-team')
             </div>
         </span>

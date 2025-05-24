@@ -269,7 +269,7 @@
                         <th class="col_action with-table-config-icon {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a>
 
                             <!--[tableconfig]-->
-                            <div class="table-config-icon {{ app()->getLocale() == 'persian' ? 'icon-rtl' : 'icon-ltr' }}">
+                            <div class="table-config-icon">
                                 <span class="text-default js-toggle-table-config-panel"
                                     data-target="table-config-clients">
                                     <i class="sl-icon-settings">

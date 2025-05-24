@@ -3,7 +3,7 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.filter_clients')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="sidepanel-filter-clients"></i>

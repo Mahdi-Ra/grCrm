@@ -18647,12 +18647,8 @@ chat application Page
 .with-table-config-icon .table-config-icon {
   position: absolute;
   top: 0px;
-  right: 0;
-}
-.icon-rtl.with-table-config-icon .table-config-icon {
-  position: absolute;
-  top: 0px;
-  left: 0;
+  /*right: 0;*/
+  inset-inline-end: 0;
 }
 .with-table-config-icon .table-config-icon span {
   display: inline-block;

@@ -2,7 +2,7 @@
 <div class="right-sidebar" id="table-config-projects">
     <form id="table-config-form">
         <div class="slimscrollright">
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.table_settings')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="table-config-projects"></i>

@@ -1,7 +1,7 @@
 <div id="js-projects-modal-add-edit" data-project-progress=" {{ $project['project_progress'] ?? 0 }}">
     <div class="form-group form-group-checkbox row">
-        <label class="col-10 col-form-label text-left">{{ cleanLang(__('lang.set_progress_manually')) }}?</label>
-        <div class="col-2 text-left p-t-5">
+        <label class="col-10 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.set_progress_manually')) }}?</label>
+        <div class="col-2 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5">
             <input type="checkbox" id="project_progress_manually" name="project_progress_manually"
                 class="filled-in chk-col-light-blue"
                 {{ runtimePrechecked($project['project_progress_manually'] ?? '') }}>
@@ -15,7 +15,7 @@
             <div class="col-sm-10 p-l-30">
                 <div id="edit_project_progress_bar"></div>
             </div>
-            <div class="col-sm-2 text-right">
+            <div class="col-sm-2 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                 <strong>
                     <span id="edit_project_progress_display">20</span>%</strong>
             </div>
@@ -23,7 +23,7 @@
         <input type="hidden" name="project_progress" value="{{ $project->project_progress ?? '' }}"
             id="project_progress" />
     </div>
-    <div class="alert alert-info m-t-30">
+    <div class="alert alert-info m-t-30 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <h5 class="text-info">@lang('lang.update_progress_info')
     </div>
 

@@ -18,29 +18,29 @@
                             </span>
                         </th>
                         @endif
-                        <th class="contacts_col_first_name"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="contacts_col_first_name {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_first_name" href="javascript:void(0)"
                                 data-url="{{ urlResource('/users?action=sort&orderby=first_name&sortorder=asc') }}">{{ cleanLang(__('lang.name')) }}<span class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @if(config('visibility.contacts_col_client'))
-                        <th class="contacts_col_company"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="contacts_col_company {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_company_name" href="javascript:void(0)"
                                 data-url="{{ urlResource('/users?action=sort&orderby=company_name&sortorder=asc') }}">{{ cleanLang(__('lang.client')) }}<span class="sorting-icons"><i class="ti-arrows-vertical"></i></span>
                         </th>
                         @endif
-                        <th class="contacts_col_email"><a class="js-ajax-ux-request js-list-sorting" id="sort_email"
+                        <th class="contacts_col_email {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_email"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/users?action=sort&orderby=email&sortorder=asc') }}">{{ cleanLang(__('lang.email')) }}<span class="sorting-icons"><i class="ti-arrows-vertical"></i></span></th>
-                        <th class="contacts_col_phone"><a class="js-ajax-ux-request js-list-sorting" id="sort_phone"
+                        <th class="contacts_col_phone {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_phone"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/users?action=sort&orderby=phone&sortorder=asc') }}">{{ cleanLang(__('lang.phone')) }}<span class="sorting-icons"><i class="ti-arrows-vertical"></i></span></th>
                         @if(config('visibility.contacts_col_last_active'))
-                        <th class="contacts_col_last_active"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="contacts_col_last_active {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_last_seen" href="javascript:void(0)"
                                 data-url="{{ urlResource('/users?action=sort&orderby=last_seen&sortorder=asc') }}">{{ cleanLang(__('lang.last_seen')) }}<span class="sorting-icons"><i class="ti-arrows-vertical"></i></span></th>
                         @endif
                         @if(config('visibility.action_column'))
-                        <th class="contacts_col_action"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a></th>
+                        <th class="contacts_col_action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a></th>
                         @endif
                     </tr>
                 </thead>

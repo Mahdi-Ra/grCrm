@@ -23,7 +23,7 @@
 </div>
 
 
-<div class="alert alert-info m-t-30">
+<div class="alert alert-info m-t-30 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
     @lang('lang.bulk_assign_info')
 </div>
 @endif

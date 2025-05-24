@@ -2,7 +2,7 @@
 <div class="right-sidebar" id="table-config-clients">
     <form id="table-config-form">
         <div class="slimscrollright">
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <i class="icon-Filter-2"></i>{{ cleanLang(__('lang.table_settings')) }}
                 <span>
                     <i class="ti-close js-close-side-panels" data-target="table-config-clients"></i>
@@ -15,7 +15,7 @@
 
                 <!--tableconfig_column_1 [client_id]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_1" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointers"
                             {{ runtimePrechecked(config('table.tableconfig_column_1')) }}>
@@ -26,7 +26,7 @@
 
                 <!--tableconfig_column_2 [client_company_name]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_2" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_2')) }}>
@@ -37,7 +37,7 @@
 
                 <!--tableconfig_column_3 [account_owner]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_3" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_3')) }}>
@@ -49,7 +49,7 @@
                 <!--tableconfig_column_4 [count_pending_projects]-->
                 @if(config('visibility.modules.projects'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_4" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_4')) }}>
@@ -62,7 +62,7 @@
                 <!--tableconfig_column_5 [count_completed_projects]-->
                 @if(config('visibility.modules.projects'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_5" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_5')) }}>
@@ -75,7 +75,7 @@
                 <!--tableconfig_column_6 [count_pending_tasks]-->
                 @if(config('visibility.modules.tasks'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_6" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_6')) }}>
@@ -88,7 +88,7 @@
                 <!--tableconfig_column_7 [count_completed_tasks]-->
                 @if(config('visibility.modules.tasks'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_7" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_7')) }}>
@@ -101,7 +101,7 @@
                 <!--tableconfig_column_8 [count_tickets_open]-->
                 @if(config('visibility.modules.tickets'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_8" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_8')) }}>
@@ -114,7 +114,7 @@
                 <!--tableconfig_column_9 [count_tickets_closed]-->
                 @if(config('visibility.modules.tickets'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_9" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_9')) }}>
@@ -127,7 +127,7 @@
                 <!--tableconfig_column_10 [sum_estimates_accepted]-->
                 @if(config('visibility.modules.estimates') && config('visibility.role_estimates'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_10" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_10')) }}>
@@ -140,7 +140,7 @@
                 <!--tableconfig_column_11 [sum_estimates_declined]-->
                 @if(config('visibility.modules.estimates') && config('visibility.role_estimates'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_11" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_11')) }}>
@@ -153,7 +153,7 @@
                 <!--tableconfig_column_12 [sum_invoices_all]-->
                 @if(config('visibility.modules.invoices') && config('visibility.role_invoices'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_12" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_12')) }}>
@@ -166,7 +166,7 @@
                 <!--tableconfig_column_13 [sum_all_payments]-->
                 @if(config('visibility.modules.payments') && config('visibility.role_payments'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_13" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_13')) }}>
@@ -179,7 +179,7 @@
                 <!--tableconfig_column_14 [sum_outstanding_balance]-->
                 @if(config('visibility.modules.invoices') && config('visibility.role_invoices'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_14" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_14')) }}>
@@ -192,7 +192,7 @@
                 <!--tableconfig_column_15 [sum_subscriptions_active]-->
                 @if(config('visibility.modules.subscriptions') && config('visibility.role_subscriptions'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_15" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_15')) }}>
@@ -206,7 +206,7 @@
                 <!--tableconfig_column_16 [sum_proposals_accepted]-->
                 @if(config('visibility.modules.proposals') && config('visibility.role_proposals'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_16" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_16')) }}>
@@ -220,7 +220,7 @@
                 <!--tableconfig_column_17 [sum_proposals_declined]-->
                 @if(config('visibility.modules.proposals') && config('visibility.role_proposals'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_17" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_17')) }}>
@@ -234,7 +234,7 @@
                 <!--tableconfig_column_18 [sum_contracts]-->
                 @if(config('visibility.modules.contracts') && config('visibility.role_contracts'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_18" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_18')) }}>
@@ -247,7 +247,7 @@
                 <!--tableconfig_column_19 [count_hours_worked]-->
                 @if(config('visibility.modules.timesheets') && config('visibility.role_timesheets'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_19" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_19')) }}>
@@ -260,7 +260,7 @@
                 <!--tableconfig_column_20 [count_tickets_open]-->
                 @if(config('visibility.modules.tickets'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_20" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_20')) }}>
@@ -273,7 +273,7 @@
                 <!--tableconfig_column_21 [count_tickets_closed]-->
                 @if(config('visibility.modules.tickets'))
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_21" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_21')) }}>
@@ -285,7 +285,7 @@
 
                 <!--tableconfig_column_22 [count_users]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_22" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_22')) }}>
@@ -296,7 +296,7 @@
 
                 <!--tableconfig_column_23 [tags]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <input name="tableconfig_column_23" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             {{ runtimePrechecked(config('table.tableconfig_column_23')) }}>
@@ -309,7 +309,7 @@
 
             <!--tableconfig_column_24 [category]-->
             <div class="p-b-5">
-                <label class="custom-control custom-checkbox table-config-checkbox-container">
+                <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                     <input name="tableconfig_column_24" type="checkbox"
                         class="custom-control-input table-config-checkbox cursor-pointer"
                         {{ runtimePrechecked(config('table.tableconfig_column_24')) }}>
@@ -322,7 +322,7 @@
 
         <!--tableconfig_column_25 [status]-->
         <div class="p-b-5">
-            <label class="custom-control custom-checkbox table-config-checkbox-container">
+            <label class="custom-control custom-checkbox table-config-checkbox-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <input name="tableconfig_column_25" type="checkbox"
                     class="custom-control-input table-config-checkbox cursor-pointer"
                     {{ runtimePrechecked(config('table.tableconfig_column_25')) }}>

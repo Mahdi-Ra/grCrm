@@ -1,5 +1,5 @@
 <div class="form-group row">
-    <label for="example-month-input" class="col-12 col-form-label text-left">@lang('lang.status')</label>
+    <label for="example-month-input" class="col-12 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.status')</label>
     <div class="col-sm-12">
         <select class="select2-basic form-control form-control-sm" id="project_status" name="project_status">
             <option value="not_started">
@@ -18,7 +18,7 @@
 
 <!--skip_notifications-->
 <div class="modal-selector m-b-0 m-t-30">
-    <div class="form-group form-group-checkbox row">
+    <div class="form-group form-group-checkbox row {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="col-12 ">
             <input type="checkbox" id="skip_notifications" name="skip_notifications"
                 class="filled-in chk-col-light-blue">

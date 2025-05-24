@@ -1,5 +1,5 @@
 <div class="form-group row">
-    <label for="example-month-input" class="col-12 col-form-label text-left">{{ cleanLang(__('lang.status')) }}</label>
+    <label for="example-month-input" class="col-12 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.status')) }}</label>
     <div class="col-sm-12">
         <select class="select2-basic form-control form-control-sm" id="project_status" name="project_status">
             <option value="not_started" {{ runtimePreselected('not_started', $project->project_status) }}>
