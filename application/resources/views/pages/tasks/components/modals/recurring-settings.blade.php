@@ -4,7 +4,7 @@
         <!--repeat period-->
         <div class="form-group row">
             <label for="example-month-input"
-                class="col-sm-12 col-lg-4 col-form-label text-left">{{ cleanLang(__('lang.repeat_every')) }}</label>
+                class="col-sm-12 col-lg-4 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.repeat_every')) }}</label>
 
             <div class="col-sm-12 col-lg-3">
                 <input type="number" class="form-control form-control-sm" id="task_recurring_duration"
@@ -31,12 +31,12 @@
         <!--repeat cycle-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-4 text-left control-label col-form-label">{{ cleanLang(__('lang.cycles')) }}</label>
+                class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.cycles')) }}</label>
             <div class="col-sm-12 col-lg-3">
                 <input type="number" class="form-control form-control-sm" id="task_recurring_cycles"
                     name="task_recurring_cycles" value="{{ $task->task_recurring_cycles ?? 0}}">
             </div>
-            <div class="col-sm-12 col-lg-3">
+            <div class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <!--info tooltip-->
                 <div class="fx-info-tool-tip">
                     <span class="align-middle text-themecontrast font-16" data-toggle="tooltip"
@@ -49,7 +49,7 @@
         <!--next cycle date-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-4 text-left control-label col-form-label">{{ cleanLang(__('lang.first_task_date')) }}</label>
+                class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.first_task_date')) }}</label>
             <div class="col-sm-12 col-lg-3">
                 @if(isset($task['task_recurring']) && $task['task_recurring'] == 'yes')
                 <input type="text" class="form-control form-control-sm pickadate" name="task_recurring_next"
@@ -62,7 +62,7 @@
                 <input class="mysql-date" type="hidden" name="task_recurring_next" id="task_recurring_next" value="">
                 @endif
             </div>
-            <div class="col-sm-12 col-lg-3">
+            <div class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <!--info tooltip-->
                 <div class="fx-info-tool-tip">
                     <span class="align-middle text-themecontrast font-16" data-toggle="tooltip"
@@ -76,8 +76,8 @@
 
         <!--copy checklists-->
         <div class="form-group form-group-checkbox row">
-            <label class="col-4 col-form-label text-left">@lang('lang.copy_checklists')</label>
-            <div class="col-8 text-left p-t-5">
+            <label class="col-4 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.copy_checklists')</label>
+            <div class="col-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} p-t-5">
                 <input type="checkbox" id="task_recurring_copy_checklists" name="task_recurring_copy_checklists"
                     class="filled-in chk-col-light-blue"
                     {{ runtimePreChecked2($task->task_recurring_copy_checklists ?? 'yes', 'yes') }}>
@@ -88,8 +88,8 @@
 
         <!--copy files-->
         <div class="form-group form-group-checkbox row">
-            <label class="col-4 col-form-label text-left">@lang('lang.copy_files')</label>
-            <div class="col-8 text-left p-t-5">
+            <label class="col-4 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.copy_files')</label>
+            <div class="col-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} p-t-5">
                 <input type="checkbox" id="task_recurring_copy_files" name="task_recurring_copy_files"
                     class="filled-in chk-col-light-blue"
                     {{ runtimePreChecked2($task->task_recurring_copy_files ?? 'yes', 'yes') }}>
@@ -99,8 +99,8 @@
 
         <!--automatically assign-->
         <div class="form-group form-group-checkbox row">
-            <label class="col-4 col-form-label text-left">@lang('lang.automatically_assign')</label>
-            <div class="col-8 text-left p-t-5">
+            <label class="col-4 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.automatically_assign')</label>
+            <div class="col-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} p-t-5">
                 <input type="checkbox" id="task_recurring_automatically_assign" name="task_recurring_automatically_assign"
                     class="filled-in chk-col-light-blue"
                     {{ runtimePreChecked2($task->task_recurring_automatically_assign ?? 'yes', 'yes') }}>

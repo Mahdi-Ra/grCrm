@@ -7,54 +7,54 @@
                 data-form-id="tasks-list-table">
                 <thead>
                     <tr>
-                        <th class="tasks_col_title">
+                        <th class="tasks_col_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_task_title" href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=task_title&sortorder=asc') }}">{{ cleanLang(__('lang.title')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @if(config('visibility.tasks_col_project'))
-                        <th class="tasks_col_title">
+                        <th class="tasks_col_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_task_project" href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=task_project&sortorder=asc') }}">{{ cleanLang(__('lang.project')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
                         @if(config('visibility.tasks_col_milestone'))
-                        <th class="tasks_col_milestone">
+                        <th class="tasks_col_milestone {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_milestone" href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=milestone&sortorder=asc') }}">{{ cleanLang(__('lang.milestone')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
                         @if(config('visibility.tasks_col_date'))
-                        <th class="tasks_col_added">
+                        <th class="tasks_col_added {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_task_date" href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=task_date&sortorder=asc') }}">{{ cleanLang(__('lang.created')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
-                        <th class="tasks_col_deadline">
+                        <th class="tasks_col_deadline {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_task_date_due"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=task_date_due&sortorder=asc') }}">{{ cleanLang(__('lang.deadline')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @if(config('visibility.tasks_col_assigned'))
-                        <th class="tasks_col_assigned"><a href="javascript:void(0)">{{ cleanLang(__('lang.assigned')) }}</a></th>
+                        <th class="tasks_col_assigned {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">{{ cleanLang(__('lang.assigned')) }}</a></th>
                         @endif
                         @if(config('visibility.tasks_col_all_time'))
-                        <th class="tasks_col_all_time"><a class="js-ajax-ux-request js-list-sorting" id="sort_mytime"
+                        <th class="tasks_col_all_time {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_mytime"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=mytime&sortorder=asc') }}">{{ cleanLang(__('lang.all_time')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
                         @endif
                         @if(config('visibility.tasks_col_mytime'))
-                        <th class="tasks_col_my_time"><a class="js-ajax-ux-request js-list-sorting" id="sort_mytime"
+                        <th class="tasks_col_my_time {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_mytime"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=mytime&sortorder=asc') }}">{{ cleanLang(__('lang.my_time')) }}<span class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
                         @endif
                         @if(config('visibility.tasks_col_priority'))
-                        <th class="tasks_col_priority">
+                        <th class="tasks_col_priority {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_task_priority"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=task_priority&sortorder=asc') }}">{{ cleanLang(__('lang.priority')) }}#<span
@@ -62,15 +62,15 @@
                         </th>
                         @endif
                         @if(config('visibility.tasks_col_tags'))
-                        <th class="tasks_col_tags"><a href="javascript:void(0)">{{ cleanLang(__('lang.tags')) }}</a></th>
+                        <th class="tasks_col_tags {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">{{ cleanLang(__('lang.tags')) }}</a></th>
                         @endif
-                        <th class="tasks_col_status">
+                        <th class="tasks_col_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <a class="js-ajax-ux-request js-list-sorting" id="sort_task_status"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/tasks?action=sort&orderby=task_status&sortorder=asc') }}">{{ cleanLang(__('lang.status')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
-                        <th class="tasks_col_action"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a></th>
+                        <th class="tasks_col_action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a></th>
                     </tr>
                 </thead>
                 <tbody id="tasks-td-container">

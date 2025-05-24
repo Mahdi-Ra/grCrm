@@ -3,7 +3,7 @@
     
     @foreach($stats as $stat)
     <div class="card">
-        <div class="card-body">
+        <div class="card-body {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <div class="row">
                 <div class="col-12">
                     <h3 id="stats-widget-value-1">{{ $stat['value'] ?? '' }}</h3>

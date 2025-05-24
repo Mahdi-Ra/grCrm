@@ -6591,6 +6591,9 @@ Other comon js for all pages
   overflow-x: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+body.rtl .table-responsive {
+  overflow-x: hidden;
+}
 
 .single-column .left-sidebar {
   display: none;
@@ -13751,7 +13754,8 @@ textarea.error {
   position: absolute;
   width: 2px;
   height: 90%;
-  left: 0px;
+  /*left: 0px;*/
+  inset-inline-start: 0;
   top: 2px;
   bottom: 2px;
 }

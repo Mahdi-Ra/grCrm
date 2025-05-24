@@ -1,7 +1,7 @@
 @foreach($tasks as $task)
 <!--each row-->
 <tr id="task_{{ $task->task_id }}" class="{{ runtimeTaskCompletedStatus($task->task_status) }} {{ $task->pinned_status ?? '' }}">
-    <td class="tasks_col_title td-edge">
+    <td class="tasks_col_title td-edge {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--for polling timers-->
         <input type="hidden" name="tasks[{{ $task->task_id }}]" value="{{ $task->assigned_to_me }}">
         <!--checkbox-->
@@ -29,7 +29,7 @@
         </span>
         @endif
         @if(config('visibility.tasks_nocheckbox'))
-        <a class="show-modal-button reset-card-modal-form js-ajax-ux-request p-l-5" href="javascript:void(0)"
+        <a class="show-modal-button reset-card-modal-form js-ajax-ux-request p-l-5 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
             data-toggle="modal" data-target="#cardModal" data-url="{{ urlResource('/tasks/'.$task->task_id) }}"
             data-loading-target="main-top-nav-bar"><span class="x-strike-through"
                 id="table_task_title_{{ $task->task_id }}">
@@ -42,23 +42,23 @@
         @endif
     </td>
     @if(config('visibility.tasks_col_project'))
-    <td class="tasks_col_project">
+    <td class="tasks_col_project {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="x-strike-through"><a title=""
                 href="{{ url('/projects/'.$task->project_id) }}">{{ str_limit($task->project_title ?? '---', 18) }}</a></span>
     </td>
     @endif
     @if(config('visibility.tasks_col_milestone'))
-    <td class="tasks_col_milestone">
+    <td class="tasks_col_milestone {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="x-strike-through">{{ str_limit($task->milestone_title ?? '---', 12) }}</span>
     </td>
     @endif
     @if(config('visibility.tasks_col_date'))
-    <td class="tasks_col_created">{{ runtimeDate($task->task_date_start) }}</td>
+    <td class="tasks_col_created {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ runtimeDate($task->task_date_start) }}</td>
     @endif
-    <td class="tasks_col_deadline">{{ runtimeDate($task->task_date_due) }}</td>
+    <td class="tasks_col_deadline {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ runtimeDate($task->task_date_due) }}</td>
 
     @if(config('visibility.tasks_col_assigned'))
-    <td class="tasks_col_assigned" id="tasks_col_assigned_{{ $task->task_id }}">
+    <td class="tasks_col_assigned {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="tasks_col_assigned_{{ $task->task_id }}">
         <!--assigned users-->
         @if(count($task->assigned ?? []) > 0)
         @foreach($task->assigned->take(2) as $user)
@@ -78,13 +78,13 @@
     </td>
     @endif
     @if(config('visibility.tasks_col_all_time'))
-    <td class="tasks_col_all_time">
+    <td class="tasks_col_all_time {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="x-timer-time"
             id="task_timer_all_table_{{ $task->task_id }}">{{ runtimeSecondsHumanReadable($task->sum_all_time, true) }}</span>
     </td>
     @endif
     @if(config('visibility.tasks_col_mytime'))
-    <td class="tasks_col_my_time">
+    <td class="tasks_col_my_time {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         @if($task->assigned_to_me)
         <span class="x-timer-time timers {{ runtimeTimerRunningStatus($task->timer_current_status) }}"
             id="task_timer_table_{{ $task->task_id }}">{!! clean(runtimeSecondsHumanReadable($task->my_time, false))
@@ -115,13 +115,13 @@
     </td>
     @endif
     @if(config('visibility.tasks_col_priority'))
-    <td class="tasks_col_priority">
+    <td class="tasks_col_priority {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span
             class="label label-outline-{{ $task->taskpriority_color }}">{{ $task->taskpriority_title }}</span>
     </td>
     @endif
     @if(config('visibility.tasks_col_tags'))
-    <td class="tasks_col_tags">
+    <td class="tasks_col_tags {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--tag-->
         @if(count($task->tags ?? []) > 0)
         @foreach($task->tags->take(2) as $tag)
@@ -140,7 +140,7 @@
         <!--more tags-->
     </td>
     @endif
-    <td class="tasks_col_status">
+    <td class="tasks_col_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="label label-{{ $task->taskstatus_color }}">{{ runtimeLang($task->taskstatus_title) }}</span>
         <!--archived-->
         @if($task->task_active_state == 'archived' && runtimeArchivingOptions())
@@ -148,7 +148,7 @@
             title="@lang('lang.archived')"><i class="ti-archive"></i></span>
         @endif
     </td>
-    <td class="tasks_col_action actions_column">
+    <td class="tasks_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--action button-->
         <span class="list-table-action dropdown font-size-inherit">
 
@@ -179,7 +179,7 @@
 
         <!--more button (team)-->
         @if(auth()->user()->is_team && $task->permission_super_user)
-        <span class="list-table-action dropdown  font-size-inherit">
+        <span class="list-table-action dropdown  font-size-inherit {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <button type="button" id="listTableAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 title="{{ cleanLang(__('lang.more')) }}"
                 class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm">
@@ -189,7 +189,7 @@
 
                 <!--clone task (team only)-->
                 @if(auth()->user()->is_team && $task->permission_edit_task)
-                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-toggle="modal" data-target="#commonModal" data-modal-title="@lang('lang.clone_task')"
                     data-url="{{ urlResource('/tasks/'.$task->task_id.'/clone') }}"
                     data-action-url="{{ urlResource('/tasks/'.$task->task_id.'/clone') }}" data-modal-size="modal-sm"
@@ -200,7 +200,7 @@
 
                 <!--record time-->
                 @if($task->assigned_to_me)
-                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-confirm-title="{{ cleanLang(__('lang.archive_task')) }}" data-toggle="modal"
                     data-target="#commonModal" data-modal-title="@lang('lang.record_your_work_time')"
                     data-url="{{ url('/timesheets/create?task_id='.$task->task_id) }}"
@@ -210,7 +210,7 @@
                 </a>
                 @endif
                 <!--stop all timers-->
-                <a class="dropdown-item confirm-action-danger"
+                <a class="dropdown-item confirm-action-danger {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-confirm-title="{{ cleanLang(__('lang.stop_all_timers')) }}"
                     data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}" data-ajax-type="PUT"
                     data-url="{{ url('/') }}/tasks/timer/{{ $task->task_id }}/stopall?source=list">
@@ -219,7 +219,7 @@
 
                 @if(auth()->user()->is_team && $task->permission_edit_task)
                 <!--recurring settings-->
-                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     href="javascript:void(0)" data-toggle="modal" data-target="#commonModal"
                     data-url="{{ urlResource('/tasks/'.$task->task_id.'/recurring-settings?source=list') }}"
                     data-loading-target="commonModalBody"
@@ -229,7 +229,7 @@
                     data-action-ajax-loading-target="tasks-td-container">{{ cleanLang(__('lang.recurring_settings')) }}</a>
                 <!--stop recurring -->
                 @if($task->task_recurring == 'yes')
-                <a class="dropdown-item confirm-action-info" href="javascript:void(0)"
+                <a class="dropdown-item confirm-action-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
                     data-confirm-title="{{ cleanLang(__('lang.stop_recurring')) }}"
                     data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}"
                     data-url="{{ urlResource('/tasks/'.$task->task_id.'/stop-recurring?source=list') }}">
@@ -239,7 +239,7 @@
 
                 <!--archive-->
                 @if($task->task_active_state == 'active' && runtimeArchivingOptions())
-                <a class="dropdown-item confirm-action-info"
+                <a class="dropdown-item confirm-action-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-confirm-title="{{ cleanLang(__('lang.archive_task')) }}"
                     data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}" data-ajax-type="PUT"
                     data-url="{{ urlResource('/tasks/'.$task->task_id.'/archive') }}">
@@ -248,7 +248,7 @@
                 @endif
                 <!--activate-->
                 @if($task->task_active_state == 'archived' && runtimeArchivingOptions())
-                <a class="dropdown-item confirm-action-info"
+                <a class="dropdown-item confirm-action-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-confirm-title="{{ cleanLang(__('lang.restore_task')) }}"
                     data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}" data-ajax-type="PUT"
                     data-url="{{ urlResource('/tasks/'.$task->task_id.'/activate') }}">

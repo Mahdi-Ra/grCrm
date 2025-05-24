@@ -28,7 +28,7 @@
 
                 <!--clone task (team only)-->
                 @if(auth()->user()->is_team && $task->permission_edit_task)
-                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-toggle="modal" data-target="#commonModal" data-modal-title="@lang('lang.clone_task')"
                     data-url="{{ urlResource('/tasks/'.$task->task_id.'/clone') }}"
                     data-action-url="{{ urlResource('/tasks/'.$task->task_id.'/clone') }}" data-modal-size="modal-lg"
@@ -40,7 +40,7 @@
 
                 <!--record time-->
                 @if($task->assigned_to_me)
-                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-confirm-title="{{ cleanLang(__('lang.archive_task')) }}" data-toggle="modal"
                     data-target="#commonModal" data-modal-title="@lang('lang.record_your_work_time')"
                     data-url="{{ url('/timesheets/create?task_id='.$task->task_id) }}"

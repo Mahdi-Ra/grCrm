@@ -3,7 +3,7 @@
     
     <?php $__currentLoopData = $stats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $stat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <div class="card">
-        <div class="card-body">
+        <div class="card-body <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
             <div class="row">
                 <div class="col-12">
                     <h3 id="stats-widget-value-1"><?php echo e($stat['value'] ?? ''); ?></h3>
