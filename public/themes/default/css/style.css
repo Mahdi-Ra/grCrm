@@ -14782,6 +14782,9 @@ textarea {
   z-index: 100;
   font-size: 18px;
 }
+body.rtl .card-modal .close {
+  left: 10px;
+}
 
 /**-------------------------------------------------------
 * rich text formatting
@@ -17246,6 +17249,10 @@ chat application Page
   text-shadow: none;
   right: 13px;
   top: 8px;
+}
+body.rtl .card-modal .modal-dialog .modal-content .modal-body button.close {
+  left: 13px;
+  text-align: left;
 }
 .card-modal .modal-dialog .modal-content .modal-body button.close.card-has-cover-image {
   top: -185px;

@@ -1,6 +1,6 @@
 @if(auth()->user()->is_team && $task->assigned_to_me && $task->permission_edit_task)
 <div class="x-section x-timer m-t-10" id="task-users-task-timer">
-    <div class="x-title  text-left p-b-5">
+    <div class="x-title  {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} p-b-5">
         <h6 class=" m-b-0">{{ cleanLang(__('lang.my_timer')) }}
             <!--info tooltip-->
             <span class="info-tooltip">

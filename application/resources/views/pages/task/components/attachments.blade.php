@@ -1,6 +1,6 @@
-<div class="card-attachments" id="card-attachments"
+<div class="card-attachments {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-attachments"
     data-upload-url="{{ url('/tasks/'.$task->task_id.'/attach-files')}}">
-    <div class="x-heading"><i class="mdi mdi-cloud-download"></i>{{ cleanLang(__('lang.attachments')) }}</div>
+    <div class="x-heading {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-cloud-download"></i>{{ cleanLang(__('lang.attachments')) }}</div>
     <div class="x-content row" id="card-attachments-container">
         <!--dynamic content here-->
     </div>
@@ -14,7 +14,7 @@
         <!--tags-->
         <div class="form-group row">
             <label
-                class="col-12 text-left control-label col-form-label required p-l-35">{{ cleanLang(__('lang.tags')) }}</label>
+                class="col-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required p-l-35">{{ cleanLang(__('lang.tags')) }}</label>
             <div class="col-12 p-l-35">
                 <select name="tags" id="tags"
                     class="form-control form-control-sm select2-multiple {{ runtimeAllowUserTags() }} select2-hidden-accessible card-attachment-tags"

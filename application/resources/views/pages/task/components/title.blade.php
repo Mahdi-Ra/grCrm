@@ -1,4 +1,4 @@
-<div class="card-title m-b-0">
+<div class="card-title m-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
     <span id="{{ runtimePermissions('task-edit-title', $task->permission_edit_task) }}"> {{ $task->task_title }}
     </span>
 </div>
@@ -7,7 +7,7 @@
 <div id="card-title-edit" class="card-title-edit hidden">
     <input type="text" class="form-control form-control-sm card-title-input" id="task_title" name="task_title">
     <!--button: subit & cancel-->
-    <div id="card-title-submit" class="p-t-10 text-right">
+    <div id="card-title-submit" class="p-t-10 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
         <button type="button" class="btn waves-effect waves-light btn-xs btn-default"
             id="card-title-button-cancel">{{ cleanLang(__('lang.cancel')) }}</button>
         <button type="button" class="btn waves-effect waves-light btn-xs btn-danger"
@@ -17,9 +17,9 @@
     </div>
 </div>
 @endif
-<div class=""><small><strong>@lang('lang.project'): </strong></small><small id="card-task-milestone-title"><a
+<div class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><small><strong>@lang('lang.project'): </strong></small><small id="card-task-milestone-title"><a
             href="{{ url('projects/'.$task->project_id ?? '') }}">{{ $task->project_title ?? '---' }}</a></small></div>
-<div class="m-b-15"><small><strong>@lang('lang.milestone'): </strong></small><small
+<div class="m-b-15 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><small><strong>@lang('lang.milestone'): </strong></small><small
         id="card-task-milestone-title">{{ runtimeLang($task->milestone_title, 'task_milestone') }}</small></div>
 
 <!--this item is archived notice-->

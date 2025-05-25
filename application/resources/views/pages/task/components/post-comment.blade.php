@@ -2,7 +2,7 @@
 <!--complete commenting form-->
 <div class="post-comment" id="post-card-comment-form">
     <!--placeholder textbox-->
-    <div class="x-message-field x-message-field-placeholder m-b-10" id="card-coment-placeholder-input-container"
+    <div class="x-message-field x-message-field-placeholder m-b-10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-coment-placeholder-input-container"
         data-show-element-container="card-comment-tinmyce-container">
         <textarea class="form-control form-control-sm w-100" rows="1"
             id="card-coment-placeholder-input">{{ cleanLang(__('lang.post_a_comment')) }}...</textarea>

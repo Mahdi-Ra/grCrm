@@ -1,5 +1,5 @@
 <!--heading-->
-<div class="x-heading p-t-10"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.my_notes')) }}</div>
+<div class="x-heading p-t-10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.my_notes')) }}</div>
 
 
 
@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="form-group text-right">
+    <div class="form-group {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
         <button type="button" class="btn btn-danger btn-xs ajax-request" data-loading-target="card-tasks-left-panel"
             data-url="{{ url('/tasks/content/'.$task->task_id.'/edit-mynotes') }}" data-type="form"
             data-loading-class="loading-before-centre" data-ajax-type="post" data-form-id="card-task-mynotes">

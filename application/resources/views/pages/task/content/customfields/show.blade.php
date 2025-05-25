@@ -1,5 +1,5 @@
 <!--heading-->
-<div class="x-heading p-t-10"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.custom_fields')) }}</div>
+<div class="x-heading p-t-10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.custom_fields')) }}</div>
 
 
 

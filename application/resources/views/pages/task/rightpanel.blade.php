@@ -2,7 +2,7 @@
     @if(config('visibility.task_is_open'))
     <!----------Assigned----------->
     @if(config('visibility.tasks_card_assigned'))
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.assigned_users')) }}</h6>
         </div>
@@ -30,12 +30,12 @@
 
     <!----------settings----------->
     <div class="x-section">
-        <div class="x-title">
+        <div class="x-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <h6>{{ cleanLang(__('lang.settings')) }}</h6>
         </div>
         <!--start date-->
         @if(config('visibility.tasks_standard_features'))
-        <div class="x-element" id="task-start-date"><i class="mdi mdi-calendar-plus"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="task-start-date"><i class="mdi mdi-calendar-plus"></i>
             <span>{{ cleanLang(__('lang.start_date')) }}:</span>
             @if($task->permission_edit_task)
             <span class="x-highlight x-editable card-pickadate"
@@ -51,7 +51,7 @@
         @endif
         <!--due date-->
         @if(config('visibility.tasks_standard_features'))
-        <div class="x-element" id="task-due-date"><i class="mdi mdi-calendar-clock"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="task-due-date"><i class="mdi mdi-calendar-clock"></i>
             <span>{{ cleanLang(__('lang.due_date')) }}:</span>
             @if($task->permission_edit_task)
             <span class="x-highlight x-editable card-pickadate"
@@ -66,7 +66,7 @@
         </div>
         @endif
         <!--status-->
-        <div class="x-element" id="card-task-status"><i class="mdi mdi-flag"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-task-status"><i class="mdi mdi-flag"></i>
             <span>{{ cleanLang(__('lang.status')) }}: </span>
             @if($task->permission_edit_task)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal"
@@ -79,7 +79,7 @@
         </div>
 
         <!--priority-->
-        <div class="x-element" id="card-task-priority"><i class="mdi mdi-flag"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-task-priority"><i class="mdi mdi-flag"></i>
             <span>{{ cleanLang(__('lang.priority')) }}: </span>
             @if($task->permission_edit_task)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal"
@@ -93,7 +93,7 @@
 
         <!--client visibility-->
         @if(auth()->user()->type =='team')
-        <div class="x-element" id="card-task-client-visibility"><i class="mdi mdi-eye"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-task-client-visibility"><i class="mdi mdi-eye"></i>
             <span>{{ cleanLang(__('lang.client')) }}:</span>
             @if($task->permission_edit_task)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal"
@@ -110,7 +110,7 @@
 
         <!--reminder-->
         @if(config('visibility.modules.reminders') && $task->project_type == 'project')
-        <div class="card-reminders-container" id="card-reminders-container">
+        <div class="card-reminders-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-reminders-container">
             @include('pages.reminders.cards.wrapper')
         </div>
         @endif
@@ -119,7 +119,7 @@
     </div>
 
     <!----------tags----------->
-    <div class="card-tags-container" id="card-tags-container">
+    <div class="card-tags-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-tags-container">
         @include('pages.task.components.tags')
     </div>
     @endif
@@ -134,7 +134,7 @@
 
 
     <!--dependencies-->
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.dependencies')) }}</h6>
         </div>
@@ -146,7 +146,7 @@
     @if(config('visibility.task_is_open'))
 
     <!----------actions----------->
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.actions')) }}</h6>
         </div>
@@ -218,7 +218,7 @@
     </div>
 
     <!----------meta infor----------->
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.information')) }}</h6>
         </div>

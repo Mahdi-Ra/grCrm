@@ -1,7 +1,7 @@
-<div class="card-checklist" id="card-checklist">
+<div class="card-checklist {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-checklist">
     <div class="x-heading clearfix">
-        <span class="pull-left"><i class="mdi mdi-checkbox-marked"></i>{{ cleanLang(__('lang.checklist')) }}</span>
-        <span class="pull-right p-t-5" id="card-checklist-progress">{{ $progress['completed'] }}</span>
+        <span class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }}"><i class="mdi mdi-checkbox-marked"></i>{{ cleanLang(__('lang.checklist')) }}</span>
+        <span class="{{ app()->getLocale() == 'persian' ? 'pull-left' : 'pull-right' }} p-t-5" id="card-checklist-progress">{{ $progress['completed'] }}</span>
     </div>
     <div class="progress" id="card-checklist-progress-container">
             @include('pages.task.components.progressbar')

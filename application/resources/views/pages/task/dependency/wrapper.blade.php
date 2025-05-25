@@ -10,7 +10,7 @@
 <div class="task-dependency-container hidden" id="task-dependency-create-container">
     <!--blocking_task-->
     <div class="form-group row">
-        <label class="col-sm-12 text-left control-label col-form-label">@lang('lang.blocking_task') <span
+        <label class="col-sm-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.blocking_task') <span
                 class="align-middle text-info font-16" data-toggle="tooltip" title="@lang('lang.task_blocking_info_2')"
                 data-placement="top"><i class="ti-info-alt"></i></span></label>
         <div class="col-sm-12">
@@ -26,7 +26,7 @@
     </div>
     <!--blocking_task-->
     <div class="form-group row">
-        <label class="col-sm-12 text-left control-label col-form-label">@lang('lang.dependency_type') <span
+        <label class="col-sm-12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}t control-label col-form-label">@lang('lang.dependency_type') <span
                 class="align-middle text-info font-16" data-toggle="tooltip" title="@lang('lang.task_blocking_info_1')"
                 data-placement="top"><i class="ti-info-alt"></i></span></label>
         <div class="col-sm-12">
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="buttons-block  p-b-0 p-t-0 text-right">
+    <div class="buttons-block  p-b-0 p-t-0 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
         <!--close button (task/lead cards only-->
         <button type="button" class="btn btn-rounded-x btn-default btn-xs ajax-request"
             id="card-task-dependency-close-button">@lang('lang.close')</button>

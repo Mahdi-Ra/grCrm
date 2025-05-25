@@ -1,12 +1,12 @@
 <div class="card-description" id="card-description">
-    <div class="x-heading"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.description')) }}</div>
-    <div class="x-content rich-text-formatting" id="card-description-container">
+    <div class="x-heading {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.description')) }}</div>
+    <div class="x-content rich-text-formatting {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-description-container">
         {!! clean($task->task_description) !!}
     </div>
     @if($task->permission_edit_task)
     <!--buttons: edit-->
     <div id="card-description-edit">
-        <div class="x-action" id="card-description-button-edit"><a href="javaScript:void(0);">{{ cleanLang(__('lang.edit_description')) }}</a>
+        <div class="x-action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-description-button-edit"><a href="javaScript:void(0);">{{ cleanLang(__('lang.edit_description')) }}</a>
         </div>
         <input type="hidden" name="task_description" id="card-description-input" value="">
     </div>

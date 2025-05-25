@@ -1,4 +1,4 @@
-<div class="x-heading p-t-10"><i class="mdi mdi-cached"></i>@lang('lang.recurring_settings')</div>
+<div class="x-heading p-t-10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-cached"></i>@lang('lang.recurring_settings')</div>
 
 
 
@@ -6,7 +6,7 @@
 <!--not recurring-->
 @if($task->task_recurring =='no' && !request()->filled('recurring_action') )
 <div class="x-no-result">
-    <div class="alert alert-info m-t-40 m-b-40">@lang('lang.task_is_not_recurring')</div>
+    <div class="alert alert-info m-t-40 m-b-40 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.task_is_not_recurring')</div>
     <div class="text-center p-t-10">
         <button class="btn btn-info btn-sm ajax-request" data-loading-class="loading-before-centre"
             data-loading-target="card-tasks-left-panel"
