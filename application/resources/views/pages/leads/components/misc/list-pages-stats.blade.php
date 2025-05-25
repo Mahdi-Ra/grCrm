@@ -2,7 +2,7 @@
 <div class="card-group table-stats-cards  {{ runtimePreferenceStatsPanelPosition(auth()->user()->stats_panel_position) }}" id="list-pages-stats-widget">
     
     @foreach($stats as $stat)
-    <div class="card">
+    <div class="card {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="card-body">
             <div class="row">
                 <div class="col-12">

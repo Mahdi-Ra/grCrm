@@ -1,5 +1,5 @@
 <!--heading-->
-<div class="x-heading"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.custom_fields')) }}</div>
+<div class="x-heading {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-file-document-box"></i>{{ cleanLang(__('lang.custom_fields')) }}</div>
 
 <!--Form Data-->
 @if(count($fields ?? []) > 0)
@@ -8,7 +8,7 @@
     <!--render the form-->
     @include('misc.customfields')
 
-    <div class="form-group text-right">
+    <div class="form-group {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
         <button type="button" class="btn waves-effect waves-light btn-xs btn-default ajax-request"
         data-url="{{ url('leads/content/'.$lead->lead_id.'/show-customfields') }}"
         data-loading-class="loading-before-centre" data-loading-target="card-leads-left-panel">@lang('lang.cancel')</button>

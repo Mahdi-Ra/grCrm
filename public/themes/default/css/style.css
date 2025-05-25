@@ -15057,8 +15057,14 @@ body.rtl .card-modal .close {
 .kanban-card .kanban-card-content-comntainer .x-footer .x-assigned {
   text-align: right;
 }
+body.rtl .kanban-card .kanban-card-content-comntainer .x-footer .x-assigned {
+  text-align: left;
+}
 .kanban-card .kanban-card-content-comntainer .x-footer .x-assigned img {
   margin-left: -12px;
+}
+body.rtl .kanban-card .kanban-card-content-comntainer .x-footer .x-assigned img {
+  margin-left: 0;
 }
 .kanban-card .kanban-card-content-comntainer .label {
   padding: 2px 8px;

@@ -9,7 +9,7 @@
         runtimeCoverImage($lead->lead_cover_image_uniqueid, $lead->lead_cover_image_filename) !!}>
 
     </div>
-    <div class="kanban-card-content-comntainer">
+    <div class="kanban-card-content-comntainer {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title wordwrap" id="kanban_lead_title_{{ $lead->lead_id }}">{{ $lead->lead_title }}
             <span class="x-action-button" id="card-action-button-{{ $lead->lead_id }}" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-dots-vertical"></i></span>

@@ -1,4 +1,4 @@
-<div class="card-title" id="{{ runtimePermissions('lead-edit-title', $lead->permission_edit_lead) }}">
+<div class="card-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="{{ runtimePermissions('lead-edit-title', $lead->permission_edit_lead) }}">
     {{ $lead->lead_title }}
 </div>
 

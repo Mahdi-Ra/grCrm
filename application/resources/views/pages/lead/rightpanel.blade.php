@@ -1,5 +1,5 @@
     <!----------Assigned----------->
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.assigned_users')) }}</h6>
         </div>
@@ -20,7 +20,7 @@
         <div class="x-element x-customer">{{ cleanLang(__('lang.customer')) }}</div>
         @endif
 
-        <div class="x-title">
+        <div class="x-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <h6>{{ cleanLang(__('lang.details')) }}</h6>
         </div>
         <!--Name-->
@@ -35,7 +35,7 @@
             @endif
         </div>
         <!--value-->
-        <div class="x-element"><i class="mdi mdi-cash-multiple"></i> <span>{{ cleanLang(__('lang.value')) }}: </span>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-cash-multiple"></i> <span>{{ cleanLang(__('lang.value')) }}: </span>
             @if($lead->permission_edit_lead)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal" id="card-lead-value" tabindex="0"
                 data-popover-content="card-lead-value-popover" data-value="{{ $lead->lead_value }}"
@@ -45,7 +45,7 @@
             @endif
         </div>
         <!--status-->
-        <div class="x-element" id="card-lead-status"><i class="mdi mdi-flag"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-lead-status"><i class="mdi mdi-flag"></i>
             <span>{{ cleanLang(__('lang.status')) }}: </span>
             @if($lead->permission_edit_lead)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal" id="card-lead-status-text" tabindex="0"
@@ -56,7 +56,7 @@
             @endif
         </div>
         <!--added-->
-        <div class="x-element" id="lead-date-added"><i class="mdi mdi-calendar-plus"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="lead-date-added"><i class="mdi mdi-calendar-plus"></i>
             <span>{{ cleanLang(__('lang.added')) }}:</span>
             @if($lead->permission_edit_lead)
             <span class="x-highlight x-editable card-pickadate"
@@ -71,7 +71,7 @@
         </div>
 
         <!--category-->
-        <div class="x-element" id="card-lead-category"><i class="mdi mdi-folder"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-lead-category"><i class="mdi mdi-folder"></i>
             <span>{{ cleanLang(__('lang.category')) }}:
             </span>
             @if($lead->permission_edit_lead)
@@ -83,7 +83,7 @@
             @endif
         </div>
         <!--last contacted-->
-        <div class="x-element" id="lead-contacted"><i class="mdi mdi-message-text"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="lead-contacted"><i class="mdi mdi-message-text"></i>
             <span>{{ cleanLang(__('lang.contacted')) }}:
             </span>
             @if($lead->permission_edit_lead)
@@ -98,7 +98,7 @@
             @endif
         </div>
         <!--telephone-->
-        <div class="x-element"><i class="mdi mdi-phone"></i> <span>{{ cleanLang(__('lang.telephone')) }}: </span>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-phone"></i> <span>{{ cleanLang(__('lang.telephone')) }}: </span>
             @if($lead->permission_edit_lead)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal" id="card-lead-phone" tabindex="0"
                 data-popover-content="card-lead-phone-popover" data-value="{{ $lead->lead_phone }}"
@@ -109,7 +109,7 @@
         </div>
 
         <!--email-->
-        <div class="x-element"><i class="mdi mdi-email"></i> <span>{{ cleanLang(__('lang.email')) }}: </span>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="mdi mdi-email"></i> <span>{{ cleanLang(__('lang.email')) }}: </span>
             @if($lead->permission_edit_lead)
             <span class="x-highlight x-editable js-card-settings-button-static" data-container=".card-modal" id="card-lead-email" tabindex="0"
                 data-popover-content="card-lead-email-popover" data-value="{{ $lead->lead_email }}"
@@ -120,7 +120,7 @@
         </div>
 
         <!--Source-->
-        <div class="x-element" id="card-lead-source"><i class="mdi mdi-magnify-plus"></i>
+        <div class="x-element {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-lead-source"><i class="mdi mdi-magnify-plus"></i>
             <span>{{ cleanLang(__('lang.source')) }}:
             </span>
             @if($lead->permission_edit_lead)
@@ -135,7 +135,7 @@
 
         <!--reminder-->
         @if(config('visibility.modules.reminders'))
-        <div class="card-reminders-container" id="card-reminders-container">
+        <div class="card-reminders-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-reminders-container">
             @include('pages.reminders.cards.wrapper')
         </div>
         @endif
@@ -146,13 +146,13 @@
 
 
     <!----------tags----------->
-    <div class="card-tags-container" id="card-tags-container">
+    <div class="card-tags-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-tags-container">
         @include('pages.lead.components.tags')
     </div>
 
 
     <!----------actions----------->
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.actions')) }}</h6>
         </div>
@@ -196,7 +196,7 @@
     </div>
 
     <!----------meta infor----------->
-    <div class="x-section">
+    <div class="x-section {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="x-title">
             <h6>{{ cleanLang(__('lang.information')) }}</h6>
         </div>

@@ -16,7 +16,7 @@
 
 
 <!--comments-->
-<div class="card-comments" id="card-comments">
+<div class="card-comments {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="card-comments">
     <div class="x-heading"><i class="mdi mdi-message-text"></i>Comments</div>
     <div class="x-content">
         @include('pages.lead.components.post-comment')
