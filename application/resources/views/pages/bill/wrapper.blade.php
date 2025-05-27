@@ -9,7 +9,7 @@
         <div class="col-md-12 col-lg-7 align-self-center {{ $page['crumbs_special_class'] ?? '' }}" id="breadcrumbs">
             <!--attached to project-->
             <a id="InvoiceTitleAttached"
-                class="{{ runtimeInvoiceAttachedProject('project-title', $bill->bill_projectid) }}"
+                class="{{ runtimeInvoiceAttachedProject('project-title', $bill->bill_projectid) }} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                 href="{{ _url('projects/'.$bill->bill_projectid) }}">
                 <h3 class="text-themecolor" id="InvoiceTitleProject">{{ $page['heading'] ?? '' }}</h3>
             </a>

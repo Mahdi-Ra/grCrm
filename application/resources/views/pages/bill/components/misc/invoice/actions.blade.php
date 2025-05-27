@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-5 align-self-center text-right p-b-9 {{ $page['list_page_actions_size'] ?? '' }} {{ $page['list_page_container_class'] ?? '' }}"
+<div class="col-md-12  col-lg-5 align-self-center {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-b-9 {{ $page['list_page_actions_size'] ?? '' }} {{ $page['list_page_container_class'] ?? '' }}"
     id="list-page-actions-container">
     <div id="list-page-actions">
         @if(auth()->user()->is_team && auth()->user()->role->role_invoices >= 2)
@@ -22,7 +22,7 @@
                 class="data-toggle-tooltip  list-actions-button btn btn-page-actions waves-effect waves-dark">
                 <i class="sl-icon-share-alt"></i>
             </button>
-            <div class="dropdown-menu w-px-250 p-t-20 p-l-20 p-r-20 js-stop-propagation"
+            <div class="dropdown-menu w-px-250 p-t-20 p-l-20 p-r-20 js-stop-propagation {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                 aria-labelledby="listTableAction">
                 <div class="form-group form-group-checkbox row m-b-0">
                     <div class="col-12">
@@ -98,7 +98,7 @@
                 class="data-toggle-tooltip  list-actions-button btn btn-page-actions waves-effect waves-dark">
                 <i class="sl-icon-refresh"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="listTableAction">
+            <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
                 <!--recurring settings-->
                 <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
                     href="javascript:void(0)" data-toggle="modal" data-target="#commonModal"

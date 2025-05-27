@@ -3,8 +3,8 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title"> <!--add class'due'to title panel -->
-                <i class="ti-alarm-clock display-inline-block m-t--5"></i>
+            <div class="rpanel-title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"> <!--add class'due'to title panel -->
+                <i class="ti-alarm-clock display-inline-block"></i>
                 <div class="display-inline-block" id="reminders-side-panel-title">
                     <!--dynamic title-->
                 </div>
