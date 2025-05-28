@@ -2,7 +2,7 @@
 <div class="right-sidebar" id="table-config-invoices">
     <form id="table-config-form">
         <div class="slimscrollright">
-            <div class="rpanel-title">
+            <div class="rpanel-title <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                 <i class="icon-Filter-2"></i><?php echo e(cleanLang(__('lang.table_settings'))); ?>
 
                 <span>
@@ -16,7 +16,7 @@
 
                 <!--tableconfig_column_1 [id]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_1" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_1'))); ?>>
@@ -27,7 +27,7 @@
 
                 <!--tableconfig_column_2 [parent id] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_2" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_2'))); ?>>
@@ -38,7 +38,7 @@
 
                 <!--tableconfig_column_3 [date]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_3" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_3'))); ?>>
@@ -49,7 +49,7 @@
 
                 <!--tableconfig_column_4 [due]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_4" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_4'))); ?>>
@@ -60,7 +60,7 @@
 
                 <!--tableconfig_column_5 [company name]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_5" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_5'))); ?>>
@@ -71,7 +71,7 @@
 
                 <!--tableconfig_column_6 [client contact] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_6" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_6'))); ?>>
@@ -82,7 +82,7 @@
 
                 <!--tableconfig_column_7 [created by] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_7" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_7'))); ?>>
@@ -93,7 +93,7 @@
 
                 <!--tableconfig_column_8 [project] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_8" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_8'))); ?>>
@@ -104,7 +104,7 @@
 
                 <!--tableconfig_column_9 [project_title] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_9" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_9'))); ?>>
@@ -115,7 +115,7 @@
 
                 <!--tableconfig_column_10 [tax] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_10" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_10'))); ?>>
@@ -126,7 +126,7 @@
 
                 <!--tableconfig_column_11 [discount type] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_11" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_11'))); ?>>
@@ -137,7 +137,7 @@
 
                 <!--tableconfig_column_12 [discount amount] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_12" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_12'))); ?>>
@@ -148,7 +148,7 @@
 
                 <!--tableconfig_column_13 [last payment - date] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_13" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_13'))); ?>>
@@ -160,7 +160,7 @@
 
                 <!--tableconfig_column_14 [last payment - amount] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_14" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_14'))); ?>>
@@ -172,7 +172,7 @@
 
                 <!--tableconfig_column_15 [last payment - method] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_15" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_15'))); ?>>
@@ -184,7 +184,7 @@
 
                 <!--tableconfig_column_16 [last payment - transaction id] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_16" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_16'))); ?>>
@@ -196,7 +196,7 @@
 
                 <!--tableconfig_column_17 [attachments] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_17" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_17'))); ?>>
@@ -207,7 +207,7 @@
 
                 <!--tableconfig_column_19 [scheduled publishing date] -->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_19" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_19'))); ?>>
@@ -218,7 +218,7 @@
 
                 <!--tableconfig_column_20 [payments]-->
                 <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_20" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_20'))); ?>>
@@ -229,7 +229,7 @@
 
                         <!--tableconfig_column_21 [amount]-->
                         <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_21" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_21'))); ?>>
@@ -240,7 +240,7 @@
 
                         <!--tableconfig_column_22 [balance]-->
                         <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_22" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_22'))); ?>>
@@ -251,7 +251,7 @@
 
                         <!--tableconfig_column_23 [status]-->
                         <div class="p-b-5">
-                    <label class="custom-control custom-checkbox table-config-checkbox-container">
+                    <label class="custom-control custom-checkbox table-config-checkbox-container <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                         <input name="tableconfig_column_23" type="checkbox"
                             class="custom-control-input table-config-checkbox cursor-pointer"
                             <?php echo e(runtimePrechecked(config('table.tableconfig_column_23'))); ?>>

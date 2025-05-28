@@ -15,7 +15,7 @@
     @endif
 
     <!--tableconfig_column_1 [id]-->
-    <td class="invoices_col_tableconfig_column_1 {{ config('table.tableconfig_column_1') }} tableconfig_column_1"
+    <td class="invoices_col_tableconfig_column_1 {{ config('table.tableconfig_column_1') }} tableconfig_column_1 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_id_{{ $invoice->bill_invoiceid }}">
         <a href="/invoices/{{ $invoice->bill_invoiceid }}">
             {{ $invoice->formatted_bill_invoiceid }} </a>
@@ -35,32 +35,32 @@
 
 
     <!--tableconfig_column_2 [parent id] -->
-    <td class="invoices_col_tableconfig_column_2 {{ config('table.tableconfig_column_2') }} tableconfig_column_2"
+    <td class="invoices_col_tableconfig_column_2 {{ config('table.tableconfig_column_2') }} tableconfig_column_2 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_2{{ $invoice->bill_invoiceid }}">
         {{ $invoice->bill_recurring_parent_id ?? '---' }}
     </td>
 
 
     <!--tableconfig_column_3 [date]-->
-    <td class="invoices_col_tableconfig_column_3 {{ config('table.tableconfig_column_3') }} tableconfig_column_3"
+    <td class="invoices_col_tableconfig_column_3 {{ config('table.tableconfig_column_3') }} tableconfig_column_3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_date_{{ $invoice->bill_invoiceid }}">
         {{ runtimeDate($invoice->bill_date) }}
     </td>
 
     <!--tableconfig_column_4 [due]-->
-    <td class="invoices_col_tableconfig_column_4 {{ config('table.tableconfig_column_4') }} tableconfig_column_4"
+    <td class="invoices_col_tableconfig_column_4 {{ config('table.tableconfig_column_4') }} tableconfig_column_4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_4_{{ $invoice->bill_invoiceid }}">
         {{ runtimeDate($invoice->bill_due_date ?? '') }}
     </td>
 
     <!--tableconfig_column_5 [company name]-->
-    <td class="invoices_col_tableconfig_column_5 {{ config('table.tableconfig_column_5') }} tableconfig_column_5"
+    <td class="invoices_col_tableconfig_column_5 {{ config('table.tableconfig_column_5') }} tableconfig_column_5 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_company_{{ $invoice->bill_invoiceid }}">
         <a href="/clients/{{ $invoice->bill_clientid }}">{{ str_limit($invoice->client_company_name ?? '---', 22) }}</a>
     </td>
 
     <!--tableconfig_column_6 [client contact] -->
-    <td class="invoices_col_tableconfig_column_6 {{ config('table.tableconfig_column_6') }} tableconfig_column_6"
+    <td class="invoices_col_tableconfig_column_6 {{ config('table.tableconfig_column_6') }} tableconfig_column_6 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_6_{{ $invoice->bill_invoiceid }}">
         @if(isset($invoice->contact_name) && $invoice->contact_name != '')
         <a href="javascript:void(0);" class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
@@ -75,7 +75,7 @@
     </td>
 
     <!--tableconfig_column_7 [created by] -->
-    <td class="invoices_col_tableconfig_column_7 {{ config('table.tableconfig_column_7') }} tableconfig_column_7"
+    <td class="invoices_col_tableconfig_column_7 {{ config('table.tableconfig_column_7') }} tableconfig_column_7 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_7_{{ $invoice->bill_invoiceid }}">
         <img src="{{ getUsersAvatar($invoice->avatar_directory, $invoice->avatar_filename, $invoice->bill_creatorid) }}"
             alt="user" class="img-circle avatar-xsmall">
@@ -83,25 +83,25 @@
     </td>
 
     <!--tableconfig_column_8 [project] -->
-    <td class="invoices_col_tableconfig_column_8 {{ config('table.tableconfig_column_8') }} tableconfig_column_8"
+    <td class="invoices_col_tableconfig_column_8 {{ config('table.tableconfig_column_8') }} tableconfig_column_8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_8_{{ $invoice->bill_invoiceid }}">
         {{ $invoice->bill_projectid ?? '---' }}
     </td>
 
     <!--tableconfig_column_9 [project_title] -->
-    <td class="invoices_col_tableconfig_column_9 {{ config('table.tableconfig_column_9') }} tableconfig_column_9"
+    <td class="invoices_col_tableconfig_column_9 {{ config('table.tableconfig_column_9') }} tableconfig_column_9 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_project_{{ $invoice->bill_invoiceid }}">
         <a href="/projects/{{ $invoice->bill_projectid }}">{{ str_limit($invoice->project_title ?? '---', 20) }}</a>
     </td>
 
     <!--tableconfig_column_10 [tax] -->
-    <td class="invoices_col_tableconfig_column_10 {{ config('table.tableconfig_column_10') }} tableconfig_column_10"
+    <td class="invoices_col_tableconfig_column_10 {{ config('table.tableconfig_column_10') }} tableconfig_column_10 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_10_{{ $invoice->bill_invoiceid }}">
         {{ runtimeMoneyFormat($invoice->bill_tax_total_amount) }}
     </td>
 
     <!--tableconfig_column_11 [discount type] -->
-    <td class="invoices_col_tableconfig_column_11 {{ config('table.tableconfig_column_11') }} tableconfig_column_11"
+    <td class="invoices_col_tableconfig_column_11 {{ config('table.tableconfig_column_11') }} tableconfig_column_11 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_11_{{ $invoice->bill_invoiceid }}">
         @if($invoice->bill_discount_type == 'fixed')
         @lang('lang.fixed_amount')
@@ -115,7 +115,7 @@
     </td>
 
     <!--tableconfig_column_12 [discount amount] -->
-    <td class="invoices_col_tableconfig_column_12 {{ config('table.tableconfig_column_12') }} tableconfig_column_12"
+    <td class="invoices_col_tableconfig_column_12 {{ config('table.tableconfig_column_12') }} tableconfig_column_12 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_12_{{ $invoice->bill_invoiceid }}">
         @if($invoice->bill_discount_amount == '0.00')
         ---
@@ -125,13 +125,13 @@
     </td>
 
     <!--tableconfig_column_13 [last payment - date] -->
-    <td class="invoices_col_tableconfig_column_13 {{ config('table.tableconfig_column_13') }} tableconfig_column_13"
+    <td class="invoices_col_tableconfig_column_13 {{ config('table.tableconfig_column_13') }} tableconfig_column_13 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="tableconfig_column_13_{{ $invoice->bill_invoiceid }}">
         {{ runtimeDate($invoice->last_payment_date) }}
     </td>
 
     <!--tableconfig_column_14 [last payment - amount] -->
-    <td class="invoices_col_tableconfig_column_14 {{ config('table.tableconfig_column_14') }} tableconfig_column_14"
+    <td class="invoices_col_tableconfig_column_14 {{ config('table.tableconfig_column_14') }} tableconfig_column_14 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_14_{{ $invoice->bill_invoiceid }}">
         @if($invoice->last_payment_amount == '0.00')
         ---
@@ -143,19 +143,19 @@
 
 
     <!--tableconfig_column_15 [last payment - method] -->
-    <td class="invoices_col_tableconfig_column_15 {{ config('table.tableconfig_column_15') }} tableconfig_column_15 ucw"
+    <td class="invoices_col_tableconfig_column_15 {{ config('table.tableconfig_column_15') }} tableconfig_column_15 ucw {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_15_{{ $invoice->bill_invoiceid }}">
         {{ $invoice->last_payment_method ?? '---' }}
     </td>
 
     <!--tableconfig_column_16 [last payment - transaction id] -->
-    <td class="invoices_col_tableconfig_column_16 {{ config('table.tableconfig_column_16') }} tableconfig_column_16"
+    <td class="invoices_col_tableconfig_column_16 {{ config('table.tableconfig_column_16') }} tableconfig_column_16 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_16_{{ $invoice->bill_invoiceid }}">
         {{ $invoice->last_payment_transaction_id ?? '---' }}
     </td>
 
     <!--tableconfig_column_17 [attachments] -->
-    <td class="invoices_col_tableconfig_column_17 {{ config('table.tableconfig_column_17') }} tableconfig_column_17"
+    <td class="invoices_col_tableconfig_column_17 {{ config('table.tableconfig_column_17') }} tableconfig_column_17 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_17_{{ $invoice->bill_invoiceid }}">
         @if($invoice->count_attachments == 0)
         ---
@@ -165,33 +165,33 @@
     </td>
 
     <!--tableconfig_column_19 [scheduled publishing date] -->
-    <td class="invoices_col_tableconfig_column_19 {{ config('table.tableconfig_column_19') }} tableconfig_column_19"
+    <td class="invoices_col_tableconfig_column_19 {{ config('table.tableconfig_column_19') }} tableconfig_column_19 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_19_{{ $invoice->bill_invoiceid }}">
         {{ runtimeDate($invoice->bill_publishing_scheduled_date ?? '') }}
     </td>
 
 
     <!--tableconfig_column_20 [payments]-->
-    <td class="invoices_col_tableconfig_column_20 {{ config('table.tableconfig_column_20') }} tableconfig_column_20"
+    <td class="invoices_col_tableconfig_column_20 {{ config('table.tableconfig_column_20') }} tableconfig_column_20 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_tableconfig_column_20_{{ $invoice->bill_invoiceid }}">
         <a
             href="{{ url('payments?filter_payment_invoiceid='.$invoice->bill_invoiceid) }}">{{ runtimeMoneyFormat($invoice->sum_payments) }}</a>
     </td>
 
     <!--tableconfig_column_21 [amount]-->
-    <td class="invoices_col_tableconfig_column_21 {{ config('table.tableconfig_column_21') }} tableconfig_column_21"
+    <td class="invoices_col_tableconfig_column_21 {{ config('table.tableconfig_column_21') }} tableconfig_column_21 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_amount_{{ $invoice->bill_invoiceid }}">
         {{ runtimeMoneyFormat($invoice->bill_final_amount) }}</td>
 
 
     <!--tableconfig_column_22 [balance]-->
-    <td class="invoices_col_tableconfig_column_22 {{ config('table.tableconfig_column_22') }} tableconfig_column_22"
+    <td class="invoices_col_tableconfig_column_22 {{ config('table.tableconfig_column_22') }} tableconfig_column_22 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_balance_{{ $invoice->bill_invoiceid }}">
         {{ runtimeMoneyFormat($invoice->invoice_balance) }}
     </td>
 
     <!--tableconfig_column_23 [status]-->
-    <td class="invoices_col_tableconfig_column_23 {{ config('table.tableconfig_column_23') }} tableconfig_column_23"
+    <td class="invoices_col_tableconfig_column_23 {{ config('table.tableconfig_column_23') }} tableconfig_column_23 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
         id="invoices_col_status_{{ $invoice->bill_invoiceid }}">
 
         <span class="label {{ runtimeInvoiceStatusColors($invoice->bill_status, 'label') }}">{{
@@ -221,7 +221,7 @@
     </td>
 
     <!--actions-->
-    <td class="invoices_col_action actions_column" id="invoices_col_action_{{ $invoice->bill_invoiceid }}">
+    <td class="invoices_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="invoices_col_action_{{ $invoice->bill_invoiceid }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
 
@@ -265,7 +265,7 @@
                 <div class="dropdown-menu" aria-labelledby="listTableAction">
                     @if(config('visibility.action_buttons_edit'))
                     <!--quick edit-->
-                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form edit-add-modal-button"
+                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form edit-add-modal-button {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         data-toggle="modal" data-target="#commonModal"
                         data-url="{{ urlResource('/invoices/'.$invoice->bill_invoiceid.'/edit') }}"
                         data-loading-target="commonModalBody"
@@ -276,14 +276,14 @@
                         {{ cleanLang(__('lang.quick_edit')) }}
                     </a>
                     <!--email to client-->
-                    <a class="dropdown-item confirm-action-info" href="javascript:void(0)"
+                    <a class="dropdown-item confirm-action-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
                         data-confirm-title="{{ cleanLang(__('lang.email_to_client')) }}"
                         data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}"
                         data-url="{{ url('/invoices') }}/{{ $invoice->bill_invoiceid }}/resend?ref=list">
                         {{ cleanLang(__('lang.email_to_client')) }}</a>
                     <!--add payment-->
                     @if(auth()->user()->role->role_invoices > 1)
-                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form edit-add-modal-button"
+                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form edit-add-modal-button {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         href="javascript:void(0)" data-toggle="modal" data-target="#commonModal"
                         data-modal-title="{{ cleanLang(__('lang.add_new_payment')) }}"
                         data-url="{{ url('/payments/create?bill_invoiceid='.$invoice->bill_invoiceid) }}"
@@ -293,7 +293,7 @@
                     @endif
                     <!--clone invoice-->
                     @if(auth()->user()->role->role_invoices > 1)
-                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form edit-add-modal-button"
+                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form edit-add-modal-button {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         href="javascript:void(0)" data-toggle="modal" data-target="#commonModal"
                         data-modal-title="{{ cleanLang(__('lang.clone_invoice')) }}"
                         data-url="{{ url('/invoices/'.$invoice->bill_invoiceid.'/clone') }}"
@@ -302,7 +302,7 @@
                         {{ cleanLang(__('lang.clone_invoice')) }}</a>
                     @endif
                     <!--change category-->
-                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form"
+                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         href="javascript:void(0)" data-toggle="modal" data-target="#actionsModal"
                         data-modal-title="{{ cleanLang(__('lang.change_category')) }}"
                         data-url="{{ url('/invoices/change-category') }}"
@@ -311,7 +311,7 @@
                         {{ cleanLang(__('lang.change_category')) }}</a>
                     <!--attach project -->
                     @if(!is_numeric($invoice->bill_projectid))
-                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form"
+                    <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         href="javascript:void(0)" data-toggle="modal" data-target="#actionsModal"
                         data-modal-title=" {{ cleanLang(__('lang.attach_to_project')) }}"
                         data-url="{{ urlResource('/invoices/'.$invoice->bill_invoiceid.'/attach-project?client_id='.$invoice->bill_clientid) }}"
@@ -321,14 +321,14 @@
                     @endif
                     <!--dettach project -->
                     @if(is_numeric($invoice->bill_projectid))
-                    <a class="dropdown-item confirm-action-danger" href="javascript:void(0)"
+                    <a class="dropdown-item confirm-action-danger {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
                         data-confirm-title="{{ cleanLang(__('lang.detach_from_project')) }}"
                         data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}"
                         data-url="{{ urlResource('/invoices/'.$invoice->bill_invoiceid.'/detach-project') }}">
                         {{ cleanLang(__('lang.detach_from_project')) }}</a>
                     @endif
                     <!--recurring settings-->
-                    <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                    <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         href="javascript:void(0)" data-toggle="modal" data-target="#commonModal"
                         data-url="{{ urlResource('/invoices/'.$invoice->bill_invoiceid.'/recurring-settings?source=page') }}"
                         data-loading-target="commonModalBody"
@@ -338,17 +338,17 @@
                         data-action-ajax-loading-target="invoices-td-container">{{ cleanLang(__('lang.recurring_settings')) }}</a>
                     <!--stop recurring -->
                     @if($invoice->bill_recurring == 'yes')
-                    <a class="dropdown-item confirm-action-info" href="javascript:void(0)"
+                    <a class="dropdown-item confirm-action-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="javascript:void(0)"
                         data-confirm-title="{{ cleanLang(__('lang.stop_recurring')) }}"
                         data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}"
                         data-url="{{ urlResource('/invoices/'.$invoice->bill_invoiceid.'/stop-recurring') }}">
                         {{ cleanLang(__('lang.stop_recurring')) }}</a>
                     @endif
                     @endif
-                    <a class="dropdown-item"
+                    <a class="dropdown-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                         href="{{ url('payments?filter_payment_invoiceid='.$invoice->bill_invoiceid) }}">
                         {{ cleanLang(__('lang.view_payments')) }}</a>
-                    <a class="dropdown-item" href="{{ url('/invoices/'.$invoice->bill_invoiceid.'/pdf') }}" download>
+                    <a class="dropdown-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="{{ url('/invoices/'.$invoice->bill_invoiceid.'/pdf') }}" download>
                         {{ cleanLang(__('lang.download')) }}</a>
                 </div>
             </span>
