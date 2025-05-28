@@ -1,7 +1,7 @@
         <!--HEADER-->
         <div class="billing-mode-only-item">
-            <span class="pull-left">
-                <h3><b>{{ cleanLang(__('lang.invoice')) }}</b>
+            <span class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }}">
+                <h3 class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><b>{{ cleanLang(__('lang.invoice')) }}</b>
                     <!--recurring icon-->
                     @include('pages.bill.components.elements.invoice.icons-recuring')
                 </h3>
@@ -10,7 +10,7 @@
                 </span>
             </span>
             <!--status-->
-            <span class="pull-right text-align-right">
+            <span class="{{ app()->getLocale() == 'persian' ? 'pull-left' : 'pull-right' }} text-align-right">
                 <!--draft-->
                 <span class="js-invoice-statuses {{ runtimeInvoiceStatus('draft', $bill->bill_status) }}"
                     id="invoice-status-draft">

@@ -5,23 +5,23 @@
                 <tr>
                     <!--action-->
                     @if(config('visibility.bill_mode') == 'editing')
-                    <th class="text-left x-action bill_col_action"></th>
+                    <th class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} x-action bill_col_action"></th>
                     @endif
                     <!--description-->
-                    <th class="text-left x-description bill_col_description">{{ cleanLang(__('lang.description')) }}
+                    <th class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} x-description bill_col_description">{{ cleanLang(__('lang.description')) }}
                     </th>
                     <!--quantity-->
-                    <th class="text-left x-quantity bill_col_quantity">{{ cleanLang(__('lang.qty')) }}</th>
+                    <th class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} x-quantity bill_col_quantity">{{ cleanLang(__('lang.qty')) }}</th>
                     <!--unit price-->
-                    <th class="text-left x-unit bill_col_unit">{{ cleanLang(__('lang.unit')) }}</th>
+                    <th class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} x-unit bill_col_unit">{{ cleanLang(__('lang.unit')) }}</th>
                     <!--rate-->
-                    <th class="text-left x-rate bill_col_rate">{{ cleanLang(__('lang.rate')) }}</th>
+                    <th class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} x-rate bill_col_rate">{{ cleanLang(__('lang.rate')) }}</th>
                     <!--tax-->
                     <th
-                        class="text-left x-tax bill_col_tax {{ runtimeVisibility('invoice-column-inline-tax', $bill->bill_tax_type) }}">
+                        class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} x-tax bill_col_tax {{ runtimeVisibility('invoice-column-inline-tax', $bill->bill_tax_type) }}">
                         {{ cleanLang(__('lang.tax')) }}</th>
                     <!--total-->
-                    <th class="text-right x-total bill_col_total" id="bill_col_total">{{ cleanLang(__('lang.total')) }}
+                    <th class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} x-total bill_col_total" id="bill_col_total">{{ cleanLang(__('lang.total')) }}
                     </th>
                 </tr>
             </thead>

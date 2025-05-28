@@ -146,11 +146,11 @@
 
             <div class="dropdown-menu" aria-labelledby="listTableAction">
                 <!--edit-->
-                <a class="dropdown-item" href="{{ url('/invoices/'.$bill->bill_invoiceid.'/edit-invoice') }}"><i
+                <a class="dropdown-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="{{ url('/invoices/'.$bill->bill_invoiceid.'/edit-invoice') }}"><i
                         class="sl-icon-note display-inline-block p-r-5"></i>{{ cleanLang(__('lang.edit_invoice')) }}</a>
 
                 <!--attach project-->
-                <a class="dropdown-item confirm-action-danger {{ runtimeVisibility('dettach-invoice', $bill->bill_projectid)}}"
+                <a class="dropdown-item confirm-action-danger {{ runtimeVisibility('dettach-invoice', $bill->bill_projectid)}} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     href="javascript:void(0)" data-confirm-title="{{ cleanLang(__('lang.detach_from_project')) }}"
                     id="bill-actions-dettach-project" data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}"
                     data-url="{{ urlResource('/invoices/'.$bill->bill_invoiceid.'/detach-project') }}">
@@ -158,7 +158,7 @@
                         class="sl-icon-docs display-inline-block p-r-5"></i>{{ cleanLang(__('lang.detach_from_project')) }}</a>
 
                 <!--deattach project-->
-                <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ runtimeVisibility('attach-invoice', $bill->bill_projectid)}}"
+                <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ runtimeVisibility('attach-invoice', $bill->bill_projectid)}} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     href="javascript:void(0)" data-toggle="modal" data-target="#actionsModal"
                     id="bill-actions-attach-project" data-modal-title="{{ cleanLang(__('lang.attach_to_project')) }}"
                     data-url="{{ urlResource('/invoices/'.$bill->bill_invoiceid.'/attach-project?client_id='.$bill->bill_clientid) }}"

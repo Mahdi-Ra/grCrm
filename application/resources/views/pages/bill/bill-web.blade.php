@@ -26,10 +26,10 @@
             <!--ADDRESSES-->
             <div class="col-12 m-b-10 billing-mode-only-item">
                 <!--company address-->
-                <div class="pull-left">
+                <div class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }}">
                     <address>
-                        <h3 class="x-company-name text-info">{{ config('system.settings_company_name') }}</h3>
-                        <p class="text-muted m-l-5">
+                        <h3 class="x-company-name text-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ config('system.settings_company_name') }}</h3>
+                        <p class="text-muted m-l-5 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             @if(config('system.settings_company_address_line_1'))
                             {{ config('system.settings_company_address_line_1') }}
                             @endif
@@ -63,7 +63,7 @@
                     </address>
                 </div>
                 <!--client address-->
-                <div class="pull-right text-right">
+                <div class="{{ app()->getLocale() == 'persian' ? 'pull-left' : 'pull-right' }} text-right">
                     <address>
                         <h3 class="">{{ cleanLang(__('lang.bill_to')) }}</h3>
                         <a href="{{ url('clients/'.$bill->client_id) }}">

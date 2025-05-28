@@ -2,7 +2,7 @@
     <div class="pull-left invoice-dates">
         <table>
             <tr>
-                <td class="x-date-lang" id="fx-invoice-date-lang">{{ cleanLang(__('lang.invoice_date')) }} </td>
+                <td class="x-date-lang {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="fx-invoice-date-lang">{{ cleanLang(__('lang.invoice_date')) }} </td>
                 @if(config('visibility.bill_mode') == 'editing')
                 <td><input type="text" class="form-control form-control-xs pickadate" name="bill_date"
                         autocomplete="off" value="{{ runtimeDate($bill->bill_date) }}">
@@ -14,7 +14,7 @@
                 @endif
             </tr>
             <tr>
-                <td class="x-date-due-lang" >{{ cleanLang(__('lang.due_date')) }} </td>
+                <td class="x-date-due-lang {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" >{{ cleanLang(__('lang.due_date')) }} </td>
                 @if(config('visibility.bill_mode') == 'editing')
                 <td><input type="text" class="form-control form-control-xs pickadate" name="bill_due_date"
                         autocomplete="off" value="{{ runtimeDate($bill->bill_due_date) }}">

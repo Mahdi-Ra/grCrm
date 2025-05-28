@@ -2,7 +2,7 @@
     <div class="pull-right invoice-dues">
         <table>
             <tr>
-                <td class="x-payments-lang" id="fx-payments-date-lang">{{ cleanLang(__('lang.payments')) }}</td>
+                <td class="x-payments-lang {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="fx-payments-date-lang">{{ cleanLang(__('lang.payments')) }}</td>
                 @if($bill->sum_payments > 0)
                 <td class="x-payments"> <a href="javascript:void(0)" class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
                         data-toggle="modal" data-target="#commonModal" data-footer-visibility="hidden"
@@ -13,12 +13,12 @@
                 </td>
                 @else
 
-                <td class="x-payments"> <span class="p-l-20">{!! runtimeMoneyFormatPDF(0.00) !!}</span> </td>
+                <td class="x-payments {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"> <span class="p-l-20">{!! runtimeMoneyFormatPDF(0.00) !!}</span> </td>
                 @endif
             </tr>
             <tr>
-                <td class="x-balance-due-lang">{{ cleanLang(__('lang.balance_due')) }} </td>
-                <td class="x-balance-due"> <span class="x-due-amount-label">
+                <td class="x-balance-due-lang {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.balance_due')) }} </td>
+                <td class="x-balance-due {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"> <span class="x-due-amount-label">
                         @if($bill->invoice_balance > 0)
                         <label class="label label-rounded label-danger"
                             id="billing-details-amount-due">{!! runtimeMoneyFormatPDF($bill->invoice_balance) !!}</label>
