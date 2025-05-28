@@ -3,9 +3,9 @@
         <thead>
             <tr>
                 <!--with sort-->
-                <th class="col_category"><a href="javascript:void(0)">@lang('lang.category')</a></th>
+                <th class="col_category {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">@lang('lang.category')</a></th>
                 <!--actions-->
-                <th class="col_no_sort"><a href="javascript:void(0)">@lang('lang.products')</a></th>
+                <th class="col_no_sort {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">@lang('lang.products')</a></th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
                                 <label for="category-{{ $category->category_id }}"></label>
                             </span>
                         </div>
-                        <div class="pull-left p-l-30">
+                        <div class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }} {{ app()->getLocale() == 'persian' ? 'p-r-30' : 'p-l-30' }}">
                             {{ $category->category_name }}
                         </div>
                     </div>
@@ -70,10 +70,10 @@
                 <!--count & toggle-->
                 <td class="vt">
                     <div class="clearfix">
-                        <div class="pull-left w-px-51">
+                        <div class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }} w-px-51">
                             {{ count($category->items) }}
                         </div>
-                        <div class="switch pull-right m-l-20">
+                        <div class="switch {{ app()->getLocale() == 'persian' ? 'pull-left' : 'pull-right' }} m-l-20">
                             <label>
                                 <input type="checkbox" name="add_client_option_contact" id="add_client_option_contact"
                                     data-target="category-items-{{ $category->category_id }}"
@@ -89,7 +89,7 @@
     </table>
 </div>
 
-<div class="text-right m-t-20">
+<div class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} m-t-20">
     <button type="submit" id="categoryItemsModalSelectButton"
         class="btn btn-rounded-x btn-danger waves-effect text-left" data-url="" data-loading-target=""
         data-ajax-type="POST"

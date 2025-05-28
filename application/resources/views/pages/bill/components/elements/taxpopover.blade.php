@@ -36,7 +36,7 @@
             @endif
         </div>
         <!--update-->
-        <div class="form-group text-right">
+        <div class="form-group {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
             <button type="button" class="btn btn-info btn-sm" id="billing-tax-popover-update">
                 {{ cleanLang(__('lang.update')) }}
             </button>

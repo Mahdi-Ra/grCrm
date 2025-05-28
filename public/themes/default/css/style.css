@@ -14815,9 +14815,15 @@ body.rtl .card-modal .close {
   background-color: #ffffff;
   color: #212529;
 }
-.card-popover .popover-close {
+body.ltr .card-popover .popover-close {
   position: absolute;
   right: 11px;
+  top: 8px;
+  cursor: pointer;
+}
+body.rtl .card-popover .popover-close {
+  left: 11px;
+  position: absolute;
   top: 8px;
   cursor: pointer;
 }
@@ -19809,4 +19815,5 @@ body.rtl .invoice-rec-close {
   color: #000;
   text-shadow: 0 1px 0 #fff;
 }
+
 

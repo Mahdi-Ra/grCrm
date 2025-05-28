@@ -147,7 +147,7 @@
             @if(config('visibility.bill_mode') == 'viewing')
             <div class="col-12 billing-mode-only-item">
                 <!--invoice terms-->
-                <div class="text-left">
+                <div class="">
                     @if($bill->bill_type == 'invoice')
                     <h4>{{ cleanLang(__('lang.invoice_terms')) }}</h4>
                     @else
@@ -210,7 +210,7 @@
                 @if(config('visibility.bill_mode') == 'editing')
                 <div class="col-12">
                     <!--invoice terms-->
-                    <div class="text-left billing-mode-only-item">
+                    <div class="text-left billing-mode-only-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         @if($bill->bill_type == 'invoice')
                         <h4>{{ cleanLang(__('lang.invoice_terms')) }}</h4>
                         @else
@@ -220,7 +220,7 @@
                             id="bill_terms">{!! clean($bill->bill_terms) !!}</textarea>
                     </div>
                     <!--client - make a payment button-->
-                    <div class="text-right p-t-25">
+                    <div class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-25">
                         @if($bill->bill_type == 'invoice')
                         <!--cancel-->
                         <a class="btn btn-secondary btn-sm"
@@ -255,7 +255,7 @@
         @if(config('visibility.bill_mode') == 'viewing')
         <div class="card card-body invoice-wrapper box-shadow billing-mode-only-item billing-mode-only-item"
             id="invoice-wrapper">
-            <h4 class="">{{ cleanLang(__('lang.notes')) }} <span class="align-middle text-themecontrast font-16"
+            <h4 class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.notes')) }} <span class="align-middle text-themecontrast font-16"
                     data-toggle="tooltip" title="{{ cleanLang(__('lang.not_visisble_to_client')) }}"
                     data-placement="top"><i class="ti-info-alt"></i></span></h4>
             <div>{!! clean($bill->bill_notes) !!}</div>
@@ -263,7 +263,7 @@
         @endif
         @if(config('visibility.bill_mode') == 'editing')
         <div class="card card-body invoice-wrapper box-shadow billing-mode-only-item" id="invoice-wrapper">
-            <h4 class="">{{ cleanLang(__('lang.notes')) }} <span class="align-middle text-themecontrast font-16"
+            <h4 class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.notes')) }} <span class="align-middle text-themecontrast font-16"
                     data-toggle="tooltip" title="{{ cleanLang(__('lang.not_visisble_to_client')) }}"
                     data-placement="top"><i class="ti-info-alt"></i></span></h4>
             <div><textarea class="form-control form-control-sm tinymce-textarea" rows="3" name="bill_notes"

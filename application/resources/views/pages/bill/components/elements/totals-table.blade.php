@@ -2,7 +2,7 @@
 
     <!--FILE ATTACHEMENTS-->
     @if(config('visibility.bill_files_section'))
-    <div class="pull-left m-t-30 text-left bill-file-attachments">
+    <div class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }} m-t-30 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} bill-file-attachments">
         <h6>@lang('lang.attachments')</h6>
         <div class="bill-file-attachments-wrapper" id="bill-file-attachments-wrapper">
 
@@ -41,7 +41,7 @@
     @endif
 
     <!--total amounts-->
-    <div class="pull-right m-t-30 text-right">
+    <div class="{{ app()->getLocale() == 'persian' ? 'pull-left' : 'pull-right' }} m-t-30 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
 
         <table class="invoice-total-table">
 

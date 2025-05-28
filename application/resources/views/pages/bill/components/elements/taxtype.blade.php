@@ -22,7 +22,7 @@
             </div>
         </div>
         <!--update tax tax type-->
-        <div class="form-group text-right">
+        <div class="form-group {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
             <button type="button" class="btn btn-info btn-sm ajax-request" data-type="form"
                 data-form-id="invoice-tax-type-content" data-ajax-type="post"
                 data-confirm-title="@lang('lang.change_tax_type')"
