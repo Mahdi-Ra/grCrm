@@ -3,9 +3,9 @@
     <form>
         <div class="slimscrollright">
             <!--title-->
-            <div class="rpanel-title">
+            <div class="rpanel-title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <!--add class'due'to title panel -->
-                <i class="ti-alarm-clock display-inline-block m-t--5"></i>
+                <i class="ti-alarm-clock display-inline-block"></i>
                 <div class="display-inline-block">
                     @lang('lang.product_tasks') (@lang('lang.automation')) <span class="align-middle display-inline p-t-3 p-l-8"
                         data-toggle="tooltip" title="@lang('lang.product_tasks_info')" data-placement="top"><i class="ti-info-alt font-17"></i></span>
@@ -19,7 +19,7 @@
             <!--body-->
             <div class="r-panel-body products-tasks-side-panel-body  p-b-80">
 
-                <div class="text-right p-b-30">
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-b-30">
                     <!--add item modal-->
                     <button type="button" id="create-product-task-button"
                         class="btn btn-info btn-sm edit-add-modal-button js-ajax-ux-request reset-target-modal-form"

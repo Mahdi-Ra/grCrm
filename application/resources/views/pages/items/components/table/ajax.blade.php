@@ -17,34 +17,34 @@
         </span>
     </td>
     @endif
-    <td class="items_col_description" id="items_col_description_{{ $item->item_id }}">
+    <td class="items_col_description {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="items_col_description_{{ $item->item_id }}">
         @if(config('settings.trimmed_title'))
         {{ runtimeProductStripTags(str_limit($item->item_description ?? '---', 45)) }}
         @else
         {{ runtimeProductStripTags($item->item_description) }}
         @endif
     </td>
-    <td class="items_col_rate" id="items_col_rate_{{ $item->item_id }}">
+    <td class="items_col_rate {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="items_col_rate_{{ $item->item_id }}">
         {{ runtimeMoneyFormat($item->item_rate) }}
     </td>
-    <td class="items_col_unit" id="items_col_unit_{{ $item->item_id }}">{{ $item->item_unit }}</td>
+    <td class="items_col_unit {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="items_col_unit_{{ $item->item_id }}">{{ $item->item_unit }}</td>
     @if(config('visibility.items_col_category'))
-    <td class="items_col_category ucwords" id="items_col_category_{{ $item->item_id }}">
+    <td class="items_col_category ucwords {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="items_col_category_{{ $item->item_id }}">
         {{ str_limit($item->category_name ?? '---', 30) }}</td>
     @endif
 
     <!--number sold-->
-    <td class="items_col_count_sold">
+    <td class="items_col_count_sold {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ $item->count_sold }}
     </td>
 
     <!--amount sold-->
-    <td class="items_col_amount_sold">
+    <td class="items_col_amount_sold {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($item->sum_sold) }}
     </td>
 
     @if(config('visibility.items_col_action'))
-    <td class="items_col_action actions_column" id="items_col_action_{{ $item->item_id }}">
+    <td class="items_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="items_col_action_{{ $item->item_id }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
             <!--delete-->
@@ -88,7 +88,7 @@
                     class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm">
                     <i class="ti-more"></i>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="listTableAction">
+                <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
                     <!--actions button - change category-->
                     <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form"
                         href="javascript:void(0)" data-toggle="modal" data-target="#actionsModal"
@@ -103,7 +103,7 @@
             @endif
 
             <!--pin-->
-            <span class="list-table-action">
+            <span class="list-table-action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <a href="javascript:void(0);" title="{{ cleanLang(__('lang.pinning')) }}"
                     data-parent="item_{{ $item->item_id }}" data-url="{{ url('/items/'.$item->item_id.'/pinning') }}"
                     class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm opacity-4 js-toggle-pinning">

@@ -17,22 +17,22 @@
                             </span>
                         </th>
                         @endif
-                        <th class="items_col_description"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="items_col_description {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_item_description" href="javascript:void(0)"
                                 data-url="{{ urlResource('/items?action=sort&orderby=item_description&sortorder=asc') }}">{{ cleanLang(__('lang.description')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
-                        <th class="items_col_rate"><a class="js-ajax-ux-request js-list-sorting" id="sort_item_rate"
+                        <th class="items_col_rate {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_item_rate"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/items?action=sort&orderby=item_rate&sortorder=asc') }}">{{ cleanLang(__('lang.rate')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
-                        <th class="items_col_unit"><a class="js-ajax-ux-request js-list-sorting" id="sort_item_unit"
+                        <th class="items_col_unit {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_item_unit"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/items?action=sort&orderby=item_unit&sortorder=asc') }}">{{ cleanLang(__('lang.unit')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @if(config('visibility.items_col_category'))
-                        <th class="items_col_category"><a class="js-ajax-ux-request js-list-sorting" id="sort_category"
+                        <th class="items_col_category {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_category"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/items?action=sort&orderby=category&sortorder=asc') }}">{{ cleanLang(__('lang.category')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
@@ -40,14 +40,14 @@
                         @endif
 
                         <!--count sold-->
-                        <th class="items_col_count_sold"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="items_col_count_sold {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_count_sold" href="javascript:void(0)"
                                 data-url="{{ urlResource('/items?action=sort&orderby=count_sold&sortorder=asc') }}">@lang('lang.number_sold')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
 
                         <!--sum sold-->
-                        <th class="items_col_amount_sold"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="items_col_amount_sold {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_amount_sold" href="javascript:void(0)"
                                 data-url="{{ urlResource('/items?action=sort&orderby=amount_sold&sortorder=asc') }}">@lang('lang.amount_sold')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
@@ -55,7 +55,7 @@
 
 
                         @if(config('visibility.items_col_action'))
-                        <th class="items_col_action"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a>
+                        <th class="items_col_action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a>
                         </th>
                         @endif
                     </tr>
