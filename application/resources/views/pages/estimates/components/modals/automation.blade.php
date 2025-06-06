@@ -1,6 +1,6 @@
     <!--automation_default_status-->
     <div class="form-group row p-b-10">
-        <label class="col-sm-12 col-lg-4 text-left control-label col-form-label">@lang('lang.automation')</label>
+        <label class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.automation')</label>
         <div class="col-sm-12 col-lg-8">
             <select class="select2-basic form-control form-control-sm select2-preselected"
                 id="estimate_automation_status" name="estimate_automation_status"
@@ -28,8 +28,8 @@
         <!--automation_create_project-->
         <div class="form-group form-group-checkbox row">
             <div class="col-12">
-                <label class="text-left control-label col-form-label required p-r-3">@lang('lang.automation_create_project')</label>
-                <span class="text-right p-l-5">
+                <label class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required p-r-3">@lang('lang.automation_create_project')</label>
+                <span class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-l-5">
                     <input type="checkbox" id="estimate_automation_create_project"
                         name="estimate_automation_create_project" class="filled-in chk-col-light-blue"
                         {{ runtimePrechecked($automation['estimate_automation_create_project']) }}>

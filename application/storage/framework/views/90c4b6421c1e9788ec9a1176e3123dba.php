@@ -7,7 +7,7 @@
                 <thead>
                     <tr>
                         <?php if(config('visibility.payments_col_checkboxes')): ?>
-                        <th class="list-checkbox-wrapper payments_col_checkbox">
+                        <th class="list-checkbox-wrapper payments_col_checkbox <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>">
                             <!--list checkbox-->
                             <span class="list-checkboxes display-inline-block w-px-20">
                                 <input type="checkbox" id="listcheckbox-payments" name="listcheckbox-payments"
@@ -19,54 +19,54 @@
                         </th>
                         <?php endif; ?>
                         <?php if(config('visibility.payments_col_id')): ?>
-                        <th class="payments_col_id"><a class="js-ajax-ux-request js-list-sorting" id="sort_payment_id"
+                        <th class="payments_col_id <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting" id="sort_payment_id"
                                 href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=payment_id&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.id'))); ?>#<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         <?php endif; ?>
 
-                        <th class="payments_col_date"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="payments_col_date <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_payment_date" href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=payment_date&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.date'))); ?><span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
 
                         <?php if(config('visibility.payments_col_invoiceid')): ?>
-                        <th class="payments_col_bill_invoiceid"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="payments_col_bill_invoiceid <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_payment_invoiceid" href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=payment_invoiceid&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.invoice'))); ?><span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         <?php endif; ?>
 
-                        <th class="payments_col_amount"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="payments_col_amount <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting"
                             id="sort_payment_amount" href="javascript:void(0)"
                             data-url="<?php echo e(urlResource('/payments?action=sort&orderby=payment_amount&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.amount'))); ?><span
                                 class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                     </th>
                         <?php if(config('visibility.payments_col_client')): ?>
-                        <th class="payments_col_client"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
+                        <th class="payments_col_client <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
                                 href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=client&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.client'))); ?><span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         <?php endif; ?>
                         <?php if(config('visibility.payments_col_project')): ?>
-                        <th class="payments_col_project"><a class="js-ajax-ux-request js-list-sorting" id="sort_project"
+                        <th class="payments_col_project <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting" id="sort_project"
                                 href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=project&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.project'))); ?><span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         <?php endif; ?>
-                        <th class="payments_col_transaction hidden"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="payments_col_transaction hidden <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_payment_transaction_id" href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=payment_transaction_id&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.transaction_id'))); ?><span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></a>
                         </th>
 
                         <?php if(config('visibility.payments_col_method')): ?>
-                        <th class="payments_col_method"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="payments_col_method <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_payment_gateway" href="javascript:void(0)"
                                 data-url="<?php echo e(urlResource('/payments?action=sort&orderby=payment_gateway&sortorder=asc')); ?>"><?php echo e(cleanLang(__('lang.method'))); ?><span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
@@ -74,7 +74,7 @@
                         <?php endif; ?>
 
                         <?php if(config('visibility.payments_col_action')): ?>
-                        <th class="payments_col_action"><a href="javascript:void(0)"><?php echo e(cleanLang(__('lang.action'))); ?></a></th>
+                        <th class="payments_col_action <?php echo e(app()->getLocale() == 'persian' ? 'text-right' : 'text-left'); ?>"><a href="javascript:void(0)"><?php echo e(cleanLang(__('lang.action'))); ?></a></th>
                         <?php endif; ?>
                     </tr>
                 </thead>

@@ -16,6 +16,14 @@ Global Styles
 * {
   outline: none;
 }
+:root {
+  --direction: ltr;
+}
+
+body.rtl {
+  --direction: rtl;
+  font-family: 'Vazir', sans-serif;
+}
 
 body {
   background: #fff;
@@ -25,6 +33,56 @@ body {
   color: #526066;
   font-weight: 300;
   font-size: 14px;
+  direction: var(--direction);
+}
+
+/* ---------------------------------------------
+* persian fonts
+*-----------------------------------------------*/
+@font-face {
+  font-family: 'Vazir';
+  src: url('../fonts/Vazir/eot/Vazir-Thin-FD-WOL.eot') format('eot'),
+  url('../fonts/Vazir/woff/Vazir-Thin-FD-WOL.woff') format('woff'),
+  url('../fonts/Vazir/woff2/Vazir-Thin-FD-WOL.woff2') format('woff2'),
+  url('../fonts/Vazir/ttf/Vazir-Thin-FD-WOL.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Vazir';
+  src: url('../fonts/Vazir/eot/Vazir-Light-FD-WOL.eot') format('eot'),
+  url('../fonts/Vazir/woff/Vazir-Light-FD-WOL.woff') format('woff'),
+  url('../fonts/Vazir/woff2/Vazir-Light-FD-WOL.woff2') format('woff2'),
+  url('../fonts/Vazir/ttf/Vazir-Light-FD-WOL.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Vazir';
+  src: url('../fonts/Vazir/eot/Vazir-FD-WOL.eot') format('eot'),
+  url('../fonts/Vazir/woff/Vazir-FD-WOL.woff') format('woff'),
+  url('../fonts/Vazir/woff2/Vazir-FD-WOL.woff2') format('woff2'),
+  url('../fonts/Vazir/ttf/Vazir-FD-WOL.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Vazir';
+  src: url('../fonts/Vazir/eot/Vazir-Medium-FD-WOL.eot') format('eot'),
+  url('../fonts/Vazir/woff/Vazir-Medium-FD-WOL.woff') format('woff'),
+  url('../fonts/Vazir/woff2/Vazir-Medium-FD-WOL.woff2') format('woff2'),
+  url('../fonts/Vazir/ttf/Vazir-Medium-FD-WOL.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Vazir';
+  src: url('../fonts/Vazir/eot/Vazir-Bold-FD-WOL.eot') format('eot'),
+  url('../fonts/Vazir/woff/Vazir-Bold-FD-WOL.woff') format('woff'),
+  url('../fonts/Vazir/woff2/Vazir-Bold-FD-WOL.woff2') format('woff2'),
+  url('../fonts/Vazir/ttf/Vazir-Bold-FD-WOL.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
 html {

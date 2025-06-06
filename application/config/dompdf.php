@@ -31,6 +31,7 @@ return array(
          * Notes regarding fonts:
          * Additional .afm font metrics can be added by executing load_font.php from command line.
          *
+         *
          * Only the original "Base 14 fonts" are present on all pdf viewers. Additional fonts must
          * be embedded in the pdf file or the PDF may not display correctly. This can significantly
          * increase file size unless font subsetting is enabled. Before embedding a font please

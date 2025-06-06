@@ -13,7 +13,7 @@
         </span>
     </td>
     @endif
-    <td class="estimates_col_id" id="estimates_col_id_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_id_{{ $estimate->bill_estimateid }}">
         <a href="/estimates/{{ $estimate->bill_estimateid }}">{{ $estimate->formatted_bill_estimateid }}</a>
         <!--automation-->
         @if(auth()->user()->is_team && $estimate->estimate_automation_status == 'enabled')
@@ -21,29 +21,29 @@
             title="@lang('lang.estimate_automation')"></span>
         @endif
     </td>
-    <td class="estimates_col_date" id="estimates_col_date_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_date {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_date_{{ $estimate->bill_estimateid }}">
         {{ runtimeDate($estimate->bill_date) }}
     </td>
     @if(config('visibility.estimates_col_client'))
-    <td class="estimates_col_company" id="estimates_col_company_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_company {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_company_{{ $estimate->bill_estimateid }}">
         <a href="/clients/{{ $estimate->bill_clientid }}">
             {{ str_limit($estimate->client_company_name ?? '---', 30) }}</a>
     </td>
     @endif
     @if(config('visibility.estimates_col_created_by'))
-    <td class="estimates_col_created_by" id="estimates_col_created_by_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_created_by {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_created_by_{{ $estimate->bill_estimateid }}">
         <img src="{{ getUsersAvatar($estimate->avatar_directory, $estimate->avatar_filename) }}" alt="user"
             class="img-circle avatar-xsmall">
         {{ $estimate->first_name ?? runtimeUnkownUser() }}
     </td>
     @endif
     @if(config('visibility.estimates_col_expires'))
-    <td class="estimates_col_expires" id="estimates_col_expires_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_expires {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_expires_{{ $estimate->bill_estimateid }}">
         {{ runtimeDate($estimate->bill_expiry_date) }}</td>
     @endif
 
     @if(config('visibility.estimates_col_tags'))
-    <td class="estimates_col_tags" id="estimates_col_tags_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_tags {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_tags_{{ $estimate->bill_estimateid }}">
         <!--tag-->
         @if(count($estimate->tags ?? []) > 0)
         <span class="label label-outline-default">{{ str_limit($estimate->tags->first()->tag_title, 15) }}</span>
@@ -60,10 +60,10 @@
         <!--more tags-->
     </td>
     @endif
-    <td class="estimates_col_amount" id="estimates_col_amount_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_amount {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_amount_{{ $estimate->bill_estimateid }}">
         {{ runtimeMoneyFormat($estimate->bill_final_amount) }}
     </td>
-    <td class="estimates_col_status" id="estimates_col_status_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_status_{{ $estimate->bill_estimateid }}">
         <span class="label {{ runtimeEstimateStatusColors($estimate->bill_status, 'label') }}">{{
             runtimeLang($estimate->bill_status) }}</span>
 
@@ -89,7 +89,7 @@
         @endif
     </td>
     @if(config('visibility.estimates_col_action'))
-    <td class="estimates_col_action actions_column" id="estimates_col_action_{{ $estimate->bill_estimateid }}">
+    <td class="estimates_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="estimates_col_action_{{ $estimate->bill_estimateid }}">
         <!--action button-->
         <span class="list-table-action dropdown font-size-inherit">
             <!--delete-->
@@ -124,7 +124,7 @@
                 class="data-toggle-tooltip data-toggle-tooltip btn btn-outline-default-light btn-circle btn-sm">
                 <i class="ti-more"></i>
             </button>
-            <div class="dropdown-menu" aria-labelledby="listTableAction">
+            <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
 
                 <!--estimate url-->
                 <a class="dropdown-item" href="{{ url('/estimates/view/'.$estimate->bill_uniqueid.'?action=preview') }}"

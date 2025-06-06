@@ -1295,3 +1295,12 @@ Route::resource('cs/affiliates/earnings', 'CS_Affiliates\Earnings');
 
 //AFFILATE PROFIT
 Route::get("/cs/affiliate/my/earnings", "CS_Affiliates\Profit@index");
+
+
+//test
+use Barryvdh\DomPDF\Facade\Pdf;
+
+Route::get('/pdf-test', function () {
+    $pdf = Pdf::loadView('pages.bill.test');
+    return $pdf->stream();
+});

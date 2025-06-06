@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-5 align-self-center text-right p-b-9  {{ $page['list_page_actions_size'] ?? '' }} {{ $page['list_page_container_class'] ?? '' }}"
+<div class="col-md-12  col-lg-5 align-self-center {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-b-9  {{ $page['list_page_actions_size'] ?? '' }} {{ $page['list_page_container_class'] ?? '' }}"
     id="list-page-actions-container">
     <div id="list-page-actions">
         @if(auth()->check() && (auth()->user()->is_team && auth()->user()->role->role_estimates >= 2))
@@ -24,7 +24,7 @@
             </button>
             <div class="dropdown-menu w-px-250 p-t-20 p-l-20 p-r-20 js-stop-propagation"
                 aria-labelledby="listTableAction">
-                <div class="form-group form-group-checkbox row m-b-0">
+                <div class="form-group form-group-checkbox row m-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                     <div class="col-12">
                         <input type="checkbox" id="publishing_option_now" name="publishing_option_now"
                             class="filled-in chk-col-light-blue publishing_option"
@@ -40,7 +40,7 @@
                 <div class="modal-selector m-l--20 m-r--20 p-t-5 p-b-5 m-t-10 p-l-20 p-r-20 p-t-10"
                     id="publishing_option_later_container">
 
-                    <div class="form-group form-group-checkbox row  m-b-0">
+                    <div class="form-group form-group-checkbox row  m-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <div class="col-12">
                             <input type="checkbox" id="publishing_option_later" name="publishing_option_later"
                                 class="filled-in chk-col-light-blue publishing_option"
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <!--form buttons-->
-                <div class="text-right p-t-5 m-b-10">
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5 m-b-10">
                     <button type="submit" id="publishing_option_button"
                         class="btn btn-sm btn-info waves-effect text-left" data-url="" data-loading-target=""
                         data-ajax-type="POST" data-lang-error-message="@lang('lang.schedule_date_is_requried')"
@@ -125,16 +125,16 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="listTableAction">
                 <!--edit estimate-->
-                <a class="dropdown-item" href="{{ url('/estimates/'.$bill->bill_estimateid.'/edit-estimate') }}">
+                <a class="dropdown-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="{{ url('/estimates/'.$bill->bill_estimateid.'/edit-estimate') }}">
                     <i class="sl-icon-note display-inline-block p-r-5"></i>{{ cleanLang(__('lang.edit_estimate')) }}</a>
 
                 <!--estimate url-->
-                <a class="dropdown-item" href="{{ url('/estimates/view/'.$bill->bill_uniqueid.'?action=preview') }}"
+                <a class="dropdown-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" href="{{ url('/estimates/view/'.$bill->bill_uniqueid.'?action=preview') }}"
                     target="_blank"><i
                         class="sl-icon-cursor display-inline-block p-r-5"></i>{{ cleanLang(__('lang.estimate_url')) }}</a>
 
                 <!--change status-->
-                <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form"
+                <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     href="javascript:void(0)" data-toggle="modal" data-target="#actionsModal"
                     data-modal-title="{{ cleanLang(__('lang.change_status')) }}"
                     data-url="{{ urlResource('/estimates/'.$bill->bill_estimateid.'/change-status') }}"
@@ -143,7 +143,7 @@
                     <i class="sl-icon-flag display-inline-block p-r-5"></i>{{ cleanLang(__('lang.change_status')) }}</a>
 
                 <!--attach project-->
-                <a class="dropdown-item confirm-action-danger {{ runtimeVisibility('dettach-estimate', $bill->bill_projectid)}}"
+                <a class="dropdown-item confirm-action-danger {{ runtimeVisibility('dettach-estimate', $bill->bill_projectid)}} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     href="javascript:void(0)" data-confirm-title="{{ cleanLang(__('lang.detach_from_project')) }}"
                     id="bill-actions-dettach-project" data-confirm-text="{{ cleanLang(__('lang.are_you_sure')) }}"
                     data-url="{{ urlResource('/estimates/'.$bill->bill_estimateid.'/detach-project') }}">
@@ -151,7 +151,7 @@
                         class="sl-icon-docs display-inline-block p-r-5"></i>{{ cleanLang(__('lang.detach_from_project')) }}</a>
 
                 <!--deattach project-->
-                <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ runtimeVisibility('attach-estimate', $bill->bill_projectid)}}"
+                <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form {{ runtimeVisibility('attach-estimate', $bill->bill_projectid)}} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     href="javascript:void(0)" data-toggle="modal" data-target="#actionsModal"
                     id="bill-actions-attach-project" data-modal-title="{{ cleanLang(__('lang.attach_to_project')) }}"
                     data-url="{{ urlResource('/estimates/'.$bill->bill_estimateid.'/attach-project?client_id='.$bill->bill_clientid) }}"
@@ -162,7 +162,7 @@
 
                 <!--automation-->
                 <a href="javascript:void(0)"
-                    class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
+                    class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                     data-toggle="modal" data-target="#commonModal"
                     data-url="{{ urlResource('/estimates/'.$bill->bill_estimateid.'/edit-automation') }}"
                     data-loading-target="commonModalBody" data-modal-title="@lang('lang.estimate_automation')"

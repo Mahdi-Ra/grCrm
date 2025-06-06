@@ -147,7 +147,7 @@
             @if(config('visibility.bill_mode') == 'viewing')
             <div class="col-12 billing-mode-only-item">
                 <!--invoice terms-->
-                <div class="">
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                     @if($bill->bill_type == 'invoice')
                     <h4>{{ cleanLang(__('lang.invoice_terms')) }}</h4>
                     @else

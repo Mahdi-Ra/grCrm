@@ -2,7 +2,7 @@
 <!--each row-->
 <tr id="payment_{{ $payment->payment_id }}" class="{{ $payment->pinned_status ?? '' }}">
     @if(config('visibility.payments_col_checkboxes'))
-    <td class="payments_col_checkbox checkitem" id="payments_col_checkbox_{{ $payment->payment_id }}">
+    <td class="payments_col_checkbox checkitem " id="payments_col_checkbox_{{ $payment->payment_id }}">
         <!--list checkbox-->
         <span class="list-checkboxes display-inline-block w-px-20">
             <input type="checkbox" id="listcheckbox-payments-{{ $payment->payment_id }}"
@@ -14,41 +14,41 @@
     </td>
     @endif
     @if(config('visibility.payments_col_id'))
-    <td class="payments_col_id" id="payments_col_id_{{ $payment->payment_id }}"><a href="javascript:void(0)"
+    <td class="payments_col_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_id_{{ $payment->payment_id }}"><a href="javascript:void(0)"
             class="show-modal-button js-ajax-ux-request" data-toggle="modal"
             data-url="{{ url( '/') }}/payments/{{  $payment->payment_id }} " data-target="#plainModal"
             data-loading-target="plainModalBody" data-modal-title="">#{{ $payment->payment_id }}</a></td>
     @endif
-    <td class="payments_col_date" id="payments_col_date_{{ $payment->payment_id }}">
+    <td class="payments_col_date {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_date_{{ $payment->payment_id }}">
         {{ runtimeDate($payment->payment_date) }}
     </td>
     @if(config('visibility.payments_col_invoiceid'))
-    <td class="payments_col_bill_invoiceid" id="payments_col_bill_invoiceid_{{ $payment->payment_id }}">
+    <td class="payments_col_bill_invoiceid {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_bill_invoiceid_{{ $payment->payment_id }}">
         <a href="/invoices/{{ $payment->payment_invoiceid }}">{{ runtimeInvoiceIdFormat($payment->bill_invoiceid) }}</a>
     </td>
     @endif
-    <td class="payments_col_amount" id="payments_col_amount_{{ $payment->payment_id }}">
+    <td class="payments_col_amount {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_amount_{{ $payment->payment_id }}">
         {{ runtimeMoneyFormat($payment->payment_amount) }}</td>
     @if(config('visibility.payments_col_client'))
-    <td class="payments_col_client" id="payments_col_client_{{ $payment->payment_id }}">
+    <td class="payments_col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_client_{{ $payment->payment_id }}">
         <a
             href="/clients/{{ $payment->payment_clientid }}">{{ str_limit($payment->client_company_name ?? '---', 20) }}</a>
     </td>
     @endif
     @if(config('visibility.payments_col_project'))
-    <td class="payments_col_project" id="payments_col_project_{{ $payment->payment_id }}">
+    <td class="payments_col_project {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_project_{{ $payment->payment_id }}">
         <a href="/projects/{{ $payment->payment_projectid }}">{{ str_limit($payment->project_title ?? '---', 25) }}</a>
     </td>
     @endif
-    <td class="payments_col_transaction hidden" id="payments_col_transaction_{{ $payment->payment_id }}">
+    <td class="payments_col_transaction hidden {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_transaction_{{ $payment->payment_id }}">
         {{ str_limit($payment->payment_transaction_id ?? '---', 20) }}</td>
     @if(config('visibility.payments_col_method'))
-    <td class="payments_col_method text-ucf" id="payments_col_method_{{ $payment->payment_id }}">
+    <td class="payments_col_method text-ucf {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_method_{{ $payment->payment_id }}">
         {{ $payment->payment_gateway }}
     </td>
     @endif
     @if(config('visibility.payments_col_action'))
-    <td class="payments_col_action actions_column" id="payments_col_action_{{ $payment->payment_id }}">
+    <td class="payments_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="payments_col_action_{{ $payment->payment_id }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
             <!--edit-->

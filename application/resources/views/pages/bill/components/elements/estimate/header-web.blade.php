@@ -1,7 +1,7 @@
         <!--HEADER-->
         <div class="billing-mode-only-item">
-            <span class="pull-left">
-                <h3><b>{{ cleanLang(__('lang.estimate')) }}</b>
+            <span class="{{ app()->getLocale() == 'persian' ? 'pull-right' : 'pull-left' }}">
+                <h3 class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><b>{{ cleanLang(__('lang.estimate')) }}</b>
                     <!--automation icon-->
                     @include('pages.bill.components.elements.estimate.icons-automation')
                 </h3>
@@ -10,7 +10,7 @@
                 </span>
             </span>
             <!--status-->
-            <span class="pull-right">
+            <span class="{{ app()->getLocale() == 'persian' ? 'pull-left' : 'pull-right' }}">
                 <!--draft-->
                 <span class="js-estimate-statuses {{ runtimeEstimateStatus('draft', $bill->bill_status) }}"
                     id="estimate-status-draft">
