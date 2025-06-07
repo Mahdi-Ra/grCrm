@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-6 align-self-center text-right parent-page-actions p-b-9"
+<div class="col-md-12  col-lg-6 align-self-center {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} parent-page-actions p-b-9"
     id="list-page-actions-container-proposals">
     <div id="list-page-actions">
 
@@ -26,7 +26,7 @@
                 class="data-toggle-tooltip  list-actions-button btn btn-page-actions waves-effect waves-dark">
                 <i class="sl-icon-share-alt"></i>
             </button>
-            <div class="dropdown-menu w-px-250 p-t-20 p-l-20 p-r-20 js-stop-propagation"
+            <div class="dropdown-menu w-px-250 p-t-20 p-l-20 p-r-20 js-stop-propagation {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"
                 aria-labelledby="listTableAction">
                 <div class="form-group form-group-checkbox row m-b-0">
                     <div class="col-12">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <!--form buttons-->
-                <div class="text-right p-t-5 m-b-10">
+                <div class="{{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} p-t-5 m-b-10">
                     <button type="submit" id="publishing_option_button"
                         class="btn btn-sm btn-info waves-effect text-left" data-url="" data-loading-target=""
                         data-ajax-type="POST" data-lang-error-message="@lang('lang.schedule_date_is_requried')"

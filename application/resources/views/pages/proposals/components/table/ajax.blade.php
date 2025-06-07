@@ -16,7 +16,7 @@
     @endif
 
     <!--doc_id-->
-    <td class="col_doc_id">
+    <td class="col_doc_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="{{ url('/proposals/'.$proposal->doc_id) }}">{{ runtimeProposalIdFormat($proposal->doc_id) }}</a>
         <!--automation-->
         @if(auth()->user()->is_team && $proposal->proposal_automation_status == 'enabled')
@@ -26,13 +26,13 @@
     </td>
 
     <!--doc_date_start-->
-    <td class="col_doc_date_start">
+    <td class="col_doc_date_start {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($proposal->doc_date_start) }}
     </td>
 
     <!--client-->
     @if(config('visibility.col_client'))
-    <td class="col_client">
+    <td class="col_clien {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         @if($proposal->docresource_type == 'client')
         <a href="{{ url('/clients/'.$proposal->client_id) }}"
             title="{{ $proposal->client_company_name ?? '---' }}">{{ str_limit($proposal->client_company_name ?? '---', 25) }}</a>
@@ -44,17 +44,17 @@
     @endif
 
     <!--doc_title-->
-    <td class="col_doc_title">
+    <td class="col_doc_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ str_limit($proposal->doc_title ?? '---', 20) }}
     </td>
 
     <!--value-->
-    <td class="col_value">
+    <td class="col_value {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($proposal->bill_final_amount) }}
     </td>
 
     @if(config('visibility.col_created_by'))
-    <td class="col_created_by">
+    <td class="col_created_by {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <img src="{{ getUsersAvatar($proposal->avatar_directory, $proposal->avatar_filename) }}" alt="user"
             class="img-circle avatar-xsmall">
         {{ $proposal->first_name ?? runtimeUnkownUser() }}
@@ -62,12 +62,12 @@
     @endif
 
     <!--doc_date_end-->
-    <td class="col_doc_date_start">
+    <td class="col_doc_date_start {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($proposal->doc_date_end ?? '---') }}
     </td>
 
     <!--status-->
-    <td class="col_foo">
+    <td class="col_foo {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span
             class="label {{ runtimeProposalStatusColors($proposal->doc_status, 'label') }}">{{ runtimeLang($proposal->doc_status) }}</span>
 
@@ -80,7 +80,7 @@
     </td>
 
     @if(config('visibility.proposals_col_action'))
-    <td class="proposals_col_action actions_column" id="proposals_col_action_{{ $proposal->doc_id }}">
+    <td class="proposals_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="proposals_col_action_{{ $proposal->doc_id }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
             <!--delete-->
@@ -116,7 +116,7 @@
                     class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm">
                     <i class="ti-more"></i>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="listTableAction">
+                <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
 
                     <!--proposal url-->
                     <a class="dropdown-item"

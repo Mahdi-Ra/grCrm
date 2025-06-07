@@ -20,14 +20,14 @@
                         @endif
 
                         <!--doc_id-->
-                        <th class="col_doc_id"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_id"
+                        <th class="col_doc_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_id"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=doc_id&sortorder=asc') }}">@lang('lang.id')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
 
 
                         <!--doc_date_start-->
-                        <th class="col_doc_date_start"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="col_doc_date_start {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_doc_date_start" href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=doc_date_start&sortorder=asc') }}">@lang('lang.date')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -35,7 +35,7 @@
 
                         <!--client-->
                         @if(config('visibility.col_client'))
-                        <th class="col_client"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
+                        <th class="col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=client&sortorder=asc') }}">@lang('lang.proposed_to')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -43,42 +43,42 @@
 
 
                         <!--doc_title-->
-                        <th class="col_doc_title"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_title"
+                        <th class="col_doc_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_title"
                             href="javascript:void(0)"
                             data-url="{{ urlResource('/proposals?action=sort&orderby=doc_title&sortorder=asc') }}">@lang('lang.title')<span
                                 class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
 
                                 
                         <!--value-->
-                        <th class="col_value"><a class="js-ajax-ux-request js-list-sorting" id="sort_value"
+                        <th class="col_value {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_value"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=value&sortorder=asc') }}">@lang('lang.value')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
 
                         <!--created by-->
                         @if(config('visibility.col_created_by'))
-                        <th class="col_created_by"><a class="js-ajax-ux-request js-list-sorting" id="sort_created_by"
+                        <th class="col_created_by {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_created_by"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=created_by&sortorder=asc') }}">@lang('lang.created_by')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
                         @endif
 
                         <!--doc_date_end-->
-                        <th class="col_doc_date_end"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="col_doc_date_end {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_doc_date_end" href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=doc_date_end&sortorder=asc') }}">@lang('lang.valid_until')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
 
 
                         <!--status-->
-                        <th class="col_doc_status"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_status"
+                        <th class="col_doc_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_status"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/proposals?action=sort&orderby=doc_status&sortorder=asc') }}">@lang('lang.status')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
 
                         <!--actions-->
                         @if(config('visibility.proposals_col_action'))
-                        <th class="proposals_col_action"><a href="javascript:void(0)">@lang('lang.action')</a></th>
+                        <th class="proposals_col_action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">@lang('lang.action')</a></th>
                         @endif
                     </tr>
                 </thead>

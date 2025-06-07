@@ -4,7 +4,7 @@
     <div class="customer-selector-container" id="customer-type-client-container">
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.client')</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.client')</label>
             <div class="col-sm-12 col-lg-9">
                 <!--select2 basic search-->
                 <select name="doc_client_id" id="doc_client_id"
@@ -19,7 +19,7 @@
     <!--lead-->
     <div class="customer-selector-container hidden" id="customer-type-lead-container">
         <div class="form-group row">
-            <label class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.lead')</label>
+            <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.lead')</label>
             <div class="col-sm-12 col-lg-9">
                 <!--select2 basic search-->
                 <select name="doc_lead_id" id="doc_lead_id"
@@ -46,7 +46,7 @@
 <!--proposal_title-->
 <div class="form-group row">
     <label
-        class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.proposal_title')</label>
+        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.proposal_title')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="text" class="form-control form-control-sm" id="doc_title" name="doc_title"
             value="{{ $proposal->doc_title ?? '' }}">
@@ -56,7 +56,7 @@
 <!--proposal_date-->
 <div class="form-group row">
     <label
-        class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.proposal_date')</label>
+        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.proposal_date')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="text" class="form-control form-control-sm pickadate" autocomplete="off" name="doc_date_start"
             value="{{ runtimeDatepickerDate($proposal->doc_date_start ?? '') }}">
@@ -68,7 +68,7 @@
 
 <!--valid_until-->
 <div class="form-group row">
-    <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">@lang('lang.valid_until')</label>
+    <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.valid_until')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="text" class="form-control form-control-sm pickadate" autocomplete="off" name="doc_date_end"
             value="{{ runtimeDatepickerDate($proposal->doc_date_end ?? '') }}">
@@ -80,7 +80,7 @@
 <!--category-->
 <div class="form-group row">
     <label
-        class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}</label>
+        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}</label>
     <div class="col-sm-12 col-lg-9">
         <select class="select2-basic form-control form-control-sm" id="doc_categoryid" name="doc_categoryid">
             @foreach($categories as $category)

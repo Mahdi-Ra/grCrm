@@ -17,7 +17,7 @@
 
         <!--COMPANY DETAILS-->
         <div class="col-6">
-            <div class="doc-to-by">
+            <div class="doc-to-by {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <!--title-->
                 <div class="">
                     <h3>@lang('lang.service_provider')</h3>
@@ -60,7 +60,7 @@
         <!--CLIENT RESOURCE-->
         @if($document->docresource_type == 'client')
         <div class="col-6">
-            <div class="doc-to-by text-right">
+            <div class="doc-to-by {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                 <!--title-->
                 <div class="">
                     <h3>@lang('lang.client')</h3>

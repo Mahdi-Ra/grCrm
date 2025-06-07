@@ -12730,7 +12730,7 @@ textarea.error {
 * list tables
 * -------------------------------------------------------*/
 .list-table-wrapper {
-  min-height: 250px;
+  min-height: 300px;
 }
 
 .sorting-icons {
