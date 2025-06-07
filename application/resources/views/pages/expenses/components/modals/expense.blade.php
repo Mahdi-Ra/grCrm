@@ -5,33 +5,33 @@
                 <tbody>
                     <!--date-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.date')) }}</td>
-                        <td>{{ runtimeDate($expense->expense_date) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.date')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ runtimeDate($expense->expense_date) }}</td>
                     </tr>
                     <!--client-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.client')) }}</td>
-                        <td>{{ $expense->client_company_name }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.client')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ $expense->client_company_name }}</td>
                     </tr>
                     <!--project-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.project')) }}</td>
-                        <td>{{ $expense->project_title }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.project')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ $expense->project_title }}</td>
                     </tr>
                     <!--user-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.recorded_by')) }}</td>
-                        <td>{{ $expense->first_name }} {{ $expense->last_name }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.recorded_by')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ $expense->first_name }} {{ $expense->last_name }}</td>
                     </tr>
                     <!--description-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.description')) }}</td>
-                        <td>{{ $expense->expense_description }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.description')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ $expense->expense_description }}</td>
                     </tr>
                     <!--Attchment-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.attachement')) }}</td>
-                        <td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.attachement')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             @foreach($attachments as $attachment)
                             <ul class="p-l-0">
                                 <li  id="fx-expenses-files-attached">
@@ -46,8 +46,8 @@
                     <!--date-->
                     <!--description-->
                     <tr>
-                        <td>{{ cleanLang(__('lang.financial')) }}</td>
-                        <td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.financial')) }}</td>
+                        <td class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <span
                                 class="label {{ runtimeExpenseStatusColors($expense->expense_billable, 'label') }}">{{ runtimeLang($expense->expense_billable) }}</span> <span
                                 class="label {{ runtimeExpenseStatusColors($expense->expense_billing_status, 'label') }}">{{
@@ -55,7 +55,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td id="fx-expenses-td-amount">{{ cleanLang(__('lang.amount')) }}</td>
+                        <td id="fx-expenses-td-amount" class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.amount')) }}</td>
                         <td id="fx-expenses-td-money">{{ runtimeMoneyFormat($expense->expense_amount) }}</td>
                     </tr>
                 </tbody>

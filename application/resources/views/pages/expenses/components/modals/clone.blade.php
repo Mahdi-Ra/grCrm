@@ -5,7 +5,7 @@
         @if(auth()->user()->role->role_expenses_scope == 'global')
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.team_member')</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.team_member')</label>
             <div class="col-sm-12 col-lg-9">
                 <select name="expense_creatorid" id="expense_creatorid"
                     class="select2-basic form-control form-control-sm">
@@ -25,7 +25,7 @@
 
         <!--expense date-->
         <div class="form-group row">
-            <label class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.date')</label>
+            <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.date')</label>
             <div class="col-sm-12 col-lg-9">
                 <input type="text" class="form-control  form-control-sm pickadate" name="expense_date"
                     autocomplete="off" value="{{ runtimeDatepickerDate($expense->expense_date ?? '') }}">
@@ -37,7 +37,7 @@
         <!--client-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.client')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.client')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <!--select2 basic search-->
                 <select name="expense_clientid" id="expense_clientid"
@@ -52,7 +52,7 @@
         <!--projects-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.project')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.project')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm dynamic_expense_projectid"
                     data-allow-clear="true" id="expense_projectid" name="expense_projectid" disabled>
@@ -64,7 +64,7 @@
         <!--expense category-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm" id="expense_categoryid"
                     name="expense_categoryid">
@@ -80,7 +80,7 @@
         <!--description-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label required">{{ cleanLang(__('lang.description')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">{{ cleanLang(__('lang.description')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <textarea class="w-100" id="expense_description" rows="4"
                     name="expense_description">{{ $expense->expense_description ?? '' }}</textarea>

@@ -18,20 +18,20 @@
                             </span>
                         </th>
                         @endif
-                        <th class="expenses_col_id"><a class="js-ajax-ux-request js-list-sorting" id="sort_expense_id"
+                        <th class="expenses_col_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_expense_id"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=expense_id&sortorder=asc') }}">{{ cleanLang(__('lang.id')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @if(config('visibility.expenses_col_date'))
-                        <th class="expenses_col_date"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="expenses_col_date {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_expense_date" href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=expense_date&sortorder=asc') }}">{{ cleanLang(__('lang.date')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
                         @if(config('visibility.expenses_col_description'))
-                        <th class="expenses_col_description"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="expenses_col_description {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_expense_description" href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=expense_description&sortorder=asc') }}">{{ cleanLang(__('lang.description')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
@@ -39,7 +39,7 @@
                         @endif
                         <!--column visibility-->
                         @if(config('visibility.expenses_col_user'))
-                        <th class="expenses_col_user"><a class="js-ajax-ux-request js-list-sorting" id="sort_user"
+                        <th class="expenses_col_user {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_user"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=user&sortorder=asc') }}">{{ cleanLang(__('lang.user')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
@@ -47,7 +47,7 @@
                         @endif
                         <!--column visibility-->
                         @if(config('visibility.expenses_col_client'))
-                        <th class="expenses_col_client"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
+                        <th class="expenses_col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=client&sortorder=asc') }}">{{ cleanLang(__('lang.client')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
@@ -55,28 +55,28 @@
                         @endif
                         <!--column visibility-->
                         @if(config('visibility.expenses_col_project'))
-                        <th class="expenses_col_project"><a class="js-ajax-ux-request js-list-sorting" id="sort_project"
+                        <th class="expenses_col_project {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_project"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=project&sortorder=asc') }}">{{ cleanLang(__('lang.project')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
                         @if(config('visibility.expenses_col_amount'))
-                        <th class="expenses_col_amount"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="expenses_col_amount {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_expense_amount" href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=expense_amount&sortorder=asc') }}">{{ cleanLang(__('lang.amount')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
                         @if(config('visibility.expenses_col_status'))
-                        <th class="expenses_col_status"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="expenses_col_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_expense_billing_status" href="javascript:void(0)"
                                 data-url="{{ urlResource('/expenses?action=sort&orderby=expense_billing_status&sortorder=asc') }}">{{ cleanLang(__('lang.status')) }}<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a>
                         </th>
                         @endif
                         @if(config('visibility.expenses_col_action'))
-                        <th class="expenses_col_action"><a
+                        <th class="expenses_col_action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a
                                 href="javascript:void(0)">{{ cleanLang(__('lang.action')) }}</a></th>
                         @endif
                     </tr>

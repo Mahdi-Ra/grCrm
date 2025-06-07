@@ -16,7 +16,7 @@
         </span>
     </td>
     @endif
-    <td class="expenses_col_id">
+    <td class="expenses_col_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="display-inline-block">{{ $expense->expense_id }}</span>
         <!--recurring-->
         @if($expense->expense_recurring == 'yes')
@@ -30,12 +30,12 @@
         @endif
     </td>
     @if(config('visibility.expenses_col_date'))
-    <td class="expenses_col_date">
+    <td class="expenses_col_date {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($expense->expense_date) }}
     </td>
     @endif
     @if(config('visibility.expenses_col_description'))
-    <td class="expenses_col_description">
+    <td class="expenses_col_description {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         @if(config('settings.trimmed_title'))
         <span
             title="{{ $expense->expense_description }}">{{ str_limit($expense->expense_description ?? '---', 15) }}</span>
@@ -47,31 +47,31 @@
     @endif
     <!--column visibility-->
     @if(config('visibility.expenses_col_user'))
-    <td class="expenses_col_user">
+    <td class="expenses_col_user {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <img src="{{ getUsersAvatar($expense->avatar_directory, $expense->avatar_filename) }}" alt="user"
             class="img-circle avatar-xsmall"> {{ str_limit($expense->first_name ?? runtimeUnkownUser(), 8) }}
     </td>
     @endif
     <!--column visibility-->
     @if(config('visibility.expenses_col_client'))
-    <td class="expenses_col_client">
+    <td class="expenses_col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a
             href="/clients/{{ $expense->expense_clientid }}">{{ str_limit($expense->client_company_name ?? '---', 12) }}</a>
     </td>
     @endif
     <!--column visibility-->
     @if(config('visibility.expenses_col_project'))
-    <td class="expenses_col_project">
+    <td class="expenses_col_project {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="/projects/{{ $expense->expense_projectid }}">{{ str_limit($expense->project_title ?? '---', 12) }}</a>
     </td>
     @endif
     @if(config('visibility.expenses_col_amount'))
-    <td class="expenses_col_amount">
+    <td class="expenses_col_amount {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($expense->expense_amount) }}
     </td>
     @endif
     @if(config('visibility.expenses_col_status'))
-    <td class="expenses_col_status">
+    <td class="expenses_col_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
 
         @if($expense->expense_billable == 'billable')
         @if($expense->expense_billing_status == 'invoiced')
@@ -96,7 +96,7 @@
     </td>
     @endif
     @if(config('visibility.expenses_col_action'))
-    <td class="expenses_col_action actions_column" id="expenses_col_action_{{ $expense->expense_id }}">
+    <td class="expenses_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="expenses_col_action_{{ $expense->expense_id }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
             <!--delete-->
@@ -138,7 +138,7 @@
                     class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm">
                     <i class="ti-more"></i>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="listTableAction">
+                <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
                     @if($expense->expense_billing_status == 'not_invoiced')
                     <!--actions button - attach project -->
                     <a class="dropdown-item actions-modal-button js-ajax-ux-request reset-target-modal-form"

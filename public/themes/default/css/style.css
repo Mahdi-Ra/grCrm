@@ -12913,6 +12913,9 @@ textarea.error {
   font-size: 18px;
   color: #4c4c4c;
 }
+body.rtl .modal .modal-content .x-extra-close-icon {
+  left: 10px;
+}
 .modal .modal-dialog {
   margin-top: 30px;
   margin-bottom: 150px;

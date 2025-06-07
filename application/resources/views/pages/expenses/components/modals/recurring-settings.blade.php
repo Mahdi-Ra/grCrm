@@ -4,7 +4,7 @@
         <!--repeat period-->
         <div class="form-group row">
             <label for="example-month-input"
-                class="col-sm-12 col-lg-4 col-form-label text-left">{{ cleanLang(__('lang.repeat_every')) }}</label>
+                class="col-sm-12 col-lg-4 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.repeat_every')) }}</label>
 
             <div class="col-sm-12 col-lg-3">
                 <input type="number" class="form-control form-control-sm" id="expense_recurring_duration"
@@ -29,12 +29,12 @@
 
         <!--repeat cycle-->
         <div class="form-group row">
-            <label class="col-sm-12 col-lg-4 text-left control-label col-form-label">{{ cleanLang(__('lang.cycles')) }}</label>
+            <label class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.cycles')) }}</label>
             <div class="col-sm-12 col-lg-3">
                 <input type="number" class="form-control form-control-sm" id="expense_recurring_cycles"
                     name="expense_recurring_cycles" value="{{ $expense->expense_recurring_cycles ?? 0}}">
             </div>
-            <div class="col-sm-12 col-lg-3">
+            <div class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <!--info tooltip-->
                 <div class="fx-info-tool-tip">
                     <span class="align-middle text-themecontrast font-16" data-toggle="tooltip"
@@ -47,7 +47,7 @@
         <!--next cycle date-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-4 text-left control-label col-form-label">{{ cleanLang(__('lang.next_expense_date')) }}</label> 
+                class="col-sm-12 col-lg-4 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.next_expense_date')) }}</label>
             <div class="col-sm-12 col-lg-3">
                 @if(isset($expense['expense_recurring']) && $expense['expense_recurring'] == 'yes')
                 <input type="text" class="form-control form-control-sm pickadate" name="expense_recurring_next"
@@ -60,7 +60,7 @@
                 <input class="mysql-date" type="hidden" name="expense_recurring_next" id="expense_recurring_next" value="">
                 @endif
             </div>
-            <div class="col-sm-12 col-lg-3">
+            <div class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <!--info tooltip-->
                 <div  class="fx-info-tool-tip">
                     <span class="align-middle text-themecontrast font-16" data-toggle="tooltip"
@@ -72,10 +72,10 @@
 
         <!--cycles information-->
         <div class="alert alert-info">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span
+            <button type="button" class="invoice-rec-close" data-dismiss="alert" aria-label="Close"> <span
                     aria-hidden="true">×</span> </button>
-            <h5 class="text-info"><i class="sl-icon-info"></i> {{ cleanLang(__('lang.next_expense_date')) }}</h5>
-            <div>{{ cleanLang(__('lang.expense_recurring_cycles_explanation_1')) }}</div>
+            <h5 class="text-info {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><i class="sl-icon-info"></i> {{ cleanLang(__('lang.next_expense_date')) }}</h5>
+            <div class="{{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.expense_recurring_cycles_explanation_1')) }}</div>
         </div>
 
         <!--cycles information-->

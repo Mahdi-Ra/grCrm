@@ -3,7 +3,7 @@
 @else
 <!--client-->
 <div class="form-group row">
-    <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.client')) }}</label>
+    <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.client')) }}</label>
     <div class="col-sm-12 col-lg-9">
         <!--select2 basic search-->
         <select name="expense_clientid" id="expense_clientid"
@@ -17,7 +17,7 @@
 </div>
 <!--clients projects-->
 <div class="form-group row">
-    <label for="example-month-input" class="col-sm-12 col-lg-3 col-form-label text-left">{{ cleanLang(__('lang.project')) }}</label>
+    <label for="example-month-input" class="col-sm-12 col-lg-3 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.project')) }}</label>
     <div class="col-sm-12 col-lg-9">
         <select class="select2-basic form-control form-control-sm dynamic_expense_projectid" id="expense_projectid" name="expense_projectid"
             disabled>

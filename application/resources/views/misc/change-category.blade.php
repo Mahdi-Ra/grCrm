@@ -1,5 +1,5 @@
 <div class="form-group row">
-    <label for="example-month-input" class="col-12 col-form-label text-left">{{ cleanLang(__('lang.category')) }}</label>
+    <label for="example-month-input" class="col-12 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">{{ cleanLang(__('lang.category')) }}</label>
     <div class="col-12">
         <select class="select2-basic form-control form-control-sm" id="category"
             name="category">
