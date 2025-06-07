@@ -8,7 +8,7 @@
         <div class="p-2"><span class="round"><img
                     src="{{ getUsersAvatar($reply->avatar_directory, $reply->avatar_filename)  }}" width="50"></span>
         </div>
-        <div class="comment-text w-100">
+        <div class="comment-text w-100 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
 
             <!--note icon-->
             <span class="label label-default label-sm hidden ticket_reply_note_icon">ticket note</span>

@@ -16,19 +16,19 @@
     @endif
 
     <!--doc_id-->
-    <td class="col_doc_id">
+    <td class="col_doc_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="{{ url('/contracts/'.$contract->doc_id) }}">{{ runtimeContractIdFormat($contract->doc_id) }}</a>
     </td>
 
 
     <!--doc_title-->
-    <td class="col_doc_title">
+    <td class="col_doc_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="{{ url('/contracts/'.$contract->doc_id) }}">{{ str_limit($contract->doc_title ?? '---', 20) }}</a>
     </td>
 
     <!--client-->
     @if(config('visibility.col_client'))
-    <td class="col_client">
+    <td class="col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="{{ url('/clients/'.$contract->client_id) }}"
             title="{{ $contract->client_company_name ?? '---' }}">{{ str_limit($contract->client_company_name ?? '---', 12) }}</a>
     </td>
@@ -37,19 +37,19 @@
 
     <!--doc_date_start-->
     @if(config('visibility.doc_date_start'))
-    <td class="col_doc_date_start">
+    <td class="col_doc_date_start {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($contract->doc_date_start) }}
     </td>
     @endif
 
     <!--doc_value-->
-    <td class="col_doc_value">
+    <td class="col_doc_value {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeMoneyFormat($contract->doc_value) }}
     </td>
 
     <!--signature client-->
     @if(config('visibility.col_doc_signed_status'))
-    <td class="col_doc_signed_status">
+    <td class="col_doc_signed_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         @if($contract->doc_signed_status == 'signed')
         <span class="label label label-outline-success">@lang('lang.signed')</span>
         @else
@@ -60,7 +60,7 @@
 
     <!--signature provider-->
     @if(config('visibility.doc_provider_signed_status'))
-    <td class="col_doc_provider_signed_status">
+    <td class="col_doc_provider_signed_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         @if($contract->doc_provider_signed_status == 'signed')
         <span class="label label label-outline-success">@lang('lang.signed')</span>
         @else
@@ -70,7 +70,7 @@
     @endif
 
     <!--status-->
-    <td class="col_doc_status">
+    <td class="col_doc_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span
             class="label {{ runtimeContractStatusColors($contract->doc_status, 'label') }}">{{ runtimeLang($contract->doc_status) }}</span>
 
@@ -84,7 +84,7 @@
 
 
     @if(config('visibility.contracts_col_action'))
-    <td class="contracts_col_action actions_column" id="contracts_col_action_{{ $contract->doc_id }}">
+    <td class="contracts_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="contracts_col_action_{{ $contract->doc_id }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
             <!--delete-->
@@ -115,7 +115,7 @@
                     class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm">
                     <i class="ti-more"></i>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="listTableAction">
+                <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
 
                     <!--actions button - email client -->
                     <a class="dropdown-item confirm-action-info" href="javascript:void(0)"
@@ -149,7 +149,7 @@
             @endif
 
             <!--pin-->
-            <span class="list-table-action">
+            <span class="list-table-action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <a href="javascript:void(0);" title="{{ cleanLang(__('lang.pinning')) }}"
                     data-parent="contract_{{ $contract->doc_id }}" data-url="{{ url('/contracts/'.$contract->doc_id.'/pinning') }}"
                     class="data-toggle-action-tooltip btn btn-outline-default-light btn-circle btn-sm opacity-4 js-toggle-pinning">

@@ -13,20 +13,20 @@
                 <tbody>
                     <!--issue date-->
                     <tr id="document_dates_section_1">
-                        <td class="x-left-lang font-weight-500">
+                        <td class="x-left-lang font-weight-500 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             @if($document->doc_type == 'proposal')
                             <span>@lang('lang.proposal_date'):</span>
                             @else
                             <span>@lang('lang.contract_start_date'):</span>
                             @endif
                         </td>
-                        <td class="x-left-date p-l-25">
+                        <td class="x-left-date p-l-25 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <span>{{ runtimeDate($document->doc_date_start) }}</span>
                         </td>
                     </tr>
                     <!--valid until-->
                     <tr id="document_dates_section_2">
-                        <td class="x-left-lang  p-t-10 font-weight-500">
+                        <td class="x-left-lang  p-t-10 font-weight-500 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             @if($document->doc_type == 'proposal')
                             <span>@lang('lang.valid_until'):</span>
                             @else
@@ -61,7 +61,7 @@
                 <tbody>
                     <!----DOC ID-->
                     <tr id="document_dates_section_4">
-                        <td class="x-left-lang p-t-10 font-weight-500">
+                        <td class="x-left-lang p-t-10 font-weight-500 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             @if($document->doc_type == 'proposal')
                             <span>@lang('lang.proposal_id'):</span>
                             @else
@@ -78,7 +78,7 @@
                     <!--value-->
                     @if($document->doc_type == 'contract')
                     <tr id="document_dates_section_5">
-                        <td class="x-left-lang p-t-10 font-weight-500">
+                        <td class="x-left-lang p-t-10 font-weight-500 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                             <span>@lang('lang.value'):</span>
                         <td class="x-left-id p-l-25 p-t-10">
                             <span>{{ runtimeMoneyFormat($document->doc_value ?? 0) }}</span>
@@ -87,7 +87,7 @@
                     @endif
                     <!--status-->
                     <tr id="document_dates_section_6">
-                        <td class="x-right-lang  p-t-10 font-weight-500">@lang('lang.status'): </td>
+                        <td class="x-right-lang  p-t-10 font-weight-500 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">@lang('lang.status'): </td>
                         <td class="x-right-status  p-t-4 p-l-25">
                             <span class="x-right-label">
                                 @if($document->doc_type == 'proposal')

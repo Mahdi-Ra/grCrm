@@ -8,13 +8,13 @@
         <!--body-->
         <div class="card-body card x-message p-t-0" id="ticket-body">
             <!--message-->
-            <div class="x-body">
+            <div class="x-body {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <div class="d-flex m-b-20">
                     <div>
                         <img src="{{ getUsersAvatar($ticket->avatar_directory, $ticket->avatar_filename)  }}" alt="user"
                             width="40" class="img-circle" />
                     </div>
-                    <div class="p-l-10">
+                    <div class="{{ app()->getLocale() == 'persian' ? 'p-r-10' : 'p-l-10' }} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                         <h5 class="m-b-0">
                             @if(config('visibility.show_contact_profile'))
                             <a href="javascript:void(0);"

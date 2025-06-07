@@ -3,7 +3,7 @@
     <div class="card">
         <div class="row">
             <div class="col-lg-12">
-                <div class="ticket-panel">
+                <div class="ticket-panel {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                     <div class="x-top-header">
                         {{ cleanLang(__('lang.ticket_details')) }}
                     </div>

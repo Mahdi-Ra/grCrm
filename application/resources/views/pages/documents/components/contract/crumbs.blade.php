@@ -1,5 +1,5 @@
 <!-- Page Title & Bread Crumbs -->
-<div class="col-md-12 col-lg-6 align-self-center">
+<div class="col-md-12 col-lg-6 align-self-center {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
     <!--attached to project-->
     @if(is_numeric($document->doc_project_id))
     <a id="InvoiceTitleAttached" href="{{ _url('projects/'.$document->bill_projectid) }}">

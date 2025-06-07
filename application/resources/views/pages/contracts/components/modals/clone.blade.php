@@ -5,7 +5,7 @@
     <div class="client-selector-container" id="client-existing-container">
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.client')) }}*</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.client')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <!--select2 basic search-->
                 <select name="doc_client_id" id="doc_client_id"
@@ -19,7 +19,7 @@
         <!--projects-->
         <div class="form-group row">
             <label
-                class="col-sm-12 col-lg-3 text-left control-label col-form-label">{{ cleanLang(__('lang.project')) }}</label>
+                class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">{{ cleanLang(__('lang.project')) }}</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control form-control-sm dynamic_doc_project_id"
                     data-allow-clear="true" id="doc_project_id" name="doc_project_id" disabled>
@@ -34,7 +34,7 @@
 <!--contract_title-->
 <div class="form-group row">
     <label
-        class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.contract_title')</label>
+        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.contract_title')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="text" class="form-control form-control-sm" id="doc_title" name="doc_title"
             value="{{ $contract->doc_title ?? '' }}">
@@ -43,7 +43,7 @@
 
 <!--contract_start_date-->
 <div class="form-group row">
-    <label class="col-sm-12 col-lg-3 text-left control-label col-form-label required">@lang('lang.start_date')</label>
+    <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label required">@lang('lang.start_date')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="text" class="form-control form-control-sm pickadate" autocomplete="off" name="doc_date_start"
             value="{{ runtimeDatepickerDate($contract->doc_date_start ?? '') }}">
@@ -54,7 +54,7 @@
 
 <!--contract_end_date-->
 <div class="form-group row">
-    <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">@lang('lang.end_date')</label>
+    <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.end_date')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="text" class="form-control form-control-sm pickadate" autocomplete="off" name="doc_date_end"
             value="{{ runtimeDatepickerDate($contract->doc_date_end ?? '') }}">
@@ -65,7 +65,7 @@
 
 <!--doc_value-->
 <div class="form-group row">
-    <label class="col-sm-12 col-lg-3 text-left control-label col-form-label">@lang('lang.value')</label>
+    <label class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label">@lang('lang.value')</label>
     <div class="col-sm-12 col-lg-9">
         <input type="number" class="form-control form-control-sm" id="doc_value" name="doc_value"
             value="{{ $contract->doc_value ?? '' }}">
@@ -76,7 +76,7 @@
 <!--category-->
 <div class="form-group row">
     <label
-        class="col-sm-12 col-lg-3 text-left control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
+        class="col-sm-12 col-lg-3 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} control-label col-form-label  required">{{ cleanLang(__('lang.category')) }}*</label>
     <div class="col-sm-12 col-lg-9">
         <select class="select2-basic form-control form-control-sm" id="doc_categoryid" name="doc_categoryid">
             @foreach($categories as $category)

@@ -20,7 +20,7 @@
                         @endif
 
                         <!--doc_id-->
-                        <th class="col_doc_id"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_id"
+                        <th class="col_doc_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_id"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_id&sortorder=asc') }}">@lang('lang.id')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -28,7 +28,7 @@
 
 
                         <!--doc_title-->
-                        <th class="col_doc_title"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_title"
+                        <th class="col_doc_title {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_title"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_title&sortorder=asc') }}">@lang('lang.title')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -36,7 +36,7 @@
 
                         <!--client-->
                         @if(config('visibility.col_client'))
-                        <th class="col_client"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
+                        <th class="col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_client"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=client&sortorder=asc') }}">@lang('lang.client')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -46,7 +46,7 @@
 
                         <!--doc_date_start-->
                         @if(config('visibility.doc_date_start'))
-                        <th class="col_doc_date_start"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="col_doc_date_start {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_doc_date_start" href="javascript:void(0)"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_date_start&sortorder=asc') }}">@lang('lang.date')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -54,7 +54,7 @@
 
 
                         <!--doc_value-->
-                        <th class="col_doc_valuet"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_value"
+                        <th class="col_doc_valuet {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_value"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_value&sortorder=asc') }}">@lang('lang.value')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -62,7 +62,7 @@
 
                         <!--client_signature-->
                         @if(config('visibility.col_doc_signed_status'))
-                        <th class="col_doc_signed_status"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="col_doc_signed_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_doc_signed_status" href="javascript:void(0)" data-toggle="tooltip"
                                 title="@lang('lang.client_signature')"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_signed_status&sortorder=asc') }}">@lang('lang.client')
@@ -71,7 +71,7 @@
 
                         <!--doc_provider_signed_status-->
                         @if(config('visibility.doc_provider_signed_status'))
-                        <th class="col_doc_provider_signed_status"><a class="js-ajax-ux-request js-list-sorting"
+                        <th class="col_doc_provider_signed_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting"
                                 id="sort_doc_provider_signed_status" href="javascript:void(0)" data-toggle="tooltip"
                                 title="@lang('lang.provider_signature')"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_provider_signed_status&sortorder=asc') }}">@lang('lang.provider')
@@ -79,7 +79,7 @@
                         @endif
 
                         <!--status-->
-                        <th class="col_doc_status"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_status"
+                        <th class="col_doc_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a class="js-ajax-ux-request js-list-sorting" id="sort_doc_status"
                                 href="javascript:void(0)"
                                 data-url="{{ urlResource('/contracts?action=sort&orderby=doc_status&sortorder=asc') }}">@lang('lang.status')<span
                                     class="sorting-icons"><i class="ti-arrows-vertical"></i></span></a></th>
@@ -87,7 +87,7 @@
 
                         <!--actions-->
                         @if(config('visibility.contracts_col_action'))
-                        <th class="contracts_col_action"><a href="javascript:void(0)">@lang('lang.action')</a></th>
+                        <th class="contracts_col_action {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="javascript:void(0)">@lang('lang.action')</a></th>
                         @endif
                     </tr>
                 </thead>

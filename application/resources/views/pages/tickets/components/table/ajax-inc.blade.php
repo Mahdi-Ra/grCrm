@@ -13,12 +13,12 @@
     </td>
     @endif
     @if(config('visibility.tickets_col_id'))
-    <td class="tickets_col_id"><a href="/tickets/{{ $ticket->ticket_id }}">{{ $ticket->ticket_id }}</a></td>
+    <td class="tickets_col_id {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}"><a href="/tickets/{{ $ticket->ticket_id }}">{{ $ticket->ticket_id }}</a></td>
     @endif
-    <td class="tickets_col_subject">
+    <td class="tickets_col_subject {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <a href="/tickets/{{ $ticket->ticket_id }}">{{ str_limit($ticket->ticket_subject ?? '---', 35) }}</a>
     </td>
-    <td class="tickets_col_user">
+    <td class="tickets_col_user {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         @if(config('visibility.show_contact_profile'))
         <a href="javascript:void(0);" class="edit-add-modal-button js-ajax-ux-request reset-target-modal-form user_profile_name_{{ $ticket->id }}"
             data-toggle="modal" data-target="#commonModal" data-url="{{ url('contacts/'.$ticket->id) }}"
@@ -33,28 +33,28 @@
 
     </td>
     @if(config('visibility.tickets_col_client'))
-    <td class="tickets_col_client">
+    <td class="tickets_col_client {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ str_limit($ticket->client_company_name ?? '---', 15) }}
     </td>
     @endif
     @if(config('visibility.tickets_col_department'))
-    <td class="tickets_col_department">
+    <td class="tickets_col_department {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ str_limit($ticket->category_name ?? '---', 30) }}
     </td>
     @endif
-    <td class="tickets_col_date">
+    <td class="tickets_col_date {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDate($ticket->ticket_created) }}
     </td>
-    <td class="tickets_col_priority">
+    <td class="tickets_col_priority {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="label {{ runtimeTicketPriorityColors($ticket->ticket_priority, 'label') }}">{{
                         runtimeLang($ticket->ticket_priority) }}</span>
     </td>
     @if(config('visibility.tickets_col_activity'))
-    <td class="tickets_col_activity">
+    <td class="tickets_col_activity {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         {{ runtimeDateAgo($ticket->ticket_last_updated) }}
     </td>
     @endif
-    <td class="tickets_col_status">
+    <td class="tickets_col_status {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <span class="label label-outline-{{ $ticket->ticketstatus_color }}">{{
                         runtimeLang($ticket->ticketstatus_title) }}</span>
 
@@ -65,7 +65,7 @@
         @endif
     </td>
     @if(config('visibility.tickets_col_action'))
-    <td class="tickets_col_action actions_column">
+    <td class="tickets_col_action actions_column {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--action button-->
         <span class="list-table-action font-size-inherit">
             <!--delete-->

@@ -6,7 +6,7 @@
     <div class="row">
 
         <!--provider signature-->
-        <div class="col-6 text-left">
+        <div class="col-6 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <div class="p-l-0">
                 <ul>
                     <li>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <!--client signature-->
-        <div class="col-6 text-right">
+        <div class="col-6 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
             <div class="p-r-0">
                 <ul>
                     <li>

@@ -42,7 +42,7 @@
         <!--project-->
         <div class="form-group row">
             <label for="example-month-input"
-                class="col-sm-12 col-lg-3 col-form-label text-left required">{{ cleanLang(__('lang.project')) }}*</label>
+                class="col-sm-12 col-lg-3 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.project')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control  form-control-sm" id="ticket_projectid"
                     name="ticket_projectid">
@@ -58,7 +58,7 @@
         <!--status-->
         <div class="form-group row">
             <label for="example-month-input"
-                class="col-sm-12 col-lg-3 col-form-label text-left required">{{ cleanLang(__('lang.status')) }}*</label>
+                class="col-sm-12 col-lg-3 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.status')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control  form-control-sm" id="ticket_status" name="ticket_status">
                     @foreach($statuses as $status)
@@ -72,7 +72,7 @@
         <!--priority-->
         <div class="form-group row">
             <label for="example-month-input"
-                class="col-sm-12 col-lg-3 col-form-label text-left required">{{ cleanLang(__('lang.priority')) }}*</label>
+                class="col-sm-12 col-lg-3 col-form-label {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} required">{{ cleanLang(__('lang.priority')) }}*</label>
             <div class="col-sm-12 col-lg-9">
                 <select class="select2-basic form-control  form-control-sm" id="ticket_priority" name="ticket_priority">
                     @foreach(config('settings.ticket_priority') as $key => $value)
@@ -87,11 +87,11 @@
         <!--CUSTOMER FIELDS [collapsed]-->
         @if(config('system.settings_customfields_display_tickets') == 'toggled')
         <div class="spacer row">
-            <div class="col-sm-12 col-lg-8">
-                <span class="title">{{ cleanLang(__('lang.more_information')) }}</span class="title">
+            <div class="col-sm-12 col-lg-8 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
+                <span class="title">{{ cleanLang(__('lang.more_information')) }}</span>
             </div>
             <div class="col-sm-12 col-lg-4">
-                <div class="switch  text-right">
+                <div class="switch  {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                     <label>
                         <input type="checkbox" name="add_ticket_option_other" id="add_ticket_option_other"
                             class="js-switch-toggle-hidden-content" data-target="tickets_custom_fields_collaped">
