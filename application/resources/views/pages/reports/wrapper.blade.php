@@ -39,7 +39,7 @@
             <div class="card min-h-400">
                 <div class="tab-content">
                     <div class="tab-pane active ext-ajax-container" id="reportss_ajaxtab" role="tabpanel">
-                        <div class="card-body tab-body tab-body-embedded" id="embed-content-container">
+                        <div class="card-body tab-body tab-body-embedded {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="embed-content-container">
                             <!--dynamic content here-->
                         </div>
                     </div>
