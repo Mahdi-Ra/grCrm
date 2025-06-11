@@ -11,7 +11,7 @@
 
                 <!--home-->
                 <li data-modular-id="main_menu_client_home"
-                    class="sidenav-menu-item {{ $page['mainmenu_home'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_home'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.home')) }}">
                     <a class="waves-effect waves-dark" href="/home" aria-expanded="false" target="_self">
                         <i class="ti-home"></i>
@@ -25,7 +25,7 @@
                 <!--projects[home]-->
                 @if(config('visibility.modules.projects'))
                 <li data-modular-id="main_menu_client_projects"
-                    class="sidenav-menu-item {{ $page['mainmenu_projects'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_projects'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.projects')) }}">
                     <a class="waves-effect waves-dark" href="{{ _url('/projects') }}" aria-expanded="false"
                         target="_self">
@@ -39,7 +39,7 @@
 
                 @if(auth()->user()->is_client_owner)
                 <li data-modular-id="main_menu_client_billing"
-                    class="sidenav-menu-item {{ $page['mainmenu_client_billing'] ?? '' }}">
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_client_billing'] ?? '' }}">
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0);" aria-expanded="false">
                         <i class="ti-wallet"></i>
                         <span class="hide-menu">{{ cleanLang(__('lang.billing')) }}
@@ -80,9 +80,9 @@
                 <!--proposals-->
                 @if(config('visibility.modules.proposals') && auth()->user()->is_client_owner)
                 <li data-modular-id="main_menu_client_proposals"
-                    class="sidenav-menu-proposals {{ $page['mainmenu_client_proposals'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-proposals {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_client_proposals'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.proposals')) }}">
-                    <a class="waves-effect waves-dark p-r-20" href="/proposals" aria-expanded="false" target="_self">
+                    <a class="waves-effect waves-dark {{ app()->getLocale() == 'persian' ? 'p-l-20' : 'p-r-20' }}" href="/proposals" aria-expanded="false" target="_self">
                         <i class="ti-bookmark-alt"></i>
                         <span class="hide-menu">{{ cleanLang(__('lang.proposals')) }}
                         </span>
@@ -95,9 +95,9 @@
                 <!--contracts-->
                 @if(config('visibility.modules.contracts') && auth()->user()->is_client_owner)
                 <li data-modular-id="main_menu_client_contracts"
-                    class="sidenav-menu-item {{ $page['mainmenu_contracts'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_contracts'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.contracts')) }}">
-                    <a class="waves-effect waves-dark p-r-20" href="/contracts" aria-expanded="false" target="_self">
+                    <a class="waves-effect waves-dark {{ app()->getLocale() == 'persian' ? 'p-l-20' : 'p-r-20' }}" href="/contracts" aria-expanded="false" target="_self">
                         <i class="ti-write"></i>
                         <span class="hide-menu">{{ cleanLang(__('lang.contracts')) }}
                         </span>
@@ -109,7 +109,7 @@
                 <!--users-->
                 @if(auth()->user()->is_client_owner)
                 <li data-modular-id="main_menu_client_users"
-                    class="sidenav-menu-item {{ $page['mainmenu_contacts'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_contacts'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.users')) }}">
                     <a class="waves-effect waves-dark" href="/users" aria-expanded="false" target="_self">
                         <i class="sl-icon-people"></i>
@@ -123,7 +123,7 @@
                 <!--tickets-->
                 @if(config('visibility.modules.tickets'))
                 <li data-modular-id="main_menu_client_tickets"
-                    class="sidenav-menu-item {{ $page['mainmenu_tickets'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_tickets'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.support_tickets')) }}">
                     <a class="waves-effect waves-dark" href="/tickets" aria-expanded="false" target="_self">
                         <i class="ti-comments"></i>
@@ -137,9 +137,9 @@
                 <!--knowledgebase-->
                 @if(config('visibility.modules.knowledgebase'))
                 <li data-modular-id="main_menu_client_knowledgebase"
-                    class="sidenav-menu-item {{ $page['mainmenu_kb'] ?? '' }} menu-tooltip menu-with-tooltip"
+                    class="sidenav-menu-item {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }} {{ $page['mainmenu_kb'] ?? '' }} menu-tooltip menu-with-tooltip"
                     title="{{ cleanLang(__('lang.knowledgebase')) }}">
-                    <a class="waves-effect waves-dark p-r-20" href="/knowledgebase" aria-expanded="false"
+                    <a class="waves-effect waves-dark {{ app()->getLocale() == 'persian' ? 'p-l-20' : 'p-r-20' }}" href="/knowledgebase" aria-expanded="false"
                         target="_self">
                         <i class="sl-icon-docs"></i>
                         <span class="hide-menu">{{ cleanLang(__('lang.knowledgebase')) }}

@@ -1,5 +1,5 @@
 <!-- Page Title & Bread Crumbs -->
-<div class="col-md-12 col-lg-6 align-self-center">
+<div class="col-md-12 col-lg-6 align-self-center {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
     <h3 class="text-themecolor">{{ $page['heading'] ?? '' }}
         <!--automation-->
         @if(auth()->user()->is_team)

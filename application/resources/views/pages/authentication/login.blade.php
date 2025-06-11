@@ -9,34 +9,34 @@
 <div class="login-box m-t-20">
     <form class="form-horizontal form-material" id="loginForm">
         <div class="title">
-            <h4 class="box-title m-t-10 text-center">{{ cleanLang(__('lang.sign_in_to_your_account')) }}</h4>
+            <h4 class="box-title m-t-10 text-center">ورود به حساب کاربری</h4>
             <div class="text-center  m-b-20 ">
             </div>
         </div>
         <div class="form-group">
             <div class="col-xs-12">
-                <input class="form-control" type="text" name="email" id="email"
-                    placeholder="{{ cleanLang(__('lang.email')) }}">
+                <input class="form-control text-right" type="text" name="email" id="email"
+                    placeholder="ایمیل">
             </div>
         </div>
         <div class="form-group">
             <div class="col-xs-12">
-                <input class="form-control" type="password" name="password" id="password"
-                    placeholder="{{ cleanLang(__('lang.password')) }}">
+                <input class="form-control text-right" type="password" name="password" id="password"
+                    placeholder="رمز عبور">
             </div>
         </div>
         <div class="form-group">
             <label class="custom-control custom-checkbox cursor-pointer">
                 <input type="checkbox" class="custom-control-input" name="remember_me" checked="checked">
                 <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">{{ cleanLang(__('lang.remember_me')) }}</span>
+                <span class="custom-control-description">به خاطر بسپارید</span>
             </label>
         </div>
         <div class="form-group row p-t-10 p-b-10">
             <div class="col-md-12">
                 <a href="{{ url('forgotpassword') }}" id="to-recover" class="text-dark pull-right js-toggle-login-forms"
                     data-target="login-forms-forgot">
-                    <i class="fa fa-lock m-r-5"></i> {{ cleanLang(__('lang.forgot_password')) }}</a>
+                    <i class="fa fa-lock m-r-5"></i> فراموشی رمزعبور</a>
             </div>
         </div>
 
@@ -52,16 +52,16 @@
                 <button class="btn btn-info btn-lg btn-block" id="loginSubmitButton"
                     data-button-loading-annimation="yes" data-button-disable-on-click="yes"
                     data-url="{{ url('login?action=initial&redirect_url='.request('redirect_url')) }}"
-                    data-ajax-type="POST" type="submit">{{ cleanLang(__('lang.continue')) }}</button>
+                    data-ajax-type="POST" type="submit">ادامه</button>
             </div>
         </div>
         @if(config('system.settings_clients_registration') == 'enabled')
         <div class="form-group m-b-0">
             <div class="col-sm-12 text-center">
-                {{ cleanLang(__('lang.dont_have_an_account')) }}
+                حساب کاربری ندارید؟
                 <a href="{{ url('signup') }}" class="text-info m-l-5 js-toggle-login-forms"
                     data-target="login-forms-signup">
-                    <b>{{ cleanLang(__('lang.sign_up')) }}</b>
+                    <b>ثبت نام</b>
                 </a>
                 </p>
             </div>

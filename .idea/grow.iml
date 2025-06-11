@@ -9,6 +9,27 @@
       <sourceFolder url="file://$MODULE_DIR$/application/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/application/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/application/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/customize-my-account-for-woocommerce/Appsero/src" isTestSource="false" packagePrefix="Appsero\" />
+      <sourceFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/salin-woocommerce-brands/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/old_tenforever/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor-content-ticker/includes" isTestSource="false" packagePrefix="ECT\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/laravel/serializable-closure/src" isTestSource="false" packagePrefix="ElementorDeps\Laravel\SerializableClosure\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/laravel/serializable-closure/tests" isTestSource="true" packagePrefix="ElementorDeps\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/invoker/src" isTestSource="false" packagePrefix="ElementorDeps\Invoker\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/invoker/tests" isTestSource="true" packagePrefix="ElementorDeps\Invoker\Test\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/php-di/src" isTestSource="false" packagePrefix="ElementorDeps\DI\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/php-di/tests/IntegrationTest" isTestSource="true" packagePrefix="ElementorDeps\DI\Test\IntegrationTest\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/php-di/tests/UnitTest" isTestSource="true" packagePrefix="ElementorDeps\DI\Test\UnitTest\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/phpdoc-reader/src/PhpDocReader" isTestSource="false" packagePrefix="ElementorDeps\PhpDocReader\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/php-di/phpdoc-reader/tests" isTestSource="true" packagePrefix="ElementorDeps\UnitTest\PhpDocReader\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/dependency-injection/psr/container/src" isTestSource="false" packagePrefix="ElementorDeps\Psr\Container\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/twig/symfony/polyfill-ctype/" isTestSource="false" packagePrefix="ElementorDeps\Symfony\Polyfill\Ctype\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/twig/symfony/polyfill-mbstring/" isTestSource="false" packagePrefix="ElementorDeps\Symfony\Polyfill\Mbstring\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/twig/symfony/polyfill-php80/" isTestSource="false" packagePrefix="ElementorDeps\Symfony\Polyfill\Php80\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/twig/symfony/polyfill-php81/" isTestSource="false" packagePrefix="ElementorDeps\Symfony\Polyfill\Php81\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/twig/twig/twig/src" isTestSource="false" packagePrefix="ElementorDeps\Twig\" />
+      <sourceFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor/vendor_prefixed/twig/twig/twig/tests" isTestSource="true" packagePrefix="ElementorDeps\Twig\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/akaunting/money" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/barryvdh/laravel-debugbar" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/barryvdh/laravel-dompdf" />
@@ -143,6 +164,83 @@
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/webklex/php-imap" />
       <excludeFolder url="file://$MODULE_DIR$/application/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/beberlei/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/econea/nusoap" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/morilog/jalali" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/persian-woocommerce/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/really-simple-ssl/lets-encrypt/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/really-simple-ssl/lets-encrypt/vendor/fbett/le_acme2" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/really-simple-ssl/lets-encrypt/vendor/plesk/api-php-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/plugins/salin-woocommerce-brands/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/old_tenforever/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/bordoni/phpass" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/boxybird/inertia-wordpress" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/crazymeeks/php-excel" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/ezyang/htmlpurifier" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/hekmatinasser/notowo" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/hekmatinasser/verta" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/bus" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/database" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/events" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/macroable" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/pagination" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/pipeline" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/validation" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/illuminate/view" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/jenssegers/blade" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/jgrossi/corcel" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/kavenegar/php" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/maennchen/zipstream-php" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/markbaker/complex" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/markbaker/matrix" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/phpoffice/phpspreadsheet" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/thunderer/shortcode" />
+      <excludeFolder url="file://$MODULE_DIR$/tenfor/wp-content/themes/tenforever/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/wordpress/wp-content/plugins/elementor-content-ticker/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

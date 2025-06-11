@@ -1,5 +1,5 @@
 <!--CRUMBS CONTAINER (RIGHT)-->
-<div class="col-md-12  col-lg-6 align-self-center text-right parent-page-actions p-b-9"
+<div class="col-md-12  col-lg-6 align-self-center {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }} parent-page-actions p-b-9"
     id="list-page-actions-container">
     <div id="list-page-actions">
 
@@ -37,7 +37,7 @@
                 <i class="sl-icon-note"></i>
             </button>
 
-            <div class="dropdown-menu" aria-labelledby="listTableAction">
+            <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" aria-labelledby="listTableAction">
                 <!--edit-->
                 <a class="dropdown-item edit-add-modal-button js-ajax-ux-request reset-target-modal-form"
                     href="javascript:void(0)" data-toggle="modal" data-target="#commonModal"

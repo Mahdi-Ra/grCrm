@@ -35,7 +35,15 @@ body.rtl {
   --direction: rtl;
   font-family: 'Vazir', sans-serif;
 }
-
+#settings-wrapper {
+  font-family: 'Vazir', sans-serif;
+}
+.sidenav-menu-item {
+  font-family: 'Vazir', sans-serif;
+}
+.settings .left-sidebar {
+  font-family: 'Vazir', sans-serif;
+}
 body {
   background: #fff;
   font-family: "Montserrat";
@@ -6100,6 +6108,9 @@ Notify
   font-family: themify;
   color: #a6b7bf;
   font-size: 11px;
+}
+body.rtl .page-titles .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  rotate: 180deg;
 }
 .page-titles .breadcrumb .breadcrumb-item.active {
   color: #263238;
@@ -14331,6 +14342,9 @@ textarea {
   padding-left: 40px;
   position: relative;
 }
+body.rtl .comments .post-comment .x-message-field {
+  padding-right: 40px;
+}
 .comments .post-comment .x-message-field textarea {
   width: 100%;
   padding: 12px;
@@ -15229,6 +15243,10 @@ div.boards::-webkit-scrollbar {
   color: #0056b3;
   font-weight: 400;
   font-size: 14px;
+}
+body.rtl .timeline .x-meta a.link {
+  float: right;
+  margin-left: 5px;
 }
 .timeline .x-title {
   font-size: 13px;

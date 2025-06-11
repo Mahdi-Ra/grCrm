@@ -1,4 +1,4 @@
-<div class="row project-details" id="project-details-container">
+<div class="row project-details {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="project-details-container">
     <div class="col-sm-12 tinymce-transparent">
         <!--textarea & editor area-->
         <div class="project-description p-0 p-t-40 rich-text-formatting" id="project-description"> {!! $project->project_description !!}

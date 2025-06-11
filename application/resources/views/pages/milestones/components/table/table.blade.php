@@ -1,4 +1,4 @@
-<div class="card count-{{ @count($milestones ?? []) }}" id="milestones-table-wrapper">
+<div class="card count-{{ @count($milestones ?? []) }} {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" id="milestones-table-wrapper">
     <div class="card-body">
         <div class="table-responsive">
             @if (@count($milestones ?? []) > 0)

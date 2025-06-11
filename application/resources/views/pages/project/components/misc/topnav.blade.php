@@ -97,7 +97,7 @@
                     id="tabs-menu-billing" aria-expanded="false">
                     <span class="hidden-xs-down">{{ cleanLang(__('lang.financial')) }}</span>
                 </a>
-                <div class="dropdown-menu" x-placement="bottom-start" id="fx-topnav-dropdown">
+                <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" x-placement="bottom-start" id="fx-topnav-dropdown">
                     <!--[invoices]-->
                     @if(config('settings.project_permissions_view_invoices'))
                     <a class="dropdown-item   js-dynamic-url js-ajax-ux-request {{ $page['tabmenu_invoices'] ?? '' }}"
@@ -160,7 +160,7 @@
                     id="tabs-menu-billing" aria-expanded="false">
                     <span class="hidden-xs-down">{{ cleanLang(__('lang.more')) }}</span>
                 </a>
-                <div class="dropdown-menu" x-placement="bottom-start" id="fx-topnav-dropdown">
+                <div class="dropdown-menu {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}" x-placement="bottom-start" id="fx-topnav-dropdown">
 
                     <!--tickets-->
                     @if(config('settings.project_permissions_view_tickets'))

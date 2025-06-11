@@ -37,7 +37,7 @@
     <div class="card-body p-t-10 p-b-10" id="project_progress_container">
         <!--project progress-->
         <div class="d-flex no-block">
-            <div class="align-self-end no-shrink">
+            <div class="align-self-end no-shrink {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 <h5 class="m-b-0">{{ cleanLang(__('lang.progress')) }}</h5>
                 <!--[team]-->
                 @if(auth()->user()->is_team)
@@ -51,7 +51,7 @@
                 <h6 class="text-muted">{{ cleanLang(__('lang.project_progress')) }}</h6>
                 @endif
             </div>
-            <div class="ml-auto">
+            <div class="{{ app()->getLocale() == 'persian' ? 'mr-auto' : 'ml-auto' }}">
                 <div id="project_progress_chart"></div>
             </div>
         </div>
@@ -85,7 +85,7 @@
     <div class="m-t-10 m-b-10">
         <hr>
     </div>
-    <div class="card-body p-t-0 p-b-0">
+    <div class="card-body p-t-0 p-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <!--[client details]-->
         @if(auth()->user()->is_team)
         <div class="p-b-20">
@@ -139,7 +139,7 @@
 
         <!--project tags-->
         @if(auth()->user()->is_team)
-        <div class="row m-t-20">
+        <div class="row m-t-20 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
             <div class="col-12">
                 <div class="panel-label p-b-3">{{ cleanLang(__('lang.tags')) }}</div>
                 <div class="l-h-24">
@@ -155,7 +155,7 @@
         <hr>
     </div>
     <!--dates-->
-    <div class="card-body p-t-0 p-b-0">
+    <div class="card-body p-t-0 p-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="row">
             <div class="col-sm-6">
                 <div>
@@ -188,7 +188,7 @@
     </div>
     <!--billing details-->
     @if(config('visibility.project_billing_summary'))
-    <div class="card-body p-t-0 p-b-0">
+    <div class="card-body p-t-0 p-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div class="row">
             <div class="col-sm-6">
                 <div>
@@ -226,13 +226,13 @@
     <div class="m-t-10 m-b-10">
         <hr>
     </div>
-    <div class="card-body p-t-0 p-b-0">
+    <div class="card-body p-t-0 p-b-0 {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
         <div>
             <table class="table no-border m-b-0">
                 <tbody>
                     <tr>
                         <td class="p-l-0 p-t-5 w-50">{{ cleanLang(__('lang.all_invoices')) }}</td>
-                        <td class="font-medium p-r-0 p-t-5">
+                        <td class="font-medium p-r-0 p-t-5 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                             {{ runtimeMoneyFormat($project->sum_invoices_all) }}
                             <div class="progress">
                                 @if($project->sum_invoices_all > 0)
@@ -246,7 +246,7 @@
                     </tr>
                     <tr>
                         <td class="p-l-0 p-t-5">{{ cleanLang(__('lang.payments')) }}</td>
-                        <td class="font-medium p-r-0 p-t-5">
+                        <td class="font-medium p-r-0 p-t-5 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                             {{ runtimeMoneyFormat($project->sum_all_payments) }}
                             <div class="progress">
                                 <div class="progress-bar bg-success {{ runtimeProjectInvoicesBars($project->sum_invoices_all, $project->sum_all_payments) }}"
@@ -256,7 +256,7 @@
                     </tr>
                     <tr>
                         <td class="p-l-0 p-t-5">{{ cleanLang(__('lang.balance_due')) }}</td>
-                        <td class="font-medium p-r-0 p-t-5">
+                        <td class="font-medium p-r-0 p-t-5 {{ app()->getLocale() == 'persian' ? 'text-left' : 'text-right' }}">
                             {{ runtimeMoneyFormat($project->sum_invoices_all - $project->sum_all_payments) }}
                             <div class="progress">
                                 <div class="progress-bar bg-warning {{ runtimeProjectInvoicesBars($project->sum_invoices_all, ($project->sum_invoices_all - $project->sum_all_payments)) }}"

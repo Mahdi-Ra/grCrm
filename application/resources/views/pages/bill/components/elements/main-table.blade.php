@@ -51,7 +51,7 @@
                 @endforeach
             </tbody>
             @else
-            <tbody id="billing-items-container">
+            <tbody id="billing-items-container {{ app()->getLocale() == 'persian' ? 'text-right' : 'text-left' }}">
                 @include('pages.bill.components.elements.lineitems')
             </tbody>
             @endif
