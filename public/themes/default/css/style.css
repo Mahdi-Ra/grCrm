@@ -10755,6 +10755,10 @@ Login register and recover password Page
   z-index: 1;
   margin-right: 15px;
 }
+body.rtl .profiletimeline .sl-left {
+  float: right;
+  margin-left: 15px;
+}
 .profiletimeline .sl-left img {
   max-width: 40px;
   width: 40px;
